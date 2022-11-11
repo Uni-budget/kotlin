@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="341dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="479dp"
+        android:background="@drawable/_rectangle_24_ek1_shape"
+        android:text="Sign Up"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:backgroundTint="@color/_rectangle_50_color" />
+
+
+    <RelativeLayout
+        android:id="@+id/group_17_ek7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="17dp">
+
+
+        <RelativeLayout
+            android:id="@+id/group_2_ek12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="0dp">
+
+
+            <RelativeLayout
+                android:id="@+id/group_12_ek12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/babygage_ek11"
+            android:layout_width="127dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:text="@string/babygage_ek11_string"
+            android:textColor="@color/babygage_color"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/log_in_ek3"
+        android:layout_width="177.5dp"
+        android:layout_height="41.5dp"
+        android:layout_marginLeft="21.01dp"
+        android:layout_marginTop="86dp"
+        android:text="@string/log_in_ek3_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="13sp" />
+
+    <View
+        android:id="@+id/line_15_ek2"
+        android:layout_width="161.03dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="116dp"
+        android:background="@drawable/line_15_ek2_shape" />
+
+    <EditText
+        android:id="@+id/useremail"
+        android:layout_width="341dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="223dp"
+        android:background="@drawable/rectangle_25_ek1_shape"
+        android:hint="Type your e-mail(ID)"
+        android:paddingStart="10dp"
+        android:textSize="16dp" />
+
+
+    <EditText
+        android:id="@+id/userpassword"
+        android:layout_width="341dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="287dp"
+        android:background="@drawable/rectangle_26_shape"
+        android:hint="Type your password"
+        android:paddingStart="10dp"
+        android:textSize="16dp" />
+<!--        app:passwordToggleEnabled="true" >-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Type your password" />-->
+
+
+
+    <Button
+        android:id="@+id/loginbtn"
+        android:layout_width="341dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="420dp"
+        android:background="@drawable/_rectangle_27_shape"
+        android:text="Log in"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:backgroundTint="@color/_rectangle_23_color" />
+
+    <TextView
+        android:id="@+id/find_password"
+        android:layout_width="102dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginLeft="153dp"
+        android:layout_marginTop="543dp"
+        android:gravity="center"
+        android:text="@string/find_password_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="12sp"
+        android:textStyle="italic" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="114dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="230dp"
+        app:srcCompat="@drawable/logo" />
+
+    <!--	</RelativeLayout>-->
+
+
+</RelativeLayout>

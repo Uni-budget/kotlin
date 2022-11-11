@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinancialmainActivity">
+
+    <View
+        android:id="@+id/_bg__mainpage_financial_ek2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/_bg__mainpage_financial_ek2_shape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="374dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="584dp"
+        android:background="@drawable/rectangle_10_ek1_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/group_13_ek1"
+        android:layout_width="405dp"
+        android:layout_height="257dp"
+        android:layout_marginTop="146dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/___expenditure___income"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="270dp"
+            android:text=": Expenditure\n: Income"
+            android:textColor="@color/babygage_color"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/ellipse_4_ek1"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:layout_marginStart="316dp"
+            android:layout_marginTop="272dp"
+            android:background="@drawable/ellipse_4_ek1_shape" />
+
+        <View
+            android:id="@+id/ellipse_5_ek1"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:layout_marginStart="316dp"
+            android:layout_marginTop="282dp"
+            android:background="@drawable/ellipse_5_ek1_shape" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/rectangle_5_ek1"
+        android:background="@drawable/rectangle_5_ek1_shape"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="112dp"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/string10"
+        android:layout_width="77dp"
+        android:layout_height="39.5dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="108dp"
+        android:gravity="center"
+        android:text="@string/_2022__10_ek2_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_5_ek1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="118dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/rectangle_16_ek1_shape"
+        app:layout_constraintBottom_toBottomOf="@+id/string09"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_5_ek1"
+        app:layout_constraintTop_toTopOf="@+id/string09"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/string09"
+        android:layout_width="75dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="108dp"
+        android:gravity="center"
+        android:text="@string/_2022__09_ek2_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rectangle_4_ek1"
+        android:layout_width="374dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="458dp"
+        android:background="@drawable/rectangle_4_ek1_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/group_6_ek1"
+        android:layout_marginTop="420dp"
+        android:layout_marginStart="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/today_s_expenditure_details_ek1"
+            android:layout_width="189.5dp"
+            android:layout_height="40.5dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/today_s_expenditure_details_ek1_string"
+            android:textColor="@color/babygage_color"
+            android:textSize="13sp" />
+
+        <View
+            android:id="@+id/line_1_ek1"
+            android:layout_width="161.03dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/line_1_ek1_shape" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/group_5_ek1"
+        android:layout_marginTop="544dp"
+        android:layout_marginStart="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/today_s_income_details_ek1"
+            android:layout_width="177.5dp"
+            android:layout_height="41.5dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/today_s_income_details_ek1_string"
+            android:textColor="@color/babygage_color"
+            android:textSize="13sp" />
+
+        <View
+            android:id="@+id/line_2_ek1"
+            android:layout_width="161.03dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/line_2_ek1_shape" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/menu_ek1"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/vector_ek21"
+        android:layout_width="8dp"
+        android:layout_height="15dp"
+        android:contentDescription="vector_ek21"
+        android:src="@drawable/vector_ek21"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/string10"
+        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.65" />
+
+    <RelativeLayout
+        android:id="@+id/menu_right_ek2"
+        android:layout_marginTop="116dp"
+        android:layout_marginStart="272dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/babygage_ek10"
+        android:layout_width="127dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="@string/babygage_ek10_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="114dp"
+        android:layout_height="99dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/babygage_ek10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+    <View
+        android:id="@+id/rectangle_17_ek1"
+        android:layout_width="118dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="112dp"
+        android:background="@drawable/rectangle_17_ek1_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_5_ek1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/string11"
+        android:layout_width="75dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="108dp"
+        android:gravity="center"
+        android:text="@string/_2022__11_ek3_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/menu_right_ek3"
+        android:layout_marginTop="116dp"
+        android:layout_marginStart="272dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/vector_ek22"
+        android:layout_width="8dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="7dp"
+        android:contentDescription="vector_ek22"
+        android:src="@drawable/vector_ek22"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_17_ek1"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_5_ek1"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_17_ek1"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_17_ek1" />
+
+    <!-- this is upload button-->
+
+
+
+    <!-- this is fixed bottom bar -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_1_ek1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="10dp">
+
+        <Button
+            android:id="@+id/importGalleryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:alpha="0.60000002384186"
+            android:background="@drawable/rectangle_14_ek1_shape"
+            android:text="import from gallery"
+            android:textColor="#000000"
+            android:textSize="13dp"
+            app:backgroundTint="@color/_rectangle_50_color" />
+
+        <Button
+            android:id="@+id/takePictureBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            android:alpha="0.60000002384186"
+            android:background="@drawable/_rectangle_15_shape"
+            android:text="take a picture"
+            android:textColor="#000000"
+            android:textSize="13dp"
+            app:backgroundTint="@color/_rectangle_50_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rectangle_1_ek1"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:background="@drawable/rectangle_1_ek1_shape"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/mypageBtn"
+            android:layout_width="39dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/person_outline"
+            app:backgroundTint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/householdBtn"
+            android:layout_width="38dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/vector_ek5"
+            android:contentDescription="vector_ek5"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/household_ledger_ek2"
+            app:layout_constraintEnd_toStartOf="@+id/financial_btn"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rectangle_1_ek1"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/financialBtn"
+            android:layout_width="27dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="-5dp"
+            android:background="@drawable/vector_ek17"
+            app:backgroundTint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/settingsBtn"
+            android:layout_width="42dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="55dp"
+            android:background="@drawable/vector_ek18"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/rectangle_1_ek1"
+            app:layout_constraintHorizontal_bias="0.907"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mypage_ek1"
+        android:layout_width="75dp"
+        android:layout_height="31dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginEnd="22dp"
+        android:gravity="center"
+        android:text="@string/mypage_ek1_string"
+        android:textSize="12dp"
+        android:textColor="@color/_bg__intro_ek2_color"
+        app:layout_constraintBottom_toBottomOf="@+id/_bg__mainpage_financial_ek2"
+        app:layout_constraintEnd_toStartOf="@+id/household_ledger_ek2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1_ek1"
+        app:layout_constraintVertical_bias="0.875" />
+
+
+    <TextView
+        android:id="@+id/household_ledger_ek2"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal|center"
+        android:gravity="center"
+        android:text="@string/household_ledger_ek2_string"
+        android:textColor="@color/_bg__intro_ek2_color"
+        android:textSize="12dp"
+        android:layout_marginStart="38dp"
+        app:layout_constraintBottom_toBottomOf="@+id/_bg__mainpage_financial_ek2"
+        app:layout_constraintEnd_toStartOf="@+id/financial_audit_ek2"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1_ek1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/financial_audit_ek2"
+        android:layout_width="51dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginEnd="0dp"
+        android:gravity="center"
+        android:text="@string/financial_audit_ek2_string"
+        android:textColor="@color/_bg__intro_ek2_color"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/settings_ek1"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toEndOf="@+id/_bg__mainpage_financial_ek2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1_ek1"
+        app:layout_constraintVertical_bias="0.993" />
+
+
+    <TextView
+        android:id="@+id/settings_ek1"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="44dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:text="@string/settings_ek1_string"
+        android:textColor="@color/_bg__intro_ek2_color"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/financial_audit_ek2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toEndOf="@+id/_bg__mainpage_financial_ek2"
+        app:layout_constraintStart_toStartOf="@+id/financial_audit_ek2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

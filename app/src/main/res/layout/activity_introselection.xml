@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		intro
+     *	@date 		Sunday 06th of November 2022 09:05:16 AM
+     *	@title 		Page 1
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.figma
+     *
+     */
+    -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="114dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="230dp"
+        app:srcCompat="@drawable/logo" />
+
+    <RelativeLayout
+        android:id="@+id/group_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="111dp"
+        android:layout_marginTop="19dp">
+
+        <TextView
+            android:id="@+id/babygage_ek1"
+            android:layout_width="127dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:text="@string/babygage_ek1_string"
+            android:textColor="@color/babygage_color"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/householdbtn"
+        android:layout_width="149dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="303dp"
+        android:background="@drawable/_rectangle_59_shape"
+        android:paddingTop="120dp"
+        android:text="@string/household_ledger_ek1_string"
+        android:textColor="#000000"
+        app:backgroundTint="@color/_rectangle_59_color" />
+
+    <ImageView
+        android:id="@+id/householdImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="340dp"
+        android:contentDescription="household ledger image"
+        android:elevation="10dp"
+        android:src="@drawable/vector" />
+
+    <Button
+        android:id="@+id/financialbtn"
+        android:layout_width="149dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="303dp"
+        android:background="@drawable/rectangle_10_ek1_shape"
+        android:paddingTop="120dp"
+        android:text="@string/financial_audit_ek1_string"
+        android:textColor="#000000"
+        app:backgroundTint="@color/rectangle_10_ek1_color" />
+
+
+    <ImageView
+        android:id="@+id/financialImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="255dp"
+        android:layout_marginTop="340dp"
+        android:contentDescription="financial audit image"
+        android:elevation="10dp"
+        android:src="@drawable/vector_ek1" />
+
+    <TextView android:id="@+id/hi_ooo__welcome_to_easygage_"
+        android:layout_gravity="center_horizontal|center"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/babygage_color"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="261dp"
+        android:layout_width="191dp"
+        android:layout_height="31dp"
+        android:text="@string/hi_ooo__welcome_to_easygage__string" />
+
+</RelativeLayout>
+
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="_bg__mainpage_financial_ek2" type="id" />
+    <item name="mypageBtn" type="id" />
+    <item name="householdBtn" type="id" />
+    <item name="financialBtn" type="id" />
+    <item name="settingsBtn" type="id" />
+    <item name="mypage_ek1" type="id" />
+    <item name="household_ledger_ek2" type="id" />
+    <item name="financial_audit_ek2" type="id" />
+    <item name="settings_ek1" type="id" />
+    <item name="ellipse_1_ek1" type="id" />
+    <item name="Ellipse_2" type="id" />
+    <item name="uploadBtn" type="id" />
+    <item name="importGalleryBtn" type="id" />
+    <item name="takePictureBtn" type="id" />
+    <item name="group_13_ek1" type="id" />
+    <item name="___expenditure___income" type="id" />
+    <item name="ellipse_4_ek1" type="id" />
+    <item name="ellipse_5_ek1" type="id" />
+    <item name="view3" type="id" />
+    <item name="rectangle_5_ek1" type="id" />
+    <item name="string10" type="id" />
+    <item name="view2" type="id" />
+    <item name="string09" type="id" />
+    <item name="rectangle_4_ek1" type="id" />
+    <item name="group_6_ek1" type="id" />
+    <item name="today_s_expenditure_details_ek1" type="id" />
+    <item name="line_1_ek1" type="id" />
+    <item name="group_5_ek1" type="id" />
+    <item name="today_s_income_details_ek1" type="id" />
+    <item name="line_2_ek1" type="id" />
+    <item name="menu_ek1" type="id" />
+    <item name="vector_ek21" type="id" />
+    <item name="menu_right_ek2" type="id" />
+    <item name="hi_ooo__welcome_to_easygage__ek3" type="id" />
+    <item name="group_7_ek1" type="id" />
+    <item name="group_2_ek4" type="id" />
+    <item name="group_12_ek4" type="id" />
+    <item name="image_1_ek5" type="id" />
+    <item name="image_2_ek5" type="id" />
+    <item name="rectangle_31" type="id" />
+    <item name="babygage_ek3" type="id" />
+    <item name="rectangle_17_ek1" type="id" />
+    <item name="string11" type="id" />
+    <item name="menu_right_ek3" type="id" />
+    <item name="hi_ooo__welcome_to_easygage__ek4" type="id" />
+    <item name="vector_ek22" type="id" />
+    <item name="financial_btn" type="id" />
+
+
+    <!-- SIGNUP PAGE -->
+    <item name="rectangle_16_ek2" type="id" />
+    <item name="password" type="id" />
+    <item name="name_ek4" type="id" />
+    <item name="rectangle_21" type="id" />
+    <item name="rectangle_20" type="id" />
+    <item name="rectangle_17_ek2" type="id" />
+    <item name="e_mail_id_" type="id" />
+    <item name="line_15" type="id" />
+    <item name="sign_up_ek3" type="id" />
+    <item name="babygage_ek9" type="id" />
+    <item name="group_12_ek10" type="id" />
+    <item name="group_2_ek10" type="id" />
+    <item name="group_17_ek5" type="id" />
+    <item name="imageView" type="id" />
+
+
+    <!-- Login page -->
+    <item name="signupbtn" type="id" />
+    <item name="group_17_ek7" type="id" />
+    <item name="group_2_ek12" type="id" />
+    <item name="group_12_ek12" type="id" />
+    <item name="babygage_ek11" type="id" />
+    <item name="log_in_ek3" type="id" />
+    <item name="line_15_ek2" type="id" />
+    <item name="rectangle_25_ek1" type="id" />
+    <item name="rectangle_26" type="id" />
+    <item name="loginbtn" type="id" />
+    <item name="find_password" type="id" />
+
+
+
+
+
+</resources>

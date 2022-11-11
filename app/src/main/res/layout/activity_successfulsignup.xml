@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+
+    <TextView
+        android:id="@+id/babygage_ek10"
+        android:layout_width="127dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="@string/babygage_ek10_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="114dp"
+        android:layout_height="99dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/babygage_ek10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/sign_up_ek5"
+        android:layout_width="177.5dp"
+        android:layout_height="41.5dp"
+        android:text="@string/sign_up_ek5_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/babygage_ek10"
+        app:layout_constraintVertical_bias="0.465"
+        android:textStyle="bold"/>
+
+    <View
+        android:id="@+id/line_15"
+        android:layout_width="161.03dp"
+        android:layout_height="1dp"
+        android:background="@drawable/line_15_shape"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_24"
+        app:layout_constraintEnd_toEndOf="@+id/sign_up_ek5"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="@+id/sign_up_ek5"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_ek5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/rectangle_24"
+        android:layout_width="354dp"
+        android:layout_height="233dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/rectangle_24_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/welcomemsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FAFAFA"
+        android:gravity="center"
+        android:text="Welcome to our “BABYGAGE” service!\nYou can use everything in our service after log-in."
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/loginpagebtn"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_24"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_24"
+        app:layout_constraintTop_toBottomOf="@+id/successful_sign_up_ek3"
+        app:layout_constraintVertical_bias="0.514" />
+
+    <TextView
+        android:id="@+id/successful_sign_up_ek3"
+        android:layout_width="350dp"
+        android:layout_height="41.5dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="@string/successful_sign_up_ek3_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_24"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_24"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_24" />
+
+    <Button
+        android:id="@+id/loginpagebtn"
+        android:layout_width="201dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/_rectangle_25_shape"
+        android:text="@string/go_to_log_in_page_string"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_24"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_24"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

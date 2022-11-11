@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- intro colors -->
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="_bg__intro_ek2_color">#FFFFFF</color>
+    <color name="babygage_color">#000000</color>
+    <color name="_rectangle_59_color">#FFDD4D</color>
+    <color name="ellipse_4_color">#FF6D65</color>
+    <color name="ellipse_5_color">#0047FF</color>
+    <color name="rectangle_5_color">#FECE00</color>
+    <color name="rectangle_6_color">#FDF3C6</color>
+    <color name="__20000_color">#FF0000</color>
+    <color name="rectangle_4_color">#FFF1BB</color>
+    <color name="rectangle_9_color">#FFEC9C</color>
+    <color name="rectangle_10_ek1_color">#C8F0F3</color>
+    <color name="rectangle_14_ek1_color">#D0D0D0</color>
+    <color name="rectangle_5_ek1_color">#7CD9DF</color>
+    <color name="rectangle_33_color">#FEE574</color>
+    <color name="rectangle_49_color">#FEE575</color>
+    <color name="_rectangle_50_color">#ECECEC</color>
+    <color name="rectangle_51_color">#FFF3BD</color>
+    <color name="rectangle_54_color">#FFFAE6</color>
+    <color name="rectangle_55_color">#FF7E7E</color>
+    <color name="line_3_ek3_color">#626262</color>
+    <color name="rectangle_51_ek2_color">#D9D9D9</color>
+    <color name="rectangle_57_color">#F5F5F5</color>
+    <color name="rectangle_56_ek1_color">#ACEDF2</color>
+    <color name="rectangle_49_ek4_color">#D1D1D1</color>
+    <color name="_rectangle_23_color">#FFE575</color>
+    <color name="rectangle_10_ek2_color">#ffffff</color>
+    <color name="welcome_to_our__babygage__service__you_can_use_everything_in_our_service_after_log_in__color">#3D3D3D</color>
+    <color name="click__color">#757575</color>
+    <color name="rectangle_15_ek1_color">#B3B3B3</color>
+    <color name="rectangle_32_ek1_color">#EAEAEA</color>
+    <color name="rectangle_34_color">#FCFCFC</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
