@@ -110,17 +110,16 @@
 <!--        android:hint="Type your password" />-->
 
 
-
     <Button
         android:id="@+id/loginbtn"
         android:layout_width="341dp"
         android:layout_height="49dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="420dp"
-        android:background="@drawable/_rectangle_27_shape"
         android:text="Log in"
         android:textColor="#000000"
         android:textStyle="bold"
+        android:background="@drawable/_rectangle_27_shape"
         app:backgroundTint="@color/_rectangle_23_color" />
 
     <TextView

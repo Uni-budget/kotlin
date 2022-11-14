@@ -33,8 +33,8 @@ class SignupActivity : AppCompatActivity() {
                             startActivity(nextScreen)
                         }
                         else {
-                            Toast.makeText(this, "account creation failed", Toast.LENGTH_SHORT).show()
-                        }
+                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        } // it.exception.toString()
                     }
                 } else {
                     Toast.makeText(this, "Password is not matching", Toast.LENGTH_SHORT).show()
