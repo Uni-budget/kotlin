@@ -33,5 +33,9 @@ class FinancialmainActivity : AppCompatActivity() {
             val nextScreen = Intent(this, FinancialmainActivity::class.java)
             startActivity(nextScreen)
         }
+        binding.takePictureBtn.setOnClickListener {
+            val nextScreen = Intent(this, CameraActivity::class.java)
+            startActivity(nextScreen)
+        }
     }
 }

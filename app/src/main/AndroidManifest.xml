@@ -13,31 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BABYGAGE_OCR"
         tools:targetApi="31">
-<!--        <activity-->
-<!--            android:name=".TakepictureActivity"-->
-<!--            android:exported="false" />-->
         <activity
-            android:name="com.example.babygage_ocr.IntroselectionActivity"
+            android:name=".CameraActivity"
+            android:exported="false" />
+        <!-- <activity -->
+        <!-- android:name=".TakepictureActivity" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".IntroselectionActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.babygage_ocr.SuccessfulsignupActivity"
-            android:exported="true" />
-<!--        <activity-->
-<!--            android:name=".MypageActivity"-->
-<!--            android:exported="false" />-->
+            android:name=".SuccessfulsignupActivity"
+            android:exported="true" /> <!-- <activity -->
+        <!-- android:name=".MypageActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
-            android:name="com.example.babygage_ocr.SignupActivity"
-            android:exported="true">
-        </activity>
+            android:name=".SignupActivity"
+            android:exported="true"></activity>
         <activity
-            android:name="com.example.babygage_ocr.HouseholdmainActivity"
-            android:exported="true" />
-
-        <activity
-            android:name="com.example.babygage_ocr.FinancialmainActivity"
+            android:name=".HouseholdmainActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.babygage_ocr.LoginActivity"
+            android:name=".FinancialmainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
