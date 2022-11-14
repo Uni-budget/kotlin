@@ -33,7 +33,7 @@ class SignupActivity : AppCompatActivity() {
                             startActivity(nextScreen)
                         }
                         else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "account creation failed", Toast.LENGTH_SHORT).show()
                         } // it.exception.toString()
                     }
                 } else {
