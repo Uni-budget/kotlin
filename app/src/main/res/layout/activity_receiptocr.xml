@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReceiptocrActivity">
+
+    <ScrollView
+        android:id="@+id/_bg__mainpage_financial_ek2"
+        android:layout_width="411dp"
+        android:layout_height="713dp"
+        android:background="@drawable/_bg__mainpage_financial_ek2_shape"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_1_ek1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/babygage_ek10"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/babygage_ek10"
+        android:layout_width="127dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="@string/babygage_ek10_string"
+        android:textColor="@color/babygage_color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="114dp"
+        android:layout_height="99dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/babygage_ek10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+
+    <!-- this is upload button-->
+
+
+    <ImageView
+        android:id="@+id/imageOcr"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/starbucks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <RelativeLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/text_data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="processImage"
+        app:layout_constraintTop_toBottomOf="@+id/imageOcr">
+
+
+        <Button
+            android:id="@+id/recognizeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Recognize Text"
+            android:textColor="@color/black"
+            android:textFontWeight="@integer/material_motion_duration_long_1"
+            android:onClick="processImage"
+            android:textSize="12dp"
+            app:backgroundTint="@color/rectangle_6_color" />
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/detectedText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:scrollbars = "vertical"
+        android:hint="Detected text will appear here."
+        android:inputType="textMultiLine"
+        android:scrollHorizontally="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
+    <!-- bottom bar-->
+
+    <LinearLayout
+        android:id="@+id/rectangle_1_ek1"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:background="@drawable/rectangle_1_ek1_shape"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/mypageBtn"
+            android:layout_width="39dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/person_outline"
+            app:backgroundTint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/householdBtn"
+            android:layout_width="38dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/vector_ek5"
+            android:contentDescription="vector_ek5"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/household_ledger_ek2"
+            app:layout_constraintEnd_toStartOf="@+id/financial_btn"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rectangle_1_ek1"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/financialBtn"
+            android:layout_width="27dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="-5dp"
+            android:background="@drawable/vector_ek17"
+            app:backgroundTint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/settingsBtn"
+            android:layout_width="42dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="55dp"
+            android:background="@drawable/vector_ek18"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/rectangle_1_ek1"
+            app:layout_constraintHorizontal_bias="0.907"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mypage_ek1"
+        android:layout_width="75dp"
+        android:layout_height="31dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginEnd="22dp"
+        android:gravity="center"
+        android:text="@string/mypage_ek1_string"
+        android:textColor="@color/_bg__intro_ek2_color"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/household_ledger_ek2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1_ek1"
+        app:layout_constraintVertical_bias="0.875" />
+
+
+    <TextView
+        android:id="@+id/household_ledger_ek2"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginStart="38dp"
+        android:gravity="center"
+        android:text="@string/household_ledger_ek2_string"
+        android:textColor="@color/_bg__intro_ek2_color"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_1_ek1"
+        app:layout_constraintEnd_toStartOf="@+id/financial_audit_ek2"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1_ek1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/financial_audit_ek2"
+        android:layout_width="51dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginEnd="0dp"
+        android:gravity="center"
+        android:text="@string/financial_audit_ek2_string"
+        android:textColor="@color/_bg__intro_ek2_color"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/settings_ek1"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toEndOf="@+id/_bg__mainpage_financial_ek2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1_ek1"
+        app:layout_constraintVertical_bias="0.993" />
+
+
+    <TextView
+        android:id="@+id/settings_ek1"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:text="@string/settings_ek1_string"
+        android:textColor="@color/_bg__intro_ek2_color"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_1_ek1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="@+id/financial_audit_ek2"
+        app:layout_constraintTop_toBottomOf="@+id/linear_holder"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

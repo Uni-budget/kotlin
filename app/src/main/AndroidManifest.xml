@@ -14,9 +14,14 @@
         android:theme="@style/Theme.BABYGAGE_OCR"
         tools:targetApi="31">
         <activity
-            android:name=".CameraActivity"
+            android:name=".ReceiptconfirmActivity"
             android:exported="false" />
-        <!-- <activity -->
+        <activity
+            android:name=".ReceiptocrActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CameraActivity"
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".TakepictureActivity" -->
         <!-- android:exported="false" /> -->
         <activity
@@ -29,7 +34,7 @@
         <!-- android:exported="false" /> -->
         <activity
             android:name=".SignupActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".HouseholdmainActivity"
             android:exported="true" />

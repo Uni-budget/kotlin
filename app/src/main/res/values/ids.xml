@@ -78,9 +78,18 @@
     <item name="rectangle_26" type="id" />
     <item name="loginbtn" type="id" />
     <item name="find_password" type="id" />
-
-
-
+    <item name="rectangle_47" type="id" />
+    <item name="rectangle_42" type="id" />
+    <item name="totalTxt" type="id" />
+    <item name="rectangle_3" type="id" />
+    <item name="productTxt" type="id" />
+    <item name="priceTxt" type="id" />
+    <item name="rectangle_4" type="id" />
+    <item name="dateTxt" type="id" />
+    <item name="textView2" type="id" />
+    <item name="textView3" type="id" />
+    <item name="textView4" type="id" />
+    <item name="rectangle_32_ek1" type="id" />
 
 
 </resources>
