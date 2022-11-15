@@ -14,13 +14,20 @@
         android:theme="@style/Theme.BABYGAGE_OCR"
         tools:targetApi="31">
         <activity
+            android:name=".SetImageActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ReceiptconfirmActivity"
             android:exported="false" />
         <activity
             android:name=".ReceiptocrActivity"
             android:exported="false" />
         <activity
-            android:name=".CameraActivity"
+            android:name=".ImportimageActivity"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".TakepictureActivity" -->
         <!-- android:exported="false" /> -->
