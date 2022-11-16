@@ -1,13 +1,12 @@
 package com.example.babygage_ocr
 
-import android.annotation.SuppressLint
-import android.content.Intent
+import android.R
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.babygage_ocr.databinding.ActivitySetImageBinding
-import java.text.SimpleDateFormat
 
 
 class SetImageActivity : AppCompatActivity() {
@@ -19,6 +18,14 @@ class SetImageActivity : AppCompatActivity() {
         binding = ActivitySetImageBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        val textView = binding.tvImagePath
+        val imageView = binding.ivImage
+
+        val imagePath = intent.getStringExtra("path")
+        textView.text = imagePath
+        Glide.with(this).load(imagePath).into(imageView)
+
 
     }
 }
