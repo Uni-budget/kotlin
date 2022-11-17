@@ -59,9 +59,6 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-
-    <!-- 상단바-->
-
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
@@ -70,31 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <View
-        android:id="@+id/detailBox"
-        android:layout_width="374dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="60dp"
-        android:background="@drawable/rectangle_4_shape"
-        app:layout_constraintBottom_toTopOf="@+id/bottombar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/today_s_expenditure_details_ek1"
-        app:layout_constraintTop_toBottomOf="@+id/moneyDetails"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:layout_width="8dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/vector_ek21"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toStartOf="@+id/string10"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/string09"
-        app:layout_constraintVertical_bias="0.0" />
+    <!-- 상단바-->
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -171,19 +144,6 @@
 
 
     <!-- this is fixed bottom bar -->
-    <ImageView
-        android:id="@+id/vector_ek22"
-        android:layout_width="8dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="7dp"
-        android:contentDescription="vector_ek22"
-        android:src="@drawable/vector_ek22"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_17_ek1"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_full"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_17_ek1"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_17_ek1"
-        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/bottombar"
@@ -204,7 +164,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="30dp"
-            android:background="@drawable/person_outline"
+            android:background="@drawable/vector_ek28"
             app:backgroundTint="#FFFFFF"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -214,7 +174,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="55dp"
             android:layout_marginEnd="100dp"
-            android:background="@drawable/vector_ek5"
+            android:background="@drawable/_vector_ek58"
             android:contentDescription="vector_ek5"
             app:backgroundTint="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/household_ledger_ek2"
@@ -229,7 +189,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="-5dp"
-            android:background="@drawable/vector_ek17"
+            android:background="@drawable/vector_ek34"
             app:backgroundTint="#FFFFFF"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -238,7 +198,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="55dp"
-            android:background="@drawable/vector_ek18"
+            android:background="@drawable/vector_ek35"
             app:backgroundTint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="@+id/rectangle_1_ek1"
             app:layout_constraintHorizontal_bias="0.907"
@@ -251,6 +211,7 @@
         android:id="@+id/moneyDetails"
         android:layout_width="189.5dp"
         android:layout_height="40.5dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="52dp"
         android:text="Today's expenditure and income"
         android:textColor="@color/babygage_color"
@@ -284,6 +245,20 @@
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="@+id/detailBox"
         app:layout_constraintTop_toTopOf="@+id/detailBox" />
+
+    <View
+        android:id="@+id/detailBox"
+        android:layout_width="374dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/rectangle_4_shape"
+        app:layout_constraintBottom_toTopOf="@+id/bottombar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/today_s_expenditure_details_ek1"
+        app:layout_constraintTop_toBottomOf="@+id/moneyDetails"
+        app:layout_constraintVertical_bias="0.0" />
 
     <!--    OCR (사진 첨부 부분) -->
 <!--    <Button-->
