@@ -9,6 +9,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -24,7 +25,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import java.util.jar.Manifest
 
-@Suppress("DEPRECATION")
+
 class ImportimageActivity : AppCompatActivity(), View.OnClickListener {
     val CAMERA = 100 // camera intent value
     val GALLERY = 101 // gallery intent value
@@ -75,13 +76,17 @@ class ImportimageActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint(*["NonConstantResourceId", "QueryPermissionsNeeded"])
     override fun onClick(view: View) {
         when (view.getId()) {
             R.id.btn_camera -> {
-                intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                if (intent!!.resolveActivity(getPackageManager()) != null) {
+                if (checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED && checkSelfPermission(
+                        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    ) == PackageManager.PERMISSION_GRANTED) {
+                    val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
                     var imageFile: File? = null
+
                     try {
                         imageFile = createImageFile()
                     } catch (e: IOException) {
@@ -90,11 +95,22 @@ class ImportimageActivity : AppCompatActivity(), View.OnClickListener {
                     if (imageFile != null) {
                         val imageUri: Uri = FileProvider.getUriForFile(
                             getApplicationContext(),
-                            "com.example.sendimage.fileprovider",
+                            "com.example.babygage_ocr",
                             imageFile
                         )
                         intent!!.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
-                        startActivityForResult(intent, CAMERA)
+
+                        startActivityForResult(cameraIntent, CAMERA)
+                    } else {
+                        Log.d("test", "권한 설정 요청")
+                        ActivityCompat.requestPermissions(
+                            this,
+                            arrayOf<String?>(
+                                android.Manifest.permission.CAMERA,
+                                android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+                            ),
+                            CAMERA
+                        )
                     }
                 }
             }
@@ -126,14 +142,17 @@ class ImportimageActivity : AppCompatActivity(), View.OnClickListener {
                     cursor.moveToFirst()
                     val index: Int = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
                     imagePath = cursor.getString(index) // "/media/external/images/media/7215"
+                    Log.d("test","$imagePath")
                     cursor.close()
                 }
             }
+
             if (imagePath.length > 0) {
                 imageView?.let {
                     Glide.with(this)
                         .load(imagePath)
                         .into(it)
+                        Log.d("test","$imagePath")
                 }
             }
         }
@@ -143,12 +162,13 @@ class ImportimageActivity : AppCompatActivity(), View.OnClickListener {
     @Throws(IOException::class)
     fun createImageFile(): File {
 //        create image file
-        val timeStamp: String =
-            imageDate.format(Date()) // to avoid duplicate, we used timestamp in form of "yyyyMMdd_HHmmss"
+        val timeStamp: String = imageDate.format(Date()) // to avoid duplicate, we used timestamp in form of "yyyyMMdd_HHmmss"
         val fileName = "IMAGE_$timeStamp" // image file name
+//        val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         val file: File = File.createTempFile(fileName, ".jpg", storageDir) // create image file
         imagePath = file.getAbsolutePath() // save absolute path
+        Log.d("test","${imagePath}")
         return file
     }
 

@@ -90,6 +90,15 @@
     <item name="textView3" type="id" />
     <item name="textView4" type="id" />
     <item name="rectangle_32_ek1" type="id" />
+    <item name="calendarView" type="id" />
+    <item name="detailBox" type="id" />
+    <item name="babygage" type="id" />
+    <item name="logo" type="id" />
+    <item name="bottombar" type="id" />
+    <item name="moneyDetails" type="id" />
+    <item name="descriptionTxt" type="id" />
+    <item name="date" type="id" />
+    <item name="detalBox" type="id" />
 
 
 </resources>
