@@ -1,6 +1,7 @@
 package com.example.babygage_ocr
 
 import android.R
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -33,5 +34,12 @@ class SetImageActivity : AppCompatActivity() {
             .skipMemoryCache(true)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .into(imageView)
+
+
+        binding.testBtn.setOnClickListener {
+            val nextScreen = Intent(this, TestActivity::class.java)
+            startActivity(nextScreen)
+        }
+
     }
 }
