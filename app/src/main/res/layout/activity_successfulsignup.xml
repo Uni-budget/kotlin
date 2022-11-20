@@ -106,13 +106,14 @@
         android:layout_height="41dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/_rectangle_27_shape"
-        app:backgroundTint="@color/_rectangle_23_color"
         android:text="@string/go_to_log_in_page_string"
-        android:textStyle="bold"
         android:textColor="@color/black"
+        android:textStyle="bold"
+        app:backgroundTint="@color/_rectangle_23_color"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_24"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_24"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_24" />
+        app:layout_constraintStart_toStartOf="@+id/rectangle_24"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

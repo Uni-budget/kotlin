@@ -17,6 +17,7 @@ class HouseholdmainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        binding.date.bringToFront()
         //날짜 형태
         val dateform : DateFormat = SimpleDateFormat("yyyy년 MM월 dd일")
         //date type (오늘 날짜)
