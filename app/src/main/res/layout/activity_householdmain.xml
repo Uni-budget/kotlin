@@ -159,13 +159,15 @@
 
     <!-- this is fixed bottom bar -->
 
+
+    <!-- this is fixed bottom bar -->
     <LinearLayout
         android:id="@+id/bottombar"
         android:layout_width="match_parent"
         android:layout_height="83dp"
         android:background="@drawable/rectangle_1_ek1_shape"
         android:orientation="horizontal"
-        android:paddingTop="10dp"
+        android:paddingTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -175,19 +177,19 @@
 
         <Button
             android:id="@+id/mypageBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="40dp"
             android:background="@drawable/vector_ek28"
             app:backgroundTint="#FFFFFF"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/householdBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="100dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
             android:background="@drawable/_vector_ek58"
             android:contentDescription="vector_ek5"
             app:backgroundTint="#FFFFFF"
@@ -200,18 +202,18 @@
 
         <Button
             android:id="@+id/financialBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="-5dp"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="0dp"
             android:background="@drawable/vector_ek34"
             app:backgroundTint="#FFFFFF"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/settingsBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="55dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
             android:background="@drawable/vector_ek35"
             app:backgroundTint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="@+id/rectangle_1_ek1"

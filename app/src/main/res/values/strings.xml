@@ -263,4 +263,12 @@
     <string name="easygage_ek3_string">easygage</string>
     <string name="babygage_ek13_string">babygage</string>
     <string name="arrow_back_ek9_string">arrow_back</string>
+    <string name="col4" />
+    <string name="col3" />
+    <string name="col2" />
+    <string name="col1" />
+    <string name="col5" />
+    <string name="row1Name" />
+    <string name="row1Age" />
+    <string name="row1SurName" />
 </resources>
