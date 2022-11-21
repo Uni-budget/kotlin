@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -13,9 +14,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Image(s)"
+        android:layout_marginTop="200dp"
         android:onClick="selectImage"
-        android:textStyle="bold"/>
+        android:text="Select Image(s)"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:backgroundTint="@color/_rectangle_23_color" />
 
     <TextView
         android:layout_width="match_parent"
@@ -27,26 +31,22 @@
         android:textColor="#988734"/>
 
 
-
-
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="connectServer"
         android:text="Connect to Server &amp; Upload"
-        android:textColor="#6CA22F"
-        android:textStyle="bold" />
-
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:backgroundTint="@color/_rectangle_23_color" />
     <TextView
+        android:id="@+id/responseText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Connection Status."
-        android:id="@+id/responseText"
         android:textAlignment="center"
-        android:textColor="#FF0000"
-        android:textStyle="bold"/>
-
+        android:textColor="@color/teal_700"
+        android:textStyle="bold" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,5 +55,18 @@
         android:textAlignment="center"
         android:textColor="#988734"
         android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btnTable"
+        android:layout_marginTop="250dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="convent to table"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:backgroundTint="@color/rectangle_56_ek1_color" />
+
+
+
+
 
 </LinearLayout>

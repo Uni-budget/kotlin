@@ -101,37 +101,38 @@
         app:layout_constraintTop_toBottomOf="@+id/calendarView"
         app:layout_constraintVertical_bias="0.35" />
 
+
+    <!-- this is upload button-->
+
     <View
         android:id="@+id/detailBox"
         android:layout_width="374dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/rectangle_4_ek1_shape"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/today_s_expenditure_details_ek1"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/moneyDetails" />
 
+    <!-- this is fixed bottom bar -->
 
-    <!-- this is upload button-->
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/takePictureBtn"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:alpha="0.60000002384186"
-        android:background="@drawable/_rectangle_15_shape"
+        android:layout_width="374dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edge"
         android:text="Import receipt"
-        android:textColor="#000000"
+        android:textColor="@drawable/textcolor"
         android:textSize="13dp"
-        app:backgroundTint="@color/rectangle_14_ek1_color"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/bottombar"
         app:layout_constraintEnd_toEndOf="@+id/detailBox"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/detailBox"
         app:layout_constraintTop_toBottomOf="@+id/detailBox"
-        app:layout_constraintVertical_bias="0.649" />
+        app:layout_constraintVertical_bias="0.747" />
 
-    <!-- this is fixed bottom bar -->
     <LinearLayout
         android:id="@+id/bottombar"
         android:layout_width="match_parent"

@@ -20,6 +20,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.bumptech.glide.Glide
+import com.example.babygage_ocr.databinding.ActivityTestBinding
 import okhttp3.*
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
@@ -33,6 +35,9 @@ class TestActivity : AppCompatActivity() {
             : ArrayList<String?>? = null
     var imagesSelected = false // Whether the user selected at least an image or not.
     private var output: StringBuilder = StringBuilder()
+    var date: String = ""
+    var name: String =""
+    var price: String =""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.INTERNET), 2)
@@ -41,7 +46,25 @@ class TestActivity : AppCompatActivity() {
             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
             1
         )
-        setContentView(R.layout.activity_test)
+        var binding : ActivityTestBinding
+        binding = ActivityTestBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
+        binding.btnTable.setOnClickListener {
+
+            // 데이터 첨부를하고 액티비티 실행
+            val temp: String =date
+            val temp2: String = name
+            val temp3: String = price
+
+            val nextScreen = Intent(this, FinancialMypageActivity::class.java)
+            nextScreen.putExtra("key01", temp)
+            nextScreen.putExtra("key02", temp2)
+            nextScreen.putExtra("key03", temp3)
+
+            startActivity(nextScreen)
+        }
     }
 
     override fun onRequestPermissionsResult(
@@ -137,14 +160,12 @@ class TestActivity : AppCompatActivity() {
                 runOnUiThread {
                     val responseText = findViewById<TextView>(R.id.responseText)
                     try {
-//                        responseText.text = """
-//                        Server's Response
-//                        ${response.body().string()}
-//                        """.trimIndent()
+
+                        //=============== get date, name, price information =================
                         val jsonObject = JSONObject(response.body().string())
-                        var date = jsonObject.getString("date")
-                        var name = jsonObject.getString("name")
-                        var price = jsonObject.getString("price")
+                        date = jsonObject.getString("date")
+                        name = jsonObject.getString("name")
+                        price = jsonObject.getString("price")
                         responseText.text = "date: ${date}, name: ${name}, price: ${price}"
                     } catch (e: IOException) {
                         e.printStackTrace()
@@ -196,10 +217,19 @@ class TestActivity : AppCompatActivity() {
                             imagesSelected = true
                             numSelectedImages.text =
                                 "Number of Selected Images : " + selectedImagesPaths!!.size
+
+//
+//                            if (currentImagePath.isNotEmpty()) {
+//                                currentImagePath?.let {
+//                                    Glide.with(this)
+//                                        .load(currentImagePath)
+//                                        .into(it)
+//                                    Log.d("test","$currentImagePath")
+//                                }
                         }
                     }
                 }
-            } else {
+            }else {
                 Toast.makeText(this, "You haven't Picked any Image.", Toast.LENGTH_LONG).show()
             }
             Toast.makeText(
@@ -309,5 +339,6 @@ class TestActivity : AppCompatActivity() {
         fun isMediaDocument(uri: Uri?): Boolean {
             return "com.android.providers.media.documents" == uri!!.authority
         }
+
     }
 }
