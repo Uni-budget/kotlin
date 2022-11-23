@@ -50,10 +50,6 @@ class FinancialmainActivity : AppCompatActivity() {
 
             binding.date.text = day
         }
-        binding.financialBtn.setOnClickListener {
-            val nextScreen = Intent(this, FinancialmainActivity::class.java)
-            startActivity(nextScreen)
-        }
         binding.takePictureBtn.setOnClickListener {
             val nextScreen = Intent(this, ImportimageActivity::class.java)
             startActivity(nextScreen)

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinancialmainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <!-- 상단바-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginBottom="240dp"
+            android:background="@color/_bg__intro_ek2_color"
+            android:gravity="top"
+            app:layout_constraintBottom_toTopOf="@+id/iv_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="2dp">
+
+                <TextView
+                    android:id="@+id/babygage"
+                    android:layout_width="127dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal|center"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="BABYGAGE"
+                    android:textColor="@color/babygage_color"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="62dp"
+                    android:layout_height="53dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/babygage_ek10"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/logo" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox"
+            app:layout_constraintHorizontal_bias="0.056"
+            app:layout_constraintStart_toStartOf="@+id/detailBox"
+            app:layout_constraintTop_toTopOf="@+id/detailBox" />
+
+        <TextView
+            android:id="@+id/moneyDetails"
+            android:layout_width="189.5dp"
+            android:layout_height="40.5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="52dp"
+            android:text="Today's expenditure and income"
+            android:textColor="@color/babygage_color"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/___expenditure___income"
+            app:layout_constraintHorizontal_bias="0.197"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+        <TextView
+            android:id="@+id/descriptionTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_marginEnd="16dp"
+            android:text=": Expenditure\n: Income"
+            android:textColor="@color/babygage_color"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/detalBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView"
+            app:layout_constraintVertical_bias="0.35" />
+
+
+        <!-- this is upload button-->
+
+        <View
+            android:id="@+id/detailBox"
+            android:layout_width="374dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/rectangle_4_ek1_shape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/moneyDetails" />
+
+        <!-- this is fixed bottom bar -->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/takePictureBtn"
+            android:layout_width="374dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="76dp"
+            android:background="@drawable/edge"
+            android:text="Import receipt"
+            android:textColor="@drawable/textcolor"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailBox"
+            app:layout_constraintTop_toBottomOf="@+id/detailBox"
+            app:layout_constraintVertical_bias="0.747" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
