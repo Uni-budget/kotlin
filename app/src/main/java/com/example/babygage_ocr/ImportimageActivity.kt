@@ -48,8 +48,6 @@ class ImportimageActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
 
-
-
         imageView =binding.ivMain
         btnCamera = binding.btnCamera
         btnGallery = binding.btnGallery
@@ -73,7 +71,6 @@ class ImportimageActivity : AppCompatActivity(), View.OnClickListener {
                 ),
                 1
             )
-        // 툴바 생성
         // 툴바 생성
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)

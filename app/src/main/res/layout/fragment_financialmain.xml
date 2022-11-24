@@ -125,7 +125,7 @@
             android:id="@+id/takePictureBtn"
             android:layout_width="374dp"
             android:layout_height="50dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/edge"
             android:text="Import receipt"
             android:textColor="@drawable/textcolor"

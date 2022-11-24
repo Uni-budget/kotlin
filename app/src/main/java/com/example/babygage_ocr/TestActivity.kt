@@ -16,9 +16,11 @@ import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.bumptech.glide.Glide
 import com.example.babygage_ocr.databinding.ActivityTestBinding
@@ -31,13 +33,15 @@ import java.util.regex.Pattern
 
 class TestActivity : AppCompatActivity() {
     val SELECT_MULTIPLE_IMAGES = 1
-    var selectedImagesPaths // Paths of the image(s) selected by the user.
+    var selectedImagesPaths // Paths of the image selected by the user.
             : ArrayList<String?>? = null
     var imagesSelected = false // Whether the user selected at least an image or not.
     private var output: StringBuilder = StringBuilder()
     var date: String = ""
     var name: String =""
     var price: String =""
+    var imageView: ImageView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.INTERNET), 2)
@@ -50,6 +54,12 @@ class TestActivity : AppCompatActivity() {
         binding = ActivityTestBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        imageView =binding.ivMain
+        // 툴바 생성
+        val toolbar: Toolbar = binding.toolbar
+        setSupportActionBar(toolbar)
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
 
         binding.btnTable.setOnClickListener {
 
@@ -65,6 +75,8 @@ class TestActivity : AppCompatActivity() {
 
             startActivity(nextScreen)
         }
+
+
     }
 
     override fun onRequestPermissionsResult(
@@ -100,7 +112,7 @@ class TestActivity : AppCompatActivity() {
     fun connectServer(v: View?) {
         val responseText = findViewById<TextView>(R.id.responseText)
         if (imagesSelected == false) { // This means no image is selected and thus nothing to upload.
-            responseText.text = "No Image Selected to Upload. Select Image(s) and Try Again."
+            responseText.text = "No Image Selected to Upload. Select Image and Try Again."
             return
         }
         responseText.text = "Sending the Files. Please Wait ..."
@@ -202,6 +214,17 @@ class TestActivity : AppCompatActivity() {
                     imagesSelected = true
                     numSelectedImages.text =
                         "Number of Selected Images : " + selectedImagesPaths!!.size
+                    //SHOW IMAGE
+
+                    if (currentImagePath!!.length > 0) {
+                        imageView?.let {
+                            Glide.with(this)
+                                .load(currentImagePath!!)
+                                .into(it)
+                            Log.d("test","$currentImagePath!!")
+                        }
+                    }
+
                 } else {
                     // When multiple images are selected.
                     // Thanks tp Laith Mihyar for this Stackoverflow answer : https://stackoverflow.com/a/34047251/5426539
@@ -229,6 +252,13 @@ class TestActivity : AppCompatActivity() {
                         }
                     }
                 }
+
+
+
+
+
+
+
             }else {
                 Toast.makeText(this, "You haven't Picked any Image.", Toast.LENGTH_LONG).show()
             }
