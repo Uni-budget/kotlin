@@ -45,6 +45,7 @@
         </activity>
         <activity
             android:name=".TestActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -52,14 +53,13 @@
         </activity>
         <activity
             android:name=".SetImageActivity"
+            android:parentActivityName=".TestActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".ReceiptconfirmActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ReceiptocrActivity"
             android:exported="false" />

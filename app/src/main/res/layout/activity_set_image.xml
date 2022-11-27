@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rectangle_44_shape"
         android:textColor="@color/black"
-
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_47"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_47"
         app:layout_constraintStart_toStartOf="@+id/rectangle_47"
@@ -124,6 +124,7 @@
         android:id="@+id/productTxt"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
+        android:textSize="12dp"
         android:background="@drawable/rectangle_44_shape"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
@@ -143,9 +144,11 @@
         app:layout_constraintVertical_bias="0.29000002" />
 
     <EditText
+
         android:id="@+id/dateTxt"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
+        android:textSize="12dp"
         android:background="@drawable/rectangle_44_shape"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"

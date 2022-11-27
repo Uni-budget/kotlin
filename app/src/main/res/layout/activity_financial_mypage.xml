@@ -54,12 +54,49 @@
                 app:srcCompat="@drawable/logo" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/financial_my"
+        android:layout_width="177.5dp"
+        android:layout_height="41.5dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="21.01dp"
+        android:layout_marginTop="67dp"
+
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="Financial Audit My Page"
+        android:textColor="@color/babygage_color"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="180.03dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/financial_my"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="227dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TableLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
 
-        android:layout_marginBottom="323dp"
+        android:layout_marginBottom="550dp"
         android:background="@android:color/white">
         <!-- Table Heading-->
         <TableRow android:background="@color/teal_200">
@@ -105,6 +142,17 @@
 
         </TableRow>
 
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="100dp">
+
         <TableRow>
 
             <TextView
@@ -139,136 +187,91 @@
 
 
         </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Name"
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Age"
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1SurName"
-                android:textSize="12sp"></TextView>
-
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Name"
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Age"
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1SurName"
-                android:textSize="12sp"></TextView>
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Name"
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Age"
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1SurName"
-                android:textSize="12sp"></TextView>
-        </TableRow>
     </TableLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="516dp"
+        android:layout_above="@+id/parent"
+        android:layout_marginBottom="0dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="407dp">
 
-        <EditText
-            android:id="@+id/editTextTime"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="time" />
+            android:layout_marginTop="120dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="18dp"
+                android:text="Date" />
 
-        <EditText
-            android:id="@+id/editTextNumber"
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter the purchased date."
+                android:inputType="textPersonName"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/editTextProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter the Product name."
+                android:inputType="textPersonName"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:text="Price" />
+
+            <EditText
+                android:id="@+id/editTextTextPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter the price."
+                android:inputType="textPersonName"
+                android:textSize="12dp" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="214dp"
             android:layout_height="40dp"
-            android:layout_marginStart="1dp"
+            android:layout_gravity="center"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
             android:gravity="center"
@@ -306,10 +309,20 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.716"
                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintVertical_bias="0.95" />
+                app:layout_constraintVertical_bias="0.95" />
 
         </LinearLayout>
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_above="@+id/parent"
+        android:layout_below="@+id/parent"
+        android:layout_marginTop="342dp"
+        android:layout_marginBottom="0dp"
+        tools:listitem="@layout/recycler_financial_list_view" />
+
 
 
 </RelativeLayout>

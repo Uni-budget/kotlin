@@ -194,7 +194,7 @@
 
 
         <TextView
-            android:id="@+id/my_page"
+            android:id="@+id/financial_my_page"
             android:layout_width="177.5dp"
             android:layout_height="41.5dp"
             android:layout_marginLeft="21.01dp"
