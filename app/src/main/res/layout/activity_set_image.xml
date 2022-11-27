@@ -57,40 +57,168 @@
                 app:srcCompat="@drawable/logo" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
+
+
     <ImageView
         android:id="@+id/iv_image"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="20dp"
         android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/tv_image_path"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_32_ek1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002" />
+        app:layout_constraintVertical_bias="0.4" />
 
-    <TextView
-        android:id="@+id/tv_image_path"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+    <View
+        android:id="@+id/rectangle_32_ek1"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/rectangle_32_ek1_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.745" />
+
+    <View
+        android:id="@+id/rectangle_47"
+        android:layout_width="232dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/rectangle_47_shape"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_42"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_32_ek1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_32_ek1"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_32_ek1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/totalTxt"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_44_shape"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_47"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_47"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_47"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_47" />
+
+
+    <View
+        android:id="@+id/rectangle_3"
+        android:layout_width="232dp"
+        android:layout_height="31dp"
+        android:background="@drawable/rectangle_47_shape"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_47"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_32_ek1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_32_ek1"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_4" />
+
+    <EditText
+        android:id="@+id/productTxt"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_44_shape"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_3" />
+
+    <View
+        android:id="@+id/rectangle_4"
+        android:layout_width="232dp"
+        android:layout_height="31dp"
+        android:background="@drawable/rectangle_47_shape"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_47"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_32_ek1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_32_ek1"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_32_ek1"
+        app:layout_constraintVertical_bias="0.29000002" />
+
+    <EditText
+        android:id="@+id/dateTxt"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_44_shape"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_4"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_4" />
+
+    <Button
+        android:id="@+id/rectangle_42"
+        android:layout_width="232dp"
+        android:layout_height="40dp"
+        android:alpha="0.44999998807907"
+        android:background="@drawable/rectangle_42_shape"
+        android:text="Add a receipt"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:backgroundTint="@color/_rectangle_59_color"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_32_ek1"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_32_ek1"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_32_ek1"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_32_ek1"
+        app:layout_constraintVertical_bias="0.958" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year/month/date"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_4"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_32_ek1"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_32_ek1"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_32_ek1"
+        app:layout_constraintVertical_bias="0.681" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product name / price"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_3"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_32_ek1"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_32_ek1"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_4"
+        app:layout_constraintVertical_bias="0.94" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total price"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_47"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_32_ek1"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_32_ek1"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_3"
+        app:layout_constraintVertical_bias="0.90999997" />
 
     <Button
         android:id="@+id/testBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="test"
+        android:text="select again"
+        app:backgroundTint="@color/rectangle_15_ek1_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_image_path" />
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_32_ek1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

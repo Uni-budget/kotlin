@@ -117,11 +117,11 @@
         android:textColor="#988734"
         android:textStyle="bold"/>
     <Button
-        android:id="@+id/btnTable"
+        android:id="@+id/btnConfirm"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="convent to table"
+        android:text="Confirm"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:backgroundTint="@color/rectangle_56_ek1_color" />

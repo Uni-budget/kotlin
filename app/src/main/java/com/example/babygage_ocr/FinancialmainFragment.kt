@@ -63,7 +63,7 @@ class FinancialmainFragment : Fragment() {
             binding.date.text = day
         }
         binding.takePictureBtn.setOnClickListener (({
-            val nextScreen = Intent(context, ImportimageActivity::class.java)
+            val nextScreen = Intent(context, TestActivity::class.java)
             startActivity(nextScreen)
             activity?.finish()
         })

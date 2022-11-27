@@ -41,6 +41,7 @@ class TestActivity : AppCompatActivity() {
     var name: String =""
     var price: String =""
     var imageView: ImageView? = null
+    var intendImagePath : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,17 +62,21 @@ class TestActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
 
-        binding.btnTable.setOnClickListener {
+        binding.btnConfirm.setOnClickListener {
 
             // 데이터 첨부를하고 액티비티 실행
             val temp: String =date
             val temp2: String = name
             val temp3: String = price
 
-            val nextScreen = Intent(this, FinancialMypageActivity::class.java)
+            val nextScreen = Intent(this, SetImageActivity::class.java)
             nextScreen.putExtra("key01", temp)
             nextScreen.putExtra("key02", temp2)
             nextScreen.putExtra("key03", temp3)
+
+            if (intendImagePath.length > 0) { // if there exists image path
+                nextScreen!!.putExtra("path", intendImagePath)
+            }
 
             startActivity(nextScreen)
         }
@@ -118,7 +123,7 @@ class TestActivity : AppCompatActivity() {
         responseText.text = "Sending the Files. Please Wait ..."
 
 //        val postUrl = "http://$ipv4Address:$portNumber/getpost"
-        val postUrl = "http://56a0-118-176-93-78.ngrok.io/getpost"
+        val postUrl = "https://4882-118-176-93-78.ngrok.io/getpost"
         Log.d("test","Post url: ${postUrl}")
         val multipartBodyBuilder = MultipartBody.Builder().setType(MultipartBody.FORM)
         for (i in selectedImagesPaths!!.indices) {
@@ -217,12 +222,15 @@ class TestActivity : AppCompatActivity() {
                     //SHOW IMAGE
 
                     if (currentImagePath!!.length > 0) {
+                        intendImagePath = currentImagePath
                         imageView?.let {
                             Glide.with(this)
                                 .load(currentImagePath!!)
                                 .into(it)
                             Log.d("test","$currentImagePath!!")
+
                         }
+
                     }
 
                 } else {

@@ -1,14 +1,420 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MypageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+
+
+<!--        &lt;!&ndash; 상단바&ndash;&gt;-->
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:layout_marginBottom="240dp"-->
+<!--            android:background="@color/_bg__intro_ek2_color"-->
+<!--            android:gravity="top"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/iv_main"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                tools:layout_editor_absoluteX="16dp"-->
+<!--                tools:layout_editor_absoluteY="2dp">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/babygage"-->
+<!--                    android:layout_width="127dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_gravity="center_horizontal|center"-->
+<!--                    android:fontFamily="monospace"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="BABYGAGE"-->
+<!--                    android:textColor="@color/babygage_color"-->
+<!--                    android:textSize="20sp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/logo"-->
+<!--                    android:layout_width="62dp"-->
+<!--                    android:layout_height="53dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/babygage_ek10"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:srcCompat="@drawable/logo" />-->
+<!--            </LinearLayout>-->
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/date"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="TextView"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/detailBox"-->
+<!--            app:layout_constraintHorizontal_bias="0.056"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/detailBox"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/detailBox" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/moneyDetails"-->
+<!--            android:layout_width="189.5dp"-->
+<!--            android:layout_height="40.5dp"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginTop="52dp"-->
+<!--            android:text="Today's expenditure and income"-->
+<!--            android:textColor="@color/babygage_color"-->
+<!--            android:textSize="13sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/___expenditure___income"-->
+<!--            app:layout_constraintHorizontal_bias="0.197"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/calendarView" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/descriptionTxt"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="53dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:text=": Expenditure\n: Income"-->
+<!--            android:textColor="@color/babygage_color"-->
+<!--            android:textSize="12sp"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/detalBox"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/calendarView"-->
+<!--            app:layout_constraintVertical_bias="0.35" />-->
+
+
+<!--        &lt;!&ndash; this is upload button&ndash;&gt;-->
+
+<!--        <View-->
+<!--            android:id="@+id/detailBox"-->
+<!--            android:layout_width="374dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_marginTop="36dp"-->
+<!--            android:background="@drawable/rectangle_4_ek1_shape"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.494"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/moneyDetails" />-->
+
+<!--        &lt;!&ndash; this is fixed bottom bar &ndash;&gt;-->
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/takePictureBtn"-->
+<!--            android:layout_width="374dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:background="@drawable/edge"-->
+<!--            android:text="Import receipt"-->
+<!--            android:textColor="@drawable/textcolor"-->
+<!--            android:textSize="13dp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/bottombar"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/detailBox"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/detailBox"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/detailBox"-->
+<!--            app:layout_constraintVertical_bias="0.747" />-->
+
+
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/page_mypage_household_ek1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp">
+        <!-- 상단바-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginBottom="240dp"
+            android:background="@color/_bg__intro_ek2_color"
+            android:gravity="top"
+            app:layout_constraintBottom_toTopOf="@+id/iv_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="2dp">
+
+                <TextView
+                    android:id="@+id/babygage"
+                    android:layout_width="127dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal|center"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="BABYGAGE"
+                    android:textColor="@color/babygage_color"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="62dp"
+                    android:layout_height="53dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/babygage_ek10"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/logo" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <TextView
+            android:id="@+id/my_page"
+            android:layout_width="177.5dp"
+            android:layout_height="41.5dp"
+            android:layout_marginLeft="21.01dp"
+            android:layout_marginTop="86dp"
+            android:text="@string/my_page_string"
+            android:textColor="@color/babygage_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+
+            android:layout_width="161.03dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="117dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line_3"
+            android:layout_width="161.03dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="159dp"
+            android:layout_marginTop="173dp"
+            android:background="@drawable/line_3_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="76.5dp"
+            android:layout_height="28.5dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="150dp"
+            android:text="@string/abc_string"
+            android:textColor="@color/babygage_color"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="140.5dp"
+            android:layout_height="34.5dp"
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="180dp"
+            android:text="@string/_12345678_naver_com_string"
+            android:textColor="@color/babygage_color"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line_2_ek3"
+            android:layout_width="161.03dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="159dp"
+            android:layout_marginTop="202dp"
+            android:background="@drawable/line_2_ek3_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RelativeLayout
+            android:id="@+id/account_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="133dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/vector_ek28"
+                android:layout_width="84.17dp"
+                android:layout_height="84.17dp"
+                android:layout_marginStart="8.42dp"
+                android:layout_marginTop="8.42dp"
+                android:contentDescription="vector_ek28"
+                android:src="@drawable/vector_ek28" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="92dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="87dp"
+            android:layout_marginTop="260dp"
+            android:contentDescription="vector_ek29"
+            android:src="@drawable/vector_ek29"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/vector_ek29"
+            android:layout_width="98dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="260dp"
+            android:contentDescription="vector_ek30"
+            android:src="@drawable/vector_ek29"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+
+            android:layout_width="75dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="159dp"
+            android:layout_marginTop="151dp"
+            android:text="@string/name_string"
+            android:textColor="@color/babygage_color"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:layout_width="75dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="159dp"
+            android:layout_marginTop="181dp"
+            android:text="@string/e_mail_string"
+            android:textColor="@color/babygage_color"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RelativeLayout
+            android:id="@+id/menu_right_ek4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="407dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMyHouse"
+            android:layout_width="78dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="94dp"
+            android:layout_marginTop="280dp"
+            android:background="@drawable/_rectangle_50_shape"
+            android:text="HOUSEHOLD\nLedger"
+            android:textSize="11dp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMyFinancial"
+            android:layout_width="81dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="228dp"
+            android:layout_marginTop="280dp"
+            android:background="@drawable/_rectangle_50_shape"
+            android:text="FINANCIAL\nAudit"
+            android:textSize="11dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RelativeLayout
+            android:id="@+id/menu_right_ek6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="577dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line_5"
+            android:layout_width="210dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="391dp"
+            android:background="@drawable/line_5_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+           android:layout_width="130.5dp"
+            android:layout_height="38.5dp"
+            android:layout_marginTop="28dp"
+            android:text="My Expenditure"
+            android:textColor="@color/babygage_color"
+            android:textSize="11sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/rectangle_33"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.242"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vector_ek29"
+            app:layout_constraintVertical_bias="0.725" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView1"
+            android:layout_width="411dp"
+            android:layout_height="400dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_expenditure___household_ledger"
+            app:layout_constraintVertical_bias="0.152"
+            tools:listitem="@layout/recycler_list_view" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
