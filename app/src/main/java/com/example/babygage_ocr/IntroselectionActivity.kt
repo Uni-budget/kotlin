@@ -16,12 +16,16 @@ class IntroselectionActivity : AppCompatActivity() {
 
 
         binding.householdbtn.setOnClickListener{
-            val nextScreen = Intent(this, HouseholdmainActivity::class.java)
+            val nextScreen = Intent(this, MainActivity::class.java)
+            // fragment 선택 위해 값 넘기기
+            nextScreen.putExtra("select","household")
             startActivity(nextScreen)
         }
 
         binding.financialbtn.setOnClickListener{
-            val nextScreen = Intent(this, FinancialmainActivity::class.java)
+            val nextScreen = Intent(this, MainActivity::class.java)
+            // fragment 선택 위해 값 넘기기
+            nextScreen.putExtra("select","financial")
             startActivity(nextScreen)
         }
     }

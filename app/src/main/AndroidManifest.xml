@@ -30,6 +30,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".FinancialMypageActivity"
             android:exported="false">
             <meta-data
@@ -38,6 +45,7 @@
         </activity>
         <activity
             android:name=".TestActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -45,19 +53,19 @@
         </activity>
         <activity
             android:name=".SetImageActivity"
+            android:parentActivityName=".TestActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".ReceiptconfirmActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ReceiptocrActivity"
             android:exported="false" />
         <activity
             android:name=".ImportimageActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".TakepictureActivity" -->
         <!-- android:exported="false" /> -->

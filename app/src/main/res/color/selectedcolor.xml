@@ -1,0 +1,6 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--색상이 선택되었을 때 -->
+    <item android:state_checked="true" android:color="#3eaed6"/>
+    <!--평소 색상 -->
+    <item android:color="#858585"/>
+</selector>

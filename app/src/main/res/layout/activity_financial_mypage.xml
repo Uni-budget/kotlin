@@ -5,46 +5,135 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.babygage_ocr.FinancialMypageActivity">
+    <!-- 상단바-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="240dp"
+        android:background="@color/_bg__intro_ek2_color"
+        android:gravity="top"
+        app:layout_constraintBottom_toTopOf="@+id/iv_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="2dp">
+
+            <TextView
+                android:id="@+id/babygage_ek10"
+                android:layout_width="127dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal|center"
+
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="BABYGAGE"
+                android:textColor="@color/babygage_color"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="62dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/babygage_ek10"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/financial_my"
+        android:layout_width="177.5dp"
+        android:layout_height="41.5dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="21.01dp"
+        android:layout_marginTop="67dp"
+
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="Financial Audit My Page"
+        android:textColor="@color/babygage_color"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="180.03dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/financial_my"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="227dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TableLayout
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:background = "@android:color/white"
-        android:layout_margin = "40dp">
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginBottom="550dp"
+        android:background="@android:color/white">
         <!-- Table Heading-->
-        <TableRow
-            android:background="@color/teal_200">
+        <TableRow android:background="@color/teal_200">
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
                 android:text="Date"
                 android:textColor="@android:color/white"
-                android:padding="10sp"
-                android:textSize="10sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
+                android:textSize="10sp">
 
             </TextView>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
                 android:text="Product Name"
                 android:textColor="@android:color/white"
-                android:padding="10sp"
-                android:textSize="10sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
+                android:textSize="10sp">
 
             </TextView>
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
                 android:text="Total Price"
                 android:textColor="@android:color/white"
-                android:padding="10sp"
-                android:textSize="10sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
+                android:textSize="10sp">
 
             </TextView>
 
@@ -52,142 +141,188 @@
             <!-- Table Data-->
 
         </TableRow>
+
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="100dp">
+
         <TableRow>
+
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:id="@+id/row_text_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
                 android:text=""
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
+                android:textSize="12sp"></TextView>
+
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:id="@+id/row_text_result2"
-                android:text="@string/row1Age"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
-            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/row1Age"
+                android:textSize="12sp"></TextView>
+
+            <TextView
                 android:id="@+id/row_text_result3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
                 android:text="@string/row1SurName"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
+                android:textSize="12sp"></TextView>
 
 
-
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-
-                android:text="@string/row1Name"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/row1Age"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/row1SurName"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
-
-
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/row1Name"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/row1Age"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/row1SurName"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/row1Name"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/row1Age"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/row1SurName"
-                android:padding="10sp"
-                android:textSize="12sp"
-                android:layout_weight="4"
-                android:gravity="center_horizontal">
-            </TextView>
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/a2_btn_close"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="170dp"
-        android:layout_marginBottom="2dp"
-        android:text="Close" />
+        android:layout_above="@+id/parent"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="407dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="120dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="18dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter the purchased date."
+                android:inputType="textPersonName"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/editTextProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter the Product name."
+                android:inputType="textPersonName"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:text="Price" />
+
+            <EditText
+                android:id="@+id/editTextTextPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter the price."
+                android:inputType="textPersonName"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="214dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/generate"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@color/_rectangle_23_color"
+                android:backgroundTint="#87ceeb"
+                android:text="generate"
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                app:backgroundTint="@color/_rectangle_23_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.317"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.956" />
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/_rectangle_23_color"
+                android:backgroundTint="#87ceeb"
+                android:text="Delete"
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                app:backgroundTint="@color/_rectangle_23_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.716"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.95" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_above="@+id/parent"
+        android:layout_below="@+id/parent"
+        android:layout_marginTop="342dp"
+        android:layout_marginBottom="0dp"
+        tools:listitem="@layout/recycler_financial_list_view" />
+
 
 
 </RelativeLayout>

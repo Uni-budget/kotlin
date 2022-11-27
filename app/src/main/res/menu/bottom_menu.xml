@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/home2"
+        android:title="Home"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/house"
+        android:enabled="true"
+        android:icon="@drawable/_vector_ek58"
+        android:title="My Ledger"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/finance"
+        android:enabled="true"
+        android:icon="@drawable/vector_ek34"
+        android:title="Financial Audit"
+        app:showAsAction="always"
+        />
+
+
+
+    <item
+        android:id="@+id/mypage"
+        android:enabled="true"
+        android:icon="@drawable/vector_ek28"
+        android:title="Mypage"
+        app:showAsAction="always"
+        />
+
+    <!--    <item-->
+<!--        android:id="@+id/settings"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/vector_ek35"-->
+<!--        android:title="Settings"-->
+<!--        app:showAsAction="always"-->
+<!--        />-->
+</menu>
