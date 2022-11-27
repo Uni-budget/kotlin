@@ -123,7 +123,7 @@ class TestActivity : AppCompatActivity() {
         responseText.text = "Sending the Files. Please Wait ..."
 
 //        val postUrl = "http://$ipv4Address:$portNumber/getpost"
-        val postUrl = "http://f357-183-96-100-148.ngrok.io/getpost"
+        val postUrl =  "http://6aaf-203-246-85-178.ngrok.io/getpost"
         Log.d("test","Post url: ${postUrl}")
         val multipartBodyBuilder = MultipartBody.Builder().setType(MultipartBody.FORM)
         for (i in selectedImagesPaths!!.indices) {

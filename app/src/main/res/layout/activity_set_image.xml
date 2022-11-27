@@ -80,10 +80,10 @@
         android:background="@drawable/rectangle_32_ek1_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.745" />
+        app:layout_constraintVertical_bias="0.741" />
 
     <View
         android:id="@+id/rectangle_47"
@@ -101,7 +101,7 @@
         android:id="@+id/totalTxt"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_44_shape"
+        android:background="@color/white"
         android:textColor="@color/black"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_47"
@@ -125,7 +125,7 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:textSize="12dp"
-        android:background="@drawable/rectangle_44_shape"
+        android:background="@color/white"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
@@ -149,7 +149,7 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:textSize="12dp"
-        android:background="@drawable/rectangle_44_shape"
+        android:background="@color/white"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
@@ -160,7 +160,7 @@
         android:id="@+id/rectangle_42"
         android:layout_width="232dp"
         android:layout_height="40dp"
-        android:alpha="0.44999998807907"
+
         android:background="@drawable/rectangle_42_shape"
         android:text="Add a receipt"
         android:textColor="@color/black"

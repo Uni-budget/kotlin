@@ -24,6 +24,12 @@ class SignupActivity : AppCompatActivity() {
             val email = binding.useremail.text.toString()
             val pass = binding.userpassword.text.toString()
             val confirmPass = binding.userConfirmPassword.text.toString()
+            val username = binding.username.text.toString()
+
+
+            val mypageScreen = Intent(this, MypageFragment::class.java)
+            mypageScreen.putExtra("sendname", username)
+            mypageScreen.putExtra("sendemail",email)
 
             if(email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
                 if (pass.equals(confirmPass)) {
@@ -43,6 +49,12 @@ class SignupActivity : AppCompatActivity() {
             else {
                 Toast.makeText(this,"Empty fields", Toast.LENGTH_SHORT).show()
             }
+
+
+
+            // 데이터 첨부를하고 액티비티 실행
+
+
 
         }
 
