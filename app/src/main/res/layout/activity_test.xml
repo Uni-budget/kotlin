@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
     android:orientation="vertical">
 
     <!--    <EditText-->
@@ -65,31 +66,50 @@
         android:id="@+id/iv_main"
         android:layout_width="257dp"
         android:layout_height="313dp"
-        android:layout_marginTop="100dp"
         android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         android:background="#5CFFFFFF"
         android:visibility="visible"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo" />
 
-    <Button
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/camera"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edge2"
+        android:onClick="takePicture"
+        android:text="take picture"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/button"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edge2"
+
+        android:gravity="center"
         android:onClick="selectImage"
         android:text="Select Image"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        app:backgroundTint="@color/_rectangle_23_color" />
+        android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/numSelectedImages"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No Image Selected."
-        android:id="@+id/numSelectedImages"
+        android:layout_marginBottom="40dp"
+        android:text=""
+        android:hint="No Image Selected."
         android:textAlignment="center"
-        android:textStyle="bold"
-        android:textColor="#988734"/>
+        android:textColor="#988734"
+        android:textStyle="bold" />
 
 
     <Button
@@ -100,6 +120,7 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         app:backgroundTint="@color/_rectangle_23_color" />
+
     <TextView
         android:id="@+id/responseText"
         android:layout_width="match_parent"
@@ -108,26 +129,25 @@
         android:textAlignment="center"
         android:textColor="@color/teal_700"
         android:textStyle="bold" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
         android:autoLink="web"
+        android:text=""
         android:textAlignment="center"
         android:textColor="#988734"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnConfirm"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Confirm"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:backgroundTint="@color/rectangle_56_ek1_color" />
-
-
-
 
 
 </LinearLayout>

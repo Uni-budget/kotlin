@@ -91,41 +91,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/financial_my2"
-        android:layout_width="177.5dp"
-        android:layout_height="41.5dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="21.01dp"
-        android:layout_marginTop="286dp"
-
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="0dp"
-        android:text="Financial Audit Table"
-        android:textColor="@color/babygage_color"
-        android:textSize="14dp"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="180.03dp"
-        android:layout_height="1dp"
-        android:layout_below="@+id/financial_my"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="198dp"
-        android:layout_marginEnd="236dp"
-        android:background="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TableLayout
 
         android:layout_width="match_parent"
@@ -182,6 +147,41 @@
 
 
     </TableLayout>
+
+    <TextView
+        android:id="@+id/financial_my2"
+        android:layout_width="177.5dp"
+        android:layout_height="41.5dp"
+        android:layout_below="@+id/lin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="21.01dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="0dp"
+        android:text="Financial Audit Table"
+        android:textColor="@color/babygage_color"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="180.03dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/financial_my"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="198dp"
+        android:layout_marginEnd="236dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:layout_width="match_parent"

@@ -130,6 +130,19 @@ class HouseholdmainFragment : Fragment() {
             binding.diaryEditTxt.visibility = View.INVISIBLE
             binding.diary.visibility = View.VISIBLE
         }
+        binding.importReceipt.setOnClickListener (({
+            val nextScreen = Intent(context, TestActivity::class.java)
+            startActivity(nextScreen)
+            activity?.finish()
+        })
+        )
+
+        binding.importReceipt.setOnClickListener (({
+            val nextScreen = Intent(context, TestActivity::class.java)
+            startActivity(nextScreen)
+            activity?.finish()
+        })
+        )
 
 
 

@@ -1,17 +1,18 @@
 package com.example.babygage_ocr
 
+import android.R
+import android.content.Context
 import android.content.Intent
-
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.babygage_ocr.databinding.FragmentHouseholdmainBinding
+import android.widget.Toast
+import androidx.appcompat.view.ContextThemeWrapper
+import androidx.fragment.app.Fragment
 import com.example.babygage_ocr.databinding.FragmentMypageBinding
-import java.text.DateFormat
-import java.text.SimpleDateFormat
 import java.util.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +24,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MypageFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MypageFragment : Fragment() {
+class MypageFragment : Fragment(){
     // TODO: Rename and change types of parameters
     lateinit var binding: FragmentMypageBinding
     private var param1: String? = null
@@ -63,6 +64,20 @@ class MypageFragment : Fragment() {
         })
         )
 
+        binding.toggleButton.addOnButtonCheckedListener{ toggleButton, checkedId, isChecked ->
+            if(isChecked) {
+                when (checkedId) {
+                    R.id.button1 -> {
+                        Toast.makeText(activity,"Household expenditure", Toast.LENGTH_SHORT).show()
+                        }
+                    R.id.button2 -> {
+                        Toast.makeText(activity,"Financial Audit expenditure", Toast.LENGTH_SHORT).show()
+                         }
+                }
+            }
+            }
+        }
+
 
 
 //        // receive intend name, price, date
@@ -75,7 +90,7 @@ class MypageFragment : Fragment() {
 //        binding.userEmail.text = email
 
 
-    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of

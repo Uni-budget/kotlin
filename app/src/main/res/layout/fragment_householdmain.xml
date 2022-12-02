@@ -5,27 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HouseholdmainFragment">
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         tools:context=".HouseholdmainActivity">
-
-        <TextView
-            android:id="@+id/moneyDetails2"
-            android:layout_width="189.5dp"
-            android:layout_height="40.5dp"
-            android:layout_marginTop="12dp"
-            android:text="Today's diary"
-            android:textColor="@color/babygage_color"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/detailBox"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/detailBox"
-            app:layout_constraintTop_toBottomOf="@+id/detailBox" />
 
         <CalendarView
             android:id="@+id/calendarView"
@@ -112,21 +96,6 @@
 
 
         <TextView
-            android:id="@+id/moneyDetails"
-            android:layout_width="189.5dp"
-            android:layout_height="40.5dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Today's expenditure and income"
-            android:textColor="@color/babygage_color"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/___expenditure___income"
-            app:layout_constraintHorizontal_bias="0.197"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
-
-        <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -137,19 +106,22 @@
             app:layout_constraintStart_toStartOf="@+id/detailBox"
             app:layout_constraintTop_toTopOf="@+id/detailBox" />
 
-        <View
-            android:id="@+id/detailBox"
-            android:layout_width="379dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="60dp"
-            android:background="@drawable/rectangle_4_shape"
-            app:layout_constraintBottom_toTopOf="@+id/bottombar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/today_s_expenditure_details_ek1"
-            app:layout_constraintTop_toBottomOf="@+id/moneyDetails"
-            app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/deletebtn"
+            android:layout_width="70dp"
+            android:layout_height="33dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="@color/white"
+            android:stateListAnimator="@null"
+            android:text="DELETE"
+            android:textColor="@color/click__color"
+            android:textSize="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/editbtn"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <View
             android:id="@+id/detailBox2"
@@ -176,38 +148,6 @@
             app:layout_constraintEnd_toEndOf="@+id/detailBox2"
             tools:ignore="TouchTargetSizeCheck" />
 
-        <Button
-            android:id="@+id/savebtn"
-            android:layout_width="70dp"
-            android:layout_height="33dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="4dp"
-            android:backgroundTint="@color/white"
-            android:stateListAnimator="@null"
-            android:text="SAVE"
-            android:textColor="@color/click__color"
-            android:textSize="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
-            app:layout_constraintEnd_toEndOf="@+id/detailBox2"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <Button
-            android:id="@+id/deletebtn"
-            android:layout_width="70dp"
-            android:layout_height="33dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="4dp"
-            android:backgroundTint="@color/white"
-            android:stateListAnimator="@null"
-            android:text="DELETE"
-            android:textColor="@color/click__color"
-            android:textSize="9dp"
-            app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
-            app:layout_constraintEnd_toEndOf="@+id/detailBox2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/editbtn"
-            tools:ignore="TouchTargetSizeCheck" />
-
         <EditText
             android:id="@+id/diaryEditTxt"
             android:layout_width="339dp"
@@ -224,6 +164,50 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
+            android:id="@+id/moneyDetails"
+            android:layout_width="189.5dp"
+            android:layout_height="40.5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Today's expenditure and income"
+            android:textColor="@color/babygage_color"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/___expenditure___income"
+            app:layout_constraintHorizontal_bias="0.197"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+        <TextView
+            android:id="@+id/moneyDetails2"
+            android:layout_width="189.5dp"
+            android:layout_height="40.5dp"
+            android:layout_marginTop="12dp"
+            android:text="Today's diary"
+            android:textColor="@color/babygage_color"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailBox"
+            app:layout_constraintTop_toBottomOf="@+id/detailBox" />
+
+        <Button
+            android:id="@+id/savebtn"
+            android:layout_width="70dp"
+            android:layout_height="33dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="@color/white"
+            android:stateListAnimator="@null"
+            android:text="SAVE"
+            android:textColor="@color/click__color"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
             android:id="@+id/diary"
             android:layout_width="339dp"
             android:layout_height="21dp"
@@ -234,6 +218,38 @@
             app:layout_constraintStart_toStartOf="@+id/detailBox2"
             app:layout_constraintTop_toTopOf="@+id/detailBox2"
             app:layout_constraintVertical_bias="0.555" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/importReceipt"
+            android:layout_width="374dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edge2"
+            android:text="Import receipt"
+            android:textColor="@color/rectangle_5_color"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailBox"
+            app:layout_constraintTop_toBottomOf="@+id/detailBox2"
+            app:layout_constraintVertical_bias="0.747" />
+
+        <View
+            android:id="@+id/detailBox"
+            android:layout_width="379dp"
+            android:layout_height="49dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/rectangle_4_shape"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/today_s_expenditure_details_ek1"
+            app:layout_constraintTop_toBottomOf="@+id/moneyDetails"
+            app:layout_constraintVertical_bias="0.0" />
+
 
         <!--    OCR (사진 첨부 부분) -->
         <!--    <Button-->
