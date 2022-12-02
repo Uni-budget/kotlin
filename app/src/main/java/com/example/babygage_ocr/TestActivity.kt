@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.babygage_ocr.databinding.ActivityTestBinding
 import okhttp3.*
 import org.json.JSONObject
@@ -45,6 +46,7 @@ class TestActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("test", "권한 설정 요청")
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.INTERNET), 2)
         ActivityCompat.requestPermissions(
             this,
@@ -61,6 +63,8 @@ class TestActivity : AppCompatActivity() {
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+
+
 
         binding.btnConfirm.setOnClickListener {
 
@@ -80,6 +84,18 @@ class TestActivity : AppCompatActivity() {
 
             startActivity(nextScreen)
         }
+        binding.camera.setOnClickListener{
+            val nextScreen = Intent(this, CameraActivity::class.java)
+            startActivity(nextScreen)
+        }
+
+        // glide camera image
+        val cameraPath = intent.getStringExtra("camerapath")
+            Glide.with(this).load(cameraPath)
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .fallback(R.drawable.logo)
+                .into(imageView!!)
 
 
     }
@@ -123,7 +139,7 @@ class TestActivity : AppCompatActivity() {
         responseText.text = "Sending the Files. Please Wait ..."
 
 //        val postUrl = "http://$ipv4Address:$portNumber/getpost"
-        val postUrl = "http://f357-183-96-100-148.ngrok.io/getpost"
+        val postUrl =  "http://6aaf-203-246-85-178.ngrok.io/getpost"
         Log.d("test","Post url: ${postUrl}")
         val multipartBodyBuilder = MultipartBody.Builder().setType(MultipartBody.FORM)
         for (i in selectedImagesPaths!!.indices) {

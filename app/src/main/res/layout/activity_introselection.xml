@@ -80,6 +80,7 @@
         android:paddingTop="120dp"
         android:text="@string/household_ledger_ek1_string"
         android:textColor="#000000"
+        android:textSize="13dp"
         app:backgroundTint="@color/_rectangle_59_color" />
 
     <ImageView
@@ -106,7 +107,8 @@
         android:layout_marginTop="303dp"
         android:background="@drawable/rectangle_10_ek1_shape"
         android:paddingTop="120dp"
-        android:text="@string/financial_audit_ek1_string"
+        android:textSize="13dp"
+        android:text="Financial\nAudit"
         android:textColor="#000000"
         app:backgroundTint="@color/rectangle_10_ek1_color" />
 
@@ -126,11 +128,11 @@
 
     <TextView
         android:id="@+id/hi_ooo__welcome_to_easygage_"
-        android:layout_width="191dp"
-        android:layout_height="31dp"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp"
         android:layout_gravity="center_horizontal|center"
         android:layout_marginLeft="103dp"
-        android:layout_marginTop="261dp"
+        android:layout_marginTop="200dp"
         android:gravity="center"
         android:text="@string/hi_ooo__welcome_to_easygage__string"
         android:textColor="@color/babygage_color"

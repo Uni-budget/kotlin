@@ -121,6 +121,7 @@
         android:layout_marginTop="343dp"
         android:background="@drawable/rectangle_20_shape"
         android:hint="@string/put_your_name_string"
+        android:text=""
         android:paddingStart="10dp"
         android:textSize="16dp" />
 
@@ -167,6 +168,7 @@
         android:layout_marginTop="231dp"
         android:background="@drawable/rectangle_16_ek2_shape"
         android:hint="@string/put_your_e_mail__id__string"
+        android:text=""
         android:paddingStart="10dp"
         android:textSize="16dp" />
 

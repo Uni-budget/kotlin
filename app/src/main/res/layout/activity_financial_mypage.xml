@@ -90,13 +90,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TableLayout
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_height="31dp"
+        android:layout_below="@+id/view"
 
-        android:layout_marginBottom="550dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="543dp"
         android:background="@android:color/white">
         <!-- Table Heading-->
         <TableRow android:background="@color/teal_200">
@@ -143,15 +146,49 @@
         </TableRow>
 
 
-
     </TableLayout>
+
+    <TextView
+        android:id="@+id/financial_my2"
+        android:layout_width="177.5dp"
+        android:layout_height="41.5dp"
+        android:layout_below="@+id/lin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="21.01dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="0dp"
+        android:text="Financial Audit Table"
+        android:textColor="@color/babygage_color"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="180.03dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/financial_my"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="198dp"
+        android:layout_marginEnd="236dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="27dp"
-        android:layout_marginBottom="100dp">
+        android:layout_marginBottom="400dp">
 
         <TableRow>
 
@@ -191,6 +228,7 @@
 
 
     <LinearLayout
+        android:id="@+id/lin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/parent"
@@ -271,7 +309,7 @@
         <LinearLayout
             android:layout_width="214dp"
             android:layout_height="40dp"
-            android:layout_gravity="center"
+            android:layout_gravity="right"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
             android:gravity="center"
@@ -280,13 +318,13 @@
             <Button
                 android:id="@+id/generate"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:background="@color/_rectangle_23_color"
+                android:layout_height="50dp"
+                android:background="@color/rectangle_5_ek1_color"
                 android:backgroundTint="#87ceeb"
                 android:text="generate"
                 android:textColor="@color/black"
-                android:textSize="8dp"
-                app:backgroundTint="@color/_rectangle_23_color"
+                android:textSize="10dp"
+                app:backgroundTint="@color/rectangle_5_ek1_color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.317"
@@ -297,14 +335,14 @@
             <Button
                 android:id="@+id/delete"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:background="@color/_rectangle_23_color"
                 android:backgroundTint="#87ceeb"
                 android:text="Delete"
                 android:textColor="@color/black"
-                android:textSize="8dp"
-                app:backgroundTint="@color/_rectangle_23_color"
+                android:textSize="10dp"
+                app:backgroundTint="@color/rectangle_5_ek1_color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.716"
@@ -319,7 +357,7 @@
         android:layout_height="400dp"
         android:layout_above="@+id/parent"
         android:layout_below="@+id/parent"
-        android:layout_marginTop="342dp"
+        android:layout_marginTop="362dp"
         android:layout_marginBottom="0dp"
         tools:listitem="@layout/recycler_financial_list_view" />
 

@@ -2,6 +2,7 @@
 <resources>
     <!-- intro colors -->
     <color name="bluemint">#2B8FB6</color>
+    <color name="yellow">#FFFEE575</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
@@ -29,6 +30,7 @@
     <color name="rectangle_57_color">#F5F5F5</color>
     <color name="rectangle_56_ek1_color">#ACEDF2</color>
     <color name="rectangle_49_ek4_color">#D1D1D1</color>
+    <color name="lightgrey">#FFD6D6D6</color>
     <color name="_rectangle_23_color">#FFE575</color>
     <color name="rectangle_10_ek2_color">#ffffff</color>
     <color name="welcome_to_our__babygage__service__you_can_use_everything_in_our_service_after_log_in__color">#3D3D3D</color>

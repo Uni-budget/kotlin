@@ -5,228 +5,280 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HouseholdmainFragment">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
 
-    <!--    <View-->
-    <!--        android:id="@+id/rectangle_full"-->
-    <!--        android:background="@drawable/rectangle_5_shape"-->
-    <!--        android:layout_marginStart="0dp"-->
-    <!--        android:layout_marginTop="112dp"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="31dp"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+        tools:context=".HouseholdmainActivity">
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/string10"-->
-    <!--        android:layout_width="77dp"-->
-    <!--        android:layout_height="39.5dp"-->
-    <!--        android:layout_gravity="center_horizontal|center"-->
-    <!--        android:layout_marginTop="108dp"-->
-    <!--        android:gravity="center"-->
-    <!--        android:text="@string/_2022__10_ek2_string"-->
-    <!--        android:textColor="@color/babygage_color"-->
-    <!--        android:textSize="15sp"-->
-    <!--        app:layout_constraintEnd_toEndOf="@+id/rectangle_full"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--    <View-->
-    <!--        android:id="@+id/view"-->
-    <!--        android:layout_width="118dp"-->
-    <!--        android:layout_height="31dp"-->
-    <!--        android:layout_marginTop="4dp"-->
-    <!--        android:background="@drawable/rectangle_16_shape"-->
-    <!--        app:layout_constraintBottom_toBottomOf="@+id/string09"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.0"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/rectangle_full"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/string09"-->
-    <!--        app:layout_constraintVertical_bias="0.0" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/string09"-->
-    <!--        android:layout_width="75dp"-->
-    <!--        android:layout_height="37dp"-->
-    <!--        android:layout_gravity="center_horizontal|center"-->
-    <!--        android:layout_marginStart="24dp"-->
-    <!--        android:layout_marginTop="108dp"-->
-    <!--        android:gravity="center"-->
-    <!--        android:text="@string/_2022__09_ek2_string"-->
-    <!--        android:textColor="@color/babygage_color"-->
-    <!--        android:textSize="12sp"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-    <!-- 상단바-->
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginBottom="240dp"
-        android:background="@color/_bg__intro_ek2_color"
-        android:gravity="top"
-        app:layout_constraintBottom_toTopOf="@+id/iv_main"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
+        <CalendarView
+            android:id="@+id/calendarView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="2dp">
+            android:layout_height="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-            <TextView
-                android:id="@+id/babygage"
-                android:layout_width="127dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal|center"
-                android:fontFamily="monospace"
+        <!-- 상단바-->
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginBottom="240dp"
+            android:background="@color/_bg__intro_ek2_color"
+            android:gravity="top"
+            app:layout_constraintBottom_toTopOf="@+id/iv_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="BABYGAGE"
-                android:textColor="@color/babygage_color"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="2dp">
 
-            <ImageView
-                android:id="@+id/logo"
-                android:layout_width="62dp"
-                android:layout_height="53dp"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/babygage_ek10"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo" />
-        </LinearLayout>
-    </androidx.appcompat.widget.Toolbar>
+                <TextView
+                    android:id="@+id/babygage"
+                    android:layout_width="127dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal|center"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="BABYGAGE"
+                    android:textColor="@color/babygage_color"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <View-->
-    <!--        android:id="@+id/rectangle"-->
-    <!--        android:layout_width="118dp"-->
-    <!--        android:layout_height="31dp"-->
-    <!--        android:layout_marginTop="112dp"-->
-    <!--        android:background="@drawable/rectangle_17_shape"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="1.0"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/rectangle_full"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="62dp"
+                    android:layout_height="53dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/babygage_ek10"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/logo" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/string11"-->
-    <!--        android:layout_width="75dp"-->
-    <!--        android:layout_height="37dp"-->
-    <!--        android:layout_gravity="center_horizontal|center"-->
-    <!--        android:layout_marginTop="108dp"-->
-    <!--        android:gravity="center"-->
-    <!--        android:text="@string/_2022__11_ek3_string"-->
-    <!--        android:textColor="@color/babygage_color"-->
-    <!--        android:textSize="12sp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.949"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+        <!--    <View-->
+        <!--        android:id="@+id/rectangle"-->
+        <!--        android:layout_width="118dp"-->
+        <!--        android:layout_height="31dp"-->
+        <!--        android:layout_marginTop="112dp"-->
+        <!--        android:background="@drawable/rectangle_17_shape"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintHorizontal_bias="1.0"-->
+        <!--        app:layout_constraintStart_toStartOf="@+id/rectangle_full"-->
+        <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/string11"-->
+        <!--        android:layout_width="75dp"-->
+        <!--        android:layout_height="37dp"-->
+        <!--        android:layout_gravity="center_horizontal|center"-->
+        <!--        android:layout_marginTop="108dp"-->
+        <!--        android:gravity="center"-->
+        <!--        android:text="@string/_2022__11_ek3_string"-->
+        <!--        android:textColor="@color/babygage_color"-->
+        <!--        android:textSize="12sp"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintHorizontal_bias="0.949"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox"
+            app:layout_constraintHorizontal_bias="0.056"
+            app:layout_constraintStart_toStartOf="@+id/detailBox"
+            app:layout_constraintTop_toTopOf="@+id/detailBox" />
 
-    <TextView
-        android:id="@+id/moneyDetails"
-        android:layout_width="189.5dp"
-        android:layout_height="40.5dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
-        android:text="Today's expenditure and income"
-        android:textColor="@color/babygage_color"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/___expenditure___income"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        <Button
+            android:id="@+id/deletebtn"
+            android:layout_width="70dp"
+            android:layout_height="33dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="@color/white"
+            android:stateListAnimator="@null"
+            android:text="DELETE"
+            android:textColor="@color/click__color"
+            android:textSize="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/editbtn"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/descriptionTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="53dp"
-        android:layout_marginEnd="16dp"
-        android:text=": Expenditure\n: Income"
-        android:textColor="@color/babygage_color"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/detalBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="0.35" />
+        <View
+            android:id="@+id/detailBox2"
+            android:layout_width="378dp"
+            android:layout_height="121dp"
+            android:background="@drawable/rectangle_4_shape"
+            app:layout_constraintEnd_toEndOf="@+id/moneyDetails2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/moneyDetails2"
+            app:layout_constraintTop_toBottomOf="@+id/moneyDetails2" />
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailBox"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="@+id/detailBox"
-        app:layout_constraintTop_toTopOf="@+id/detailBox" />
+        <Button
+            android:id="@+id/editbtn"
+            android:layout_width="70dp"
+            android:layout_height="33dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="@color/white"
+            android:stateListAnimator="@null"
+            android:text="EDIT"
+            android:textColor="@color/click__color"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <View
-        android:id="@+id/detailBox"
-        android:layout_width="374dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="60dp"
-        android:background="@drawable/rectangle_4_shape"
-        app:layout_constraintBottom_toTopOf="@+id/bottombar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/today_s_expenditure_details_ek1"
-        app:layout_constraintTop_toBottomOf="@+id/moneyDetails"
-        app:layout_constraintVertical_bias="0.0" />
+        <EditText
+            android:id="@+id/diaryEditTxt"
+            android:layout_width="339dp"
+            android:layout_height="37dp"
+            android:hint="Put your text!"
+            android:inputType="textMultiLine"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/editbtn"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="@+id/detailBox2"
+            app:layout_constraintTop_toTopOf="@+id/detailBox2"
+            app:layout_constraintVertical_bias="0.425"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <!--    OCR (사진 첨부 부분) -->
-    <!--    <Button-->
-    <!--        android:id="@+id/takePictureBtn"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="40dp"-->
-    <!--        android:alpha="0.60000002384186"-->
-    <!--        android:background="@drawable/_rectangle_15_shape"-->
-    <!--        android:text="take a picture"-->
-    <!--        android:textColor="#000000"-->
-    <!--        android:textSize="13dp"-->
-    <!--        app:backgroundTint="@color/_rectangle_50_color"-->
-    <!--        tools:layout_editor_absoluteX="272dp"-->
-    <!--        tools:layout_editor_absoluteY="588dp" />-->
+        <TextView
+            android:id="@+id/moneyDetails"
+            android:layout_width="189.5dp"
+            android:layout_height="40.5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Today's expenditure and income"
+            android:textColor="@color/babygage_color"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/___expenditure___income"
+            app:layout_constraintHorizontal_bias="0.197"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
-    <!--    <Button-->
-    <!--        android:id="@+id/importGalleryBtn"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="40dp"-->
-    <!--        android:alpha="0.60000002384186"-->
-    <!--        android:background="@drawable/rectangle_14_ek1_shape"-->
-    <!--        android:text="import from gallery"-->
-    <!--        android:textColor="#000000"-->
-    <!--        android:textSize="13dp"-->
-    <!--        app:backgroundTint="@color/_rectangle_50_color"-->
-    <!--        tools:layout_editor_absoluteX="22dp"-->
-    <!--        tools:layout_editor_absoluteY="588dp" />-->
+        <TextView
+            android:id="@+id/moneyDetails2"
+            android:layout_width="189.5dp"
+            android:layout_height="40.5dp"
+            android:layout_marginTop="12dp"
+            android:text="Today's diary"
+            android:textColor="@color/babygage_color"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailBox"
+            app:layout_constraintTop_toBottomOf="@+id/detailBox" />
+
+        <Button
+            android:id="@+id/savebtn"
+            android:layout_width="70dp"
+            android:layout_height="33dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="@color/white"
+            android:stateListAnimator="@null"
+            android:text="SAVE"
+            android:textColor="@color/click__color"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/diary"
+            android:layout_width="339dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/diaryTxt"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="@+id/detailBox2"
+            app:layout_constraintTop_toTopOf="@+id/detailBox2"
+            app:layout_constraintVertical_bias="0.555" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/importReceipt"
+            android:layout_width="374dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edge2"
+            android:text="Import receipt"
+            android:textColor="@color/rectangle_5_color"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
+            app:layout_constraintEnd_toEndOf="@+id/detailBox"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailBox"
+            app:layout_constraintTop_toBottomOf="@+id/detailBox2"
+            app:layout_constraintVertical_bias="0.747" />
+
+        <View
+            android:id="@+id/detailBox"
+            android:layout_width="379dp"
+            android:layout_height="49dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/rectangle_4_shape"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/today_s_expenditure_details_ek1"
+            app:layout_constraintTop_toBottomOf="@+id/moneyDetails"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <!--    OCR (사진 첨부 부분) -->
+        <!--    <Button-->
+        <!--        android:id="@+id/takePictureBtn"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="40dp"-->
+        <!--        android:alpha="0.60000002384186"-->
+        <!--        android:background="@drawable/_rectangle_15_shape"-->
+        <!--        android:text="take a picture"-->
+        <!--        android:textColor="#000000"-->
+        <!--        android:textSize="13dp"-->
+        <!--        app:backgroundTint="@color/_rectangle_50_color"-->
+        <!--        tools:layout_editor_absoluteX="272dp"—>
+        <!—        tools:layout_editor_absoluteY="588dp" />—>
+
+        <!—    <Button—>
+        <!—        android:id="@+id/importGalleryBtn"—>
+        <!—        android:layout_width="wrap_content"—>
+        <!—        android:layout_height="40dp"—>
+        <!—        android:alpha="0.60000002384186"—>
+        <!—        android:background="@drawable/rectangle_14_ek1_shape"—>
+        <!—        android:text="import from gallery"—>
+        <!—        android:textColor="#000000"—>
+        <!—        android:textSize="13dp"—>
+        <!—        app:backgroundTint="@color/_rectangle_50_color"—>
+        <!—        tools:layout_editor_absoluteX="22dp"—>
+        <!—        tools:layout_editor_absoluteY="588dp" />
+        -->
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>

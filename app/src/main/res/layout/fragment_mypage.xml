@@ -230,9 +230,9 @@
             android:id="@+id/userName"
             android:layout_width="76.5dp"
             android:layout_height="28.5dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="150dp"
-            android:text="@string/abc_string"
+            android:layout_marginStart="208dp"
+            android:layout_marginTop="152dp"
+            android:text="user"
             android:textColor="@color/babygage_color"
             android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -242,9 +242,9 @@
             android:id="@+id/userEmail"
             android:layout_width="140.5dp"
             android:layout_height="34.5dp"
-            android:layout_marginStart="204dp"
+            android:layout_marginStart="208dp"
             android:layout_marginTop="180dp"
-            android:text="@string/_12345678_naver_com_string"
+            android:text="username@naver.com"
             android:textColor="@color/babygage_color"
             android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -360,9 +360,9 @@
             android:layout_height="51dp"
             android:layout_marginStart="228dp"
             android:layout_marginTop="280dp"
-            android:background="@drawable/_rectangle_50_shape"
+             android:background="@drawable/_rectangle_50_shape"
             android:text="FINANCIAL\nAudit"
-            android:textSize="11dp"
+            android:textSize="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -378,24 +378,24 @@
 
         </RelativeLayout>
 
+
         <View
             android:id="@+id/line_5"
             android:layout_width="210dp"
             android:layout_height="1dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="391dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="396dp"
             android:background="@drawable/line_5_shape"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <TextView
-           android:layout_width="130.5dp"
+            android:layout_width="130.5dp"
             android:layout_height="38.5dp"
             android:layout_marginTop="28dp"
             android:text="My Expenditure"
             android:textColor="@color/babygage_color"
-            android:textSize="11sp"
+            android:textSize="12dp"
             android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@+id/rectangle_33"
             app:layout_constraintEnd_toEndOf="parent"
@@ -404,10 +404,45 @@
             app:layout_constraintTop_toBottomOf="@+id/vector_ek29"
             app:layout_constraintVertical_bias="0.725" />
 
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleButton"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vector_ek29"
+            app:layout_constraintVertical_bias="1.0"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="household"
+
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="financial"
+                android:textSize="10dp" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView1"
-            android:layout_width="411dp"
-            android:layout_height="400dp"
+            android:layout_width="413dp"
+            android:layout_height="345dp"
+            android:layout_marginBottom="76dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_expenditure___household_ledger"
