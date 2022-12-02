@@ -7,6 +7,8 @@ import android.view.View
 import com.example.babygage_ocr.databinding.ActivityHouseholdmainBinding
 import android.widget.CalendarView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.text.DateFormat
@@ -20,6 +22,8 @@ class HouseholdmainActivity : AppCompatActivity() {
     var str: String = ""
 
     lateinit var binding: ActivityHouseholdmainBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +31,9 @@ class HouseholdmainActivity : AppCompatActivity() {
         binding = ActivityHouseholdmainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        val currentUser = firebaseAuth.currentUser
+        firestore= FirebaseFirestore.getInstance()
 
         binding.date.bringToFront()
 
@@ -76,7 +83,7 @@ class HouseholdmainActivity : AppCompatActivity() {
 
         binding.savebtn.setOnClickListener { // save Button 클릭
             saveDiary(fname) // saveDiary 메소드 호출
-            Toast.makeText(this, "fname + \"데이터를 저장했습니다.\"", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "$fname + \"데이터를 저장했습니다.\"", Toast.LENGTH_SHORT).show()
             str = binding.diaryEditTxt.getText().toString() // str 변수에 edittext 내용을 String형으로 저장
             binding.diary.text = "${str}" // textView에 str 출력
             binding.savebtn.visibility = View.INVISIBLE
