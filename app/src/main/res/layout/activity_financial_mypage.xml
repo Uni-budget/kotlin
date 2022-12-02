@@ -354,13 +354,26 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:layout_above="@+id/parent"
         android:layout_below="@+id/parent"
         android:layout_marginTop="362dp"
         android:layout_marginBottom="0dp"
         tools:listitem="@layout/recycler_financial_list_view" />
 
-
+    <Button
+        android:id="@+id/barchart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/rectangle_10_ek1_shape"
+        app:backgroundTint="@color/rectangle_5_ek1_color"
+        android:text="Go to Chart Dashboard !"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
 
 </RelativeLayout>

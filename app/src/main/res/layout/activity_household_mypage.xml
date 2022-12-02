@@ -125,7 +125,105 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <TableLayout
 
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_below="@+id/view"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="543dp"
+        android:background="@android:color/white">
+        <!-- Table Heading-->
+        <TableRow android:background="@color/teal_200">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Date"
+                android:textColor="@android:color/white"
+                android:textSize="10sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Product Name"
+                android:textColor="@android:color/white"
+                android:textSize="10sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Total Price"
+                android:textColor="@android:color/white"
+                android:textSize="10sp">
+
+            </TextView>
+
+
+            <!-- Table Data-->
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="400dp">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/row_text_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text=""
+                android:textSize="12sp"></TextView>
+
+            <TextView
+                android:id="@+id/row_text_result2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/row1Age"
+                android:textSize="12sp"></TextView>
+
+            <TextView
+                android:id="@+id/row_text_result3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="@string/row1SurName"
+                android:textSize="12sp"></TextView>
+
+
+        </TableRow>
+    </TableLayout>
 
     <LinearLayout
         android:id="@+id/lin"
