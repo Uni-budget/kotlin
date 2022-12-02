@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.babygage_ocr.databinding.FragmentFinancialmainBinding
 import com.example.babygage_ocr.databinding.FragmentHouseholdmainBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.text.DateFormat
@@ -21,6 +23,9 @@ import java.util.*
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+private lateinit var firebaseAuth: FirebaseAuth
+private lateinit var firestore: FirebaseFirestore
 
 /**
  * A simple [Fragment] subclass.
@@ -39,6 +44,9 @@ class HouseholdmainFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        firebaseAuth= FirebaseAuth.getInstance()
+        val currentUser = firebaseAuth.currentUser
+        firestore= FirebaseFirestore.getInstance()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -120,8 +128,7 @@ class HouseholdmainFragment : Fragment() {
         }
 
         binding.savebtn.setOnClickListener { // save Button 클릭
-            saveDiary(fname) // saveDiary 메소드 호출
-            Toast.makeText(getActivity(), "Data $fname + \"is saved.\"", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(getActivity(), "Data $fname + \"is saved.\"", Toast.LENGTH_SHORT).show()
             str = binding.diaryEditTxt.getText().toString() // str 변수에 edittext 내용을 String형으로 저장
             binding.diary.text = "${str}" // textView에 str 출력
             binding.savebtn.visibility = View.INVISIBLE
@@ -129,7 +136,15 @@ class HouseholdmainFragment : Fragment() {
             binding.deletebtn.visibility = View.VISIBLE
             binding.diaryEditTxt.visibility = View.INVISIBLE
             binding.diary.visibility = View.VISIBLE
+//            var UserDiary = UserDiary()
+//            UserDiary.uid = firebaseAuth?.currentUser?.uid.toString()
+//            UserDiary.useId = firebaseAuth?.currentUser?.email.toString()
+//            UserDiary.diary = binding.diary.text.toString()
+//            UserDiary.date = binding.date.text.toString()
+//            firestore?.collection(firebaseAuth!!.currentUser!!.uid)?.document()?.set(UserDiary)
+//            Toast.makeText(getActivity(),"저장완료",Toast.LENGTH_SHORT).show()
         }
+
         binding.importReceipt.setOnClickListener (({
             val nextScreen = Intent(context, TestActivity::class.java)
             startActivity(nextScreen)
@@ -188,7 +203,7 @@ class HouseholdmainFragment : Fragment() {
                 binding.savebtn.visibility = View.VISIBLE
                 binding.editbtn.visibility = View.INVISIBLE
                 binding.deletebtn.visibility = View.INVISIBLE
-                removeDiary(fname)
+
                 Toast.makeText(getActivity(), fname + "데이터를 삭제했습니다.", Toast.LENGTH_SHORT).show()
             }
 
@@ -206,37 +221,6 @@ class HouseholdmainFragment : Fragment() {
         }
     }
 
-    @SuppressLint("WrongConstant")
-    fun saveDiary(readyDay: String) {
-        var fos: FileOutputStream? = null
-
-        try {
-            fos = getActivity()?.openFileOutput(readyDay, MODE_NO_LOCALIZED_COLLATORS)
-            var content: String = binding.diaryEditTxt.getText().toString()
-            fos!!.write(content.toByteArray())
-            fos.close()
-
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-    }
-
-    @SuppressLint("WrongConstant")
-    fun removeDiary(readyDay: String) {
-        var fos: FileOutputStream? = null
-
-        try {
-            fos = getActivity()?.openFileOutput(readyDay, MODE_NO_LOCALIZED_COLLATORS)
-            var content: String = ""
-            fos!!.write(content.toByteArray())
-            fos!!.close()
-
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-    }
 
 
 

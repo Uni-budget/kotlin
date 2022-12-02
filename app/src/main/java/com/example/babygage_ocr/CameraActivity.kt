@@ -57,6 +57,7 @@ class CameraActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun takePhoto() {
         // Get a stable reference of the modifiable image capture use case
         val imageCapture = imageCapture ?: return
@@ -90,6 +91,7 @@ class CameraActivity : AppCompatActivity() {
     }
 
     // viewFinder 설정 : Preview
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 

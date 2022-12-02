@@ -18,6 +18,7 @@ class LoginActivity : AppCompatActivity() {
 
     setContentView(binding.root)
 
+
     binding.signupbtn.setOnClickListener {
         val nextScreen = Intent(this, SignupActivity::class.java)
         startActivity(nextScreen)

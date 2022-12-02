@@ -77,11 +77,11 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="303dp"
         android:background="@drawable/_rectangle_59_shape"
+        app:backgroundTint="@color/_rectangle_59_color"
         android:paddingTop="120dp"
         android:text="@string/household_ledger_ek1_string"
         android:textColor="#000000"
-        android:textSize="13dp"
-        app:backgroundTint="@color/_rectangle_59_color" />
+        android:textSize="13dp" />
 
     <ImageView
         android:id="@+id/householdImage"
