@@ -4,15 +4,14 @@ package com.example.babygage_ocr
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import com.example.babygage_ocr.TestActivity.Companion.getPath
 import com.example.babygage_ocr.databinding.ActivityCameraBinding
 import java.io.File
 import java.text.SimpleDateFormat
@@ -57,6 +56,7 @@ class CameraActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun takePhoto() {
         // Get a stable reference of the modifiable image capture use case
         val imageCapture = imageCapture ?: return
@@ -90,6 +90,7 @@ class CameraActivity : AppCompatActivity() {
     }
 
     // viewFinder 설정 : Preview
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 

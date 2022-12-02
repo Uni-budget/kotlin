@@ -7,6 +7,13 @@
 
     tools:context=".HouseholdmainActivity">
 
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
     <!--    <View-->
 <!--        android:id="@+id/rectangle_full"-->
@@ -58,6 +65,20 @@
 <!--        android:textSize="12sp"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <TextView
+        android:id="@+id/moneyDetails2"
+        android:layout_width="189.5dp"
+        android:layout_height="40.5dp"
+        android:layout_marginTop="12dp"
+        android:text="Today's diary"
+        android:textColor="@color/babygage_color"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/detailBox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/detailBox"
+        app:layout_constraintTop_toBottomOf="@+id/detailBox" />
 
     <CalendarView
         android:id="@+id/calendarView"
@@ -148,7 +169,7 @@
         android:layout_width="189.5dp"
         android:layout_height="40.5dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="16dp"
         android:text="Today's expenditure and income"
         android:textColor="@color/babygage_color"
         android:textSize="13sp"
@@ -157,19 +178,6 @@
         app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarView" />
-
-    <TextView
-        android:id="@+id/descriptionTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="53dp"
-        android:layout_marginEnd="16dp"
-        android:text=": Expenditure\n: Income"
-        android:textColor="@color/babygage_color"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/detalBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="0.35" />
 
     <TextView
         android:id="@+id/date"
@@ -184,8 +192,8 @@
 
     <View
         android:id="@+id/detailBox"
-        android:layout_width="374dp"
-        android:layout_height="100dp"
+        android:layout_width="379dp"
+        android:layout_height="49dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="60dp"
         android:background="@drawable/rectangle_4_shape"
@@ -195,6 +203,90 @@
         app:layout_constraintStart_toStartOf="@+id/today_s_expenditure_details_ek1"
         app:layout_constraintTop_toBottomOf="@+id/moneyDetails"
         app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/detailBox2"
+        android:layout_width="378dp"
+        android:layout_height="121dp"
+        android:background="@drawable/rectangle_4_shape"
+        app:layout_constraintEnd_toEndOf="@+id/moneyDetails2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/moneyDetails2"
+        app:layout_constraintTop_toBottomOf="@+id/moneyDetails2" />
+
+    <Button
+        android:id="@+id/editbtn"
+        android:layout_width="70dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/white"
+        android:stateListAnimator="@null"
+        android:text="EDIT"
+        android:textColor="@color/click__color"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
+        app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/savebtn"
+        android:layout_width="70dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/white"
+        android:stateListAnimator="@null"
+        android:text="SAVE"
+        android:textColor="@color/click__color"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
+        app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/deletebtn"
+        android:layout_width="70dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/white"
+        android:stateListAnimator="@null"
+        android:text="DELETE"
+        android:textColor="@color/click__color"
+        android:textSize="9dp"
+        app:layout_constraintBottom_toBottomOf="@+id/detailBox2"
+        app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editbtn"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/diaryEditTxt"
+        android:layout_width="339dp"
+        android:layout_height="37dp"
+        android:hint="Put your text!"
+        android:inputType="textMultiLine"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/editbtn"
+        app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/detailBox2"
+        app:layout_constraintTop_toTopOf="@+id/detailBox2"
+        app:layout_constraintVertical_bias="0.425"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/diary"
+        android:layout_width="339dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/diaryTxt"
+        app:layout_constraintEnd_toEndOf="@+id/detailBox2"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/detailBox2"
+        app:layout_constraintTop_toTopOf="@+id/detailBox2"
+        app:layout_constraintVertical_bias="0.555" />
 
     <!--    OCR (사진 첨부 부분) -->
 <!--    <Button-->

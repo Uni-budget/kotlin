@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import com.example.babygage_ocr.databinding.FragmentMypageBinding
+import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
 
@@ -38,6 +39,7 @@ class MypageFragment : Fragment(){
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -59,6 +61,13 @@ class MypageFragment : Fragment(){
 
         binding.btnMyFinancial.setOnClickListener (({
             val nextScreen = Intent(context, FinancialMypageActivity::class.java)
+            startActivity(nextScreen)
+            activity?.finish()
+        })
+        )
+
+        binding.btnMyHouse.setOnClickListener (({
+            val nextScreen = Intent(context, HouseholdMypageActivity::class.java)
             startActivity(nextScreen)
             activity?.finish()
         })

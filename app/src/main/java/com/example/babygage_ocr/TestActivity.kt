@@ -91,11 +91,11 @@ class TestActivity : AppCompatActivity() {
 
         // glide camera image
         val cameraPath = intent.getStringExtra("camerapath")
-            Glide.with(this).load(cameraPath)
-                .skipMemoryCache(true)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .fallback(R.drawable.logo)
-                .into(imageView!!)
+        Glide.with(this).load(cameraPath)
+            .skipMemoryCache(true)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .fallback(R.drawable.logo)
+            .into(imageView!!)
 
 
     }
