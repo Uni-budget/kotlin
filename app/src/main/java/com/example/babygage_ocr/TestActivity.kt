@@ -55,7 +55,9 @@ class TestActivity : AppCompatActivity() {
         )
         var binding : ActivityTestBinding
         binding = ActivityTestBinding.inflate(layoutInflater)
-
+        val sharedPref = getSharedPreferences("uj",MODE_PRIVATE)
+        var userId =  sharedPref.getString("userid", "")
+        Log.d("test","shared preference test user id: ${userId}")
         setContentView(binding.root)
 
         imageView =binding.ivMain

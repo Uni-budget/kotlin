@@ -88,6 +88,8 @@ dependencies {
 
 
     // apache poi
-    implementation "commons-logging:commons-logging-api:1.1"
+    implementation "commons-logging:commons-logging:1.1.1"
+    implementation 'com.amazonaws:aws-android-sdk-sns:2.6.23'
+
 
 }
