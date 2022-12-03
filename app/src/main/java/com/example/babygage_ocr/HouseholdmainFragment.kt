@@ -44,9 +44,6 @@ class HouseholdmainFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        firebaseAuth= FirebaseAuth.getInstance()
-        val currentUser = firebaseAuth.currentUser
-        firestore= FirebaseFirestore.getInstance()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -81,6 +78,9 @@ class HouseholdmainFragment : Fragment() {
 //        }
 
 
+        firebaseAuth= FirebaseAuth.getInstance()
+        val currentUser = firebaseAuth?.currentUser
+        firestore= FirebaseFirestore.getInstance()
         binding.date.bringToFront()
 
 
@@ -136,13 +136,13 @@ class HouseholdmainFragment : Fragment() {
             binding.deletebtn.visibility = View.VISIBLE
             binding.diaryEditTxt.visibility = View.INVISIBLE
             binding.diary.visibility = View.VISIBLE
-//            var UserDiary = UserDiary()
-//            UserDiary.uid = firebaseAuth?.currentUser?.uid.toString()
-//            UserDiary.useId = firebaseAuth?.currentUser?.email.toString()
-//            UserDiary.diary = binding.diary.text.toString()
-//            UserDiary.date = binding.date.text.toString()
-//            firestore?.collection(firebaseAuth!!.currentUser!!.uid)?.document()?.set(UserDiary)
-//            Toast.makeText(getActivity(),"저장완료",Toast.LENGTH_SHORT).show()
+            var userDiary = UserDiary()
+            userDiary.uid = firebaseAuth.currentUser!!.uid
+            userDiary.useId = firebaseAuth.currentUser!!.email
+            userDiary.diary = binding.diary.text.toString()
+            userDiary.date = binding.date.text.toString()
+            firestore?.collection("${firebaseAuth.currentUser!!.uid.toString()} diary")?.document()?.set(userDiary)
+            Toast.makeText(getActivity(),"diary is saved",Toast.LENGTH_SHORT).show()
         }
 
         binding.importReceipt.setOnClickListener (({
