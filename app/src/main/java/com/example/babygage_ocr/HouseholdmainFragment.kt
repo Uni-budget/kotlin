@@ -128,7 +128,6 @@ class HouseholdmainFragment : Fragment() {
         }
 
         binding.savebtn.setOnClickListener { // save Button 클릭
-//            Toast.makeText(getActivity(), "Data $fname + \"is saved.\"", Toast.LENGTH_SHORT).show()
             str = binding.diaryEditTxt.getText().toString() // str 변수에 edittext 내용을 String형으로 저장
             binding.diary.text = "${str}" // textView에 str 출력
             binding.savebtn.visibility = View.INVISIBLE
@@ -151,20 +150,9 @@ class HouseholdmainFragment : Fragment() {
             activity?.finish()
         })
         )
-
-        binding.importReceipt.setOnClickListener (({
-            val nextScreen = Intent(context, TestActivity::class.java)
-            startActivity(nextScreen)
-            activity?.finish()
-        })
-        )
-
-
-
-
-
-
     }
+
+
     fun checkedDay(cYear: Int, cMonth: Int, cDay: Int) {
         fname = "" + cYear + "-" + (cMonth + 1) + "" + "-" + cDay + ".txt"  // 저장할 파일 이름 설정. Ex) 2019-01-20.txt
         var fis: FileInputStream? = null // FileStream fis 변수 설정

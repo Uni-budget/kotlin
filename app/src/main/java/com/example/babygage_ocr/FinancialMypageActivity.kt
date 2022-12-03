@@ -1,5 +1,6 @@
 package com.example.babygage_ocr
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -96,6 +97,11 @@ class FinancialMypageActivity : AppCompatActivity() {
                     binding.itemList.adapter?.notifyItemRemoved(pos) // NOTIFY recycler view that item is removed in that position
                 }
             }
+        }
+
+        binding.barchart?.setOnClickListener {
+            val nextScreen = Intent(this, FinancialChartActivity::class.java)
+            startActivity(nextScreen)
         }
 
     }

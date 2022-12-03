@@ -59,14 +59,14 @@ class MypageFragment : Fragment(){
 
     private fun setUpView() {
 
-        binding.btnMyFinancial.setOnClickListener (({
+        binding.btnMyFinancial?.setOnClickListener (({
             val nextScreen = Intent(context, FinancialMypageActivity::class.java)
             startActivity(nextScreen)
             activity?.finish()
         })
         )
 
-        binding.btnMyHouse.setOnClickListener (({
+        binding.btnMyHouse?.setOnClickListener (({
             val nextScreen = Intent(context, HouseholdMypageActivity::class.java)
             startActivity(nextScreen)
             activity?.finish()
