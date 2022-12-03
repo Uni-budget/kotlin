@@ -96,6 +96,7 @@ class TestActivity : AppCompatActivity() {
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .fallback(R.drawable.logo)
             .into(imageView!!)
+        Log.d("test","image view loaded")
 
 
     }

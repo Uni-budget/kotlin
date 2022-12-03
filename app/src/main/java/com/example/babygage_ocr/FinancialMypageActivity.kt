@@ -1,6 +1,7 @@
 package com.example.babygage_ocr
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -15,10 +16,6 @@ import org.apache.poi.ss.usermodel.Workbook
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-
-
-
-
 
 class FinancialMypageActivity : AppCompatActivity() {
     var mEdtDate: EditText? = null
@@ -38,7 +35,7 @@ class FinancialMypageActivity : AppCompatActivity() {
         mEdtName = binding.editTextProduct
         mEdtPrice = binding.editTextTextPrice
 
-        var position = myItems.size
+        var position = 0
         var db: MyitemsDB
         db = MyitemsDB.getInstance(this)
 
@@ -50,16 +47,27 @@ class FinancialMypageActivity : AppCompatActivity() {
         for(i in stored){
             myItems.add(i) // add records to myNumbers
         }
-
+        position = myItems.size
         binding.itemList.adapter?.notifyDataSetChanged() // NOTIFY recycler view that the list size and items are changed
 
 
 
         val receive_intent = intent
 
-        val temp = receive_intent.getStringExtra("key01")
-        val temp2 = receive_intent.getStringExtra("key02")
-        val temp3 = receive_intent.getStringExtra("key03")
+        val temp = receive_intent.getStringExtra("key01").toString()
+        val temp2 = receive_intent.getStringExtra("key02").toString()
+        val temp3 = receive_intent.getStringExtra("key03").toString()
+        Log.d("test","temp: ${temp}, temp2: ${temp2}, temp3: ${temp3}")
+        if (temp != "" || temp2 != "" || temp3 != ""){
+            val item = Items(position,temp, temp2, temp3)
+            myItems.add(item) // add intended data class with 6 unique random number to the list
+            db.mynumbersDAO().insertNumbers(item) // insert it to the database
+            val pos = binding.itemList.adapter?.itemCount?.minus(1) // get last position
+            if (pos != null) {
+                binding.itemList.adapter?.notifyItemInserted(pos)// NOTIFY recycler view that new item is inserted
+            }
+            position += 1
+        }
 
 //        binding.rowTextResult.setText(temp)
 //        binding.rowTextResult2.setText(temp2)
