@@ -141,7 +141,7 @@ class HouseholdmainFragment : Fragment() {
             userDiary.useId = firebaseAuth.currentUser!!.email
             userDiary.diary = binding.diary.text.toString()
             userDiary.date = binding.date.text.toString()
-            firestore?.collection("${firebaseAuth.currentUser!!.uid.toString()} diary")?.document()?.set(userDiary)
+            firestore?.collection("${firebaseAuth.currentUser!!.uid.toString()} diary")?.document(binding.date.text.toString())?.set(userDiary)
             Toast.makeText(getActivity(),"diary is saved",Toast.LENGTH_SHORT).show()
         }
 
