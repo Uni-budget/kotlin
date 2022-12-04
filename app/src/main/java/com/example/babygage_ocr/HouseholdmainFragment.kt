@@ -144,6 +144,27 @@ class HouseholdmainFragment : Fragment() {
             Toast.makeText(getActivity(),"diary is saved",Toast.LENGTH_SHORT).show()
         }
 
+        binding.editbtn.setOnClickListener { // 수정 버튼을 누를 시
+            binding.diaryEditTxt.visibility = View.VISIBLE
+            binding.diary.visibility = View.INVISIBLE
+            binding.diaryEditTxt.setText(str) // editText에 textView에 저장된 내용을 출력
+            binding.savebtn.visibility = View.VISIBLE
+            binding.editbtn.visibility = View.INVISIBLE
+            binding.deletebtn.visibility = View.INVISIBLE
+            binding.diary.text = "${binding.diaryEditTxt.getText()}"
+        }
+
+        binding.deletebtn.setOnClickListener {
+            binding.diary.visibility = View.INVISIBLE
+            binding.diaryEditTxt.setText("")
+            binding.diaryEditTxt.visibility = View.VISIBLE
+            binding.savebtn.visibility = View.VISIBLE
+            binding.editbtn.visibility = View.INVISIBLE
+            binding.deletebtn.visibility = View.INVISIBLE
+            firestore.collection("${firebaseAuth.currentUser!!.uid.toString()} diary")?.document(binding.date.text.toString())?.delete()
+            Toast.makeText(getActivity(), "delete diary", Toast.LENGTH_SHORT).show()
+        }
+
         binding.importReceipt.setOnClickListener (({
             val nextScreen = Intent(context, TestActivity::class.java)
             startActivity(nextScreen)
@@ -174,26 +195,7 @@ class HouseholdmainFragment : Fragment() {
             binding.editbtn.visibility = View.VISIBLE
             binding.deletebtn.visibility = View.VISIBLE
 
-            binding.editbtn.setOnClickListener { // 수정 버튼을 누를 시
-                binding.diaryEditTxt.visibility = View.VISIBLE
-                binding.diary.visibility = View.INVISIBLE
-                binding.diaryEditTxt.setText(str) // editText에 textView에 저장된 내용을 출력
-                binding.savebtn.visibility = View.VISIBLE
-                binding.editbtn.visibility = View.INVISIBLE
-                binding.deletebtn.visibility = View.INVISIBLE
-                binding.diary.text = "${binding.diaryEditTxt.getText()}"
-            }
 
-            binding.deletebtn.setOnClickListener {
-                binding.diary.visibility = View.INVISIBLE
-                binding.diaryEditTxt.setText("")
-                binding.diaryEditTxt.visibility = View.VISIBLE
-                binding.savebtn.visibility = View.VISIBLE
-                binding.editbtn.visibility = View.INVISIBLE
-                binding.deletebtn.visibility = View.INVISIBLE
-
-                Toast.makeText(getActivity(), fname + "데이터를 삭제했습니다.", Toast.LENGTH_SHORT).show()
-            }
 
             if(binding.diary.getText() == ""){
                 binding.diary.visibility = View.INVISIBLE
