@@ -133,7 +133,6 @@
         android:layout_marginLeft="103dp"
         android:layout_marginTop="200dp"
         android:gravity="center"
-        android:text="@string/hi_ooo__welcome_to_easygage__string"
         android:textColor="@color/babygage_color"
         android:textSize="14dp" />
 

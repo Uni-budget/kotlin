@@ -85,6 +85,8 @@ class HouseholdmainFragment : Fragment() {
             .addOnSuccessListener { document ->
                 Log.d("ITM", document.data.toString())
                 if(document.data?.get("date")==binding.date.text.toString()) {
+                    Log.d("ITM", "DocumentSnapshot data: ${document.data}")
+                    Log.d("ITM", "DocumentSnapshot data: ${document.data?.get("date")}")
                     binding.diary.text = document.data?.get("diary").toString()
                     binding.diaryEditTxt.setText(document.data?.get("diary").toString())
                     binding.savebtn.visibility = View.INVISIBLE
@@ -113,6 +115,8 @@ class HouseholdmainFragment : Fragment() {
             docRef.get()
                 .addOnSuccessListener { document ->
                     if(document.data?.get("date")==binding.date.text.toString()) {
+                        Log.d("ITM", "DocumentSnapshot data: ${document.data}")
+                        Log.d("ITM", "DocumentSnapshot data: ${document.data?.get("date")}")
                         binding.diary.text = document.data?.get("diary").toString()
                         binding.diaryEditTxt.setText(document.data?.get("diary").toString())
                         binding.savebtn.visibility = View.INVISIBLE
