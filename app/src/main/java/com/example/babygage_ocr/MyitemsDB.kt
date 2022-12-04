@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities=[Items::class], version=1)
+@Database(entities=[Items::class], version=2)
 abstract class MyitemsDB : RoomDatabase() {
     abstract fun mynumbersDAO(): MyitemsDAO
 
@@ -23,7 +23,9 @@ abstract class MyitemsDB : RoomDatabase() {
                     context.applicationContext,
                     MyitemsDB::class.java,
                     "mynumbers_database" // create a RoomDatabase object "mynumbers_database"
-                ).allowMainThreadQueries().build()
+                ).allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 instance
             }
