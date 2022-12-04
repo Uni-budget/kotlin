@@ -44,9 +44,6 @@ class HouseholdmainFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        firebaseAuth= FirebaseAuth.getInstance()
-        val currentUser = firebaseAuth.currentUser
-        firestore= FirebaseFirestore.getInstance()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -81,6 +78,9 @@ class HouseholdmainFragment : Fragment() {
 //        }
 
 
+        firebaseAuth= FirebaseAuth.getInstance()
+        val currentUser = firebaseAuth?.currentUser
+        firestore= FirebaseFirestore.getInstance()
         binding.date.bringToFront()
 
 
@@ -128,7 +128,6 @@ class HouseholdmainFragment : Fragment() {
         }
 
         binding.savebtn.setOnClickListener { // save Button 클릭
-//            Toast.makeText(getActivity(), "Data $fname + \"is saved.\"", Toast.LENGTH_SHORT).show()
             str = binding.diaryEditTxt.getText().toString() // str 변수에 edittext 내용을 String형으로 저장
             binding.diary.text = "${str}" // textView에 str 출력
             binding.savebtn.visibility = View.INVISIBLE
@@ -136,13 +135,13 @@ class HouseholdmainFragment : Fragment() {
             binding.deletebtn.visibility = View.VISIBLE
             binding.diaryEditTxt.visibility = View.INVISIBLE
             binding.diary.visibility = View.VISIBLE
-//            var UserDiary = UserDiary()
-//            UserDiary.uid = firebaseAuth?.currentUser?.uid.toString()
-//            UserDiary.useId = firebaseAuth?.currentUser?.email.toString()
-//            UserDiary.diary = binding.diary.text.toString()
-//            UserDiary.date = binding.date.text.toString()
-//            firestore?.collection(firebaseAuth!!.currentUser!!.uid)?.document()?.set(UserDiary)
-//            Toast.makeText(getActivity(),"저장완료",Toast.LENGTH_SHORT).show()
+            var userDiary = UserDiary()
+            userDiary.uid = firebaseAuth.currentUser!!.uid
+            userDiary.useId = firebaseAuth.currentUser!!.email
+            userDiary.diary = binding.diary.text.toString()
+            userDiary.date = binding.date.text.toString()
+            firestore?.collection("${firebaseAuth.currentUser!!.uid.toString()} diary")?.document(binding.date.text.toString())?.set(userDiary)
+            Toast.makeText(getActivity(),"diary is saved",Toast.LENGTH_SHORT).show()
         }
 
         binding.importReceipt.setOnClickListener (({
@@ -151,20 +150,9 @@ class HouseholdmainFragment : Fragment() {
             activity?.finish()
         })
         )
-
-        binding.importReceipt.setOnClickListener (({
-            val nextScreen = Intent(context, TestActivity::class.java)
-            startActivity(nextScreen)
-            activity?.finish()
-        })
-        )
-
-
-
-
-
-
     }
+
+
     fun checkedDay(cYear: Int, cMonth: Int, cDay: Int) {
         fname = "" + cYear + "-" + (cMonth + 1) + "" + "-" + cDay + ".txt"  // 저장할 파일 이름 설정. Ex) 2019-01-20.txt
         var fis: FileInputStream? = null // FileStream fis 변수 설정

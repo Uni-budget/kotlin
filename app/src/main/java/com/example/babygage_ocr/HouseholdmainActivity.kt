@@ -27,7 +27,7 @@ class HouseholdmainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        var binding: ActivityHouseholdmainBinding
+        var binding: ActivityHouseholdmainBinding
         binding = ActivityHouseholdmainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)

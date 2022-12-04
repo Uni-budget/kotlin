@@ -30,7 +30,6 @@
             android:layout_marginBottom="240dp"
             android:background="@color/_bg__intro_ek2_color"
             android:gravity="top"
-            app:layout_constraintBottom_toTopOf="@+id/iv_main"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -184,15 +183,12 @@
                     android:layout_width="189.5dp"
                     android:layout_height="40.5dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
                     android:text="Today's expenditure and income"
                     android:textColor="@color/babygage_color"
                     android:textSize="13sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/___expenditure___income"
-                    app:layout_constraintHorizontal_bias="0.197"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/moneyDetails2"
@@ -228,7 +224,6 @@
                     android:layout_width="339dp"
                     android:layout_height="21dp"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/diaryTxt"
                     app:layout_constraintEnd_toEndOf="@+id/detailBox2"
                     app:layout_constraintHorizontal_bias="0.512"
                     app:layout_constraintStart_toStartOf="@+id/detailBox2"
@@ -242,10 +237,8 @@
                     android:layout_marginEnd="0dp"
                     android:layout_marginBottom="60dp"
                     android:background="@drawable/rectangle_4_shape"
-                    app:layout_constraintBottom_toTopOf="@+id/bottombar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/today_s_expenditure_details_ek1"
                     app:layout_constraintTop_toBottomOf="@+id/moneyDetails"
                     app:layout_constraintVertical_bias="0.0" />
 

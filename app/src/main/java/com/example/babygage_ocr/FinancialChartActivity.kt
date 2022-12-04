@@ -2,6 +2,7 @@ package com.example.babygage_ocr
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.babygage_ocr.databinding.ActivityFinancialChartBinding
 import com.example.babygage_ocr.databinding.ActivityHouseholdChartBinding
 import com.github.mikephil.charting.components.AxisBase
 import com.github.mikephil.charting.components.XAxis
@@ -14,8 +15,8 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 class FinancialChartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var binding : ActivityHouseholdChartBinding
-        binding = ActivityHouseholdChartBinding.inflate(layoutInflater)
+        var binding : ActivityFinancialChartBinding
+        binding = ActivityFinancialChartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val entries = ArrayList<BarEntry>()

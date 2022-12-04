@@ -17,7 +17,6 @@
         android:layout_marginBottom="240dp"
         android:background="@color/_bg__intro_ek2_color"
         android:gravity="top"
-        app:layout_constraintBottom_toTopOf="@+id/iv_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
