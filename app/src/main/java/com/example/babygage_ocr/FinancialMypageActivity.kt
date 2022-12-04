@@ -1,5 +1,6 @@
 package com.example.babygage_ocr
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -149,6 +150,10 @@ class FinancialMypageActivity : AppCompatActivity() {
             saveExcel()
         }
 
+        binding.barchart.setOnClickListener {
+            val nextScreen = Intent(this, FinancialChartActivity::class.java)
+            startActivity(nextScreen)
+        }
     }
 
  /*

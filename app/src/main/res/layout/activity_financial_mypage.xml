@@ -74,20 +74,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <Button
-        android:id="@+id/excelbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_weight="1"
-        android:backgroundTint="@color/bluemint"
-        android:gravity="center"
-        android:text="ExcelSave"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.88" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -100,7 +86,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.26">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/lin"
@@ -298,10 +284,32 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/itemList"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:layout_above="@+id/parent"
             android:layout_below="@+id/parent"
             tools:listitem="@layout/recycler_financial_list_view" />
+
+        <Button
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_52_ek1_shape"
+            android:backgroundTint="#87ceeb"
+            android:text="Go to Chart Dashboard !"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:backgroundTint="@color/rectangle_5_ek1_color" />
+
+        <Button
+            android:id="@+id/excelbtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/bluemint"
+            android:text="ExcelSave"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:backgroundTint="@color/rectangle_5_ek1_color" />
+
 
     </LinearLayout>
 
