@@ -141,7 +141,7 @@ class HouseholdmainFragment : Fragment() {
             userDiary.diary = binding.diary.text.toString()
             userDiary.date = binding.date.text.toString()
             firestore?.collection("${firebaseAuth.currentUser!!.uid.toString()} diary")?.document(binding.date.text.toString())?.set(userDiary)
-            Toast.makeText(getActivity(),"diary is saved",Toast.LENGTH_SHORT).show()
+            Toast.makeText(getActivity(),"save diary",Toast.LENGTH_SHORT).show()
         }
 
         binding.editbtn.setOnClickListener { // 수정 버튼을 누를 시
