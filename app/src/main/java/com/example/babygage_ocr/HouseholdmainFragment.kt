@@ -70,6 +70,8 @@ class HouseholdmainFragment : Fragment() {
         firebaseAuth= FirebaseAuth.getInstance()
         val currentUser = firebaseAuth?.currentUser
         firestore= FirebaseFirestore.getInstance()
+
+        //handle layout of date text
         binding.date.bringToFront()
 
         //날짜 형태
