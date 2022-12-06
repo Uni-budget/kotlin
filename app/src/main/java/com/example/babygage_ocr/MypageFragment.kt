@@ -4,6 +4,7 @@ import android.R
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,8 @@ import androidx.appcompat.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import com.example.babygage_ocr.databinding.FragmentMypageBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 
 
@@ -26,6 +29,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class MypageFragment : Fragment(){
+
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
+
     // TODO: Rename and change types of parameters
     lateinit var binding: FragmentMypageBinding
     private var param1: String? = null
@@ -58,6 +65,17 @@ class MypageFragment : Fragment(){
 
 
     private fun setUpView() {
+
+        firebaseAuth= FirebaseAuth.getInstance()
+        firestore= FirebaseFirestore.getInstance()
+        val currentUser = firebaseAuth?.currentUser
+        val docRef = firestore.collection("User Account").document(firebaseAuth.currentUser!!.email.toString())
+        docRef.get()
+            .addOnSuccessListener { document ->
+                Log.d("ITM", "DocumentSnapshot data: ${document.data}")
+                binding.userName.text = "${document.data?.get("userName")}"
+                binding.userEmail.text = "${document.data?.get("userId")}"
+            }
 
         binding.btnMyFinancial?.setOnClickListener (({
             val nextScreen = Intent(context, FinancialMypageActivity::class.java)

@@ -8,10 +8,12 @@ import android.view.View
 import android.widget.Toast
 import com.example.babygage_ocr.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +22,9 @@ class SignupActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth= FirebaseAuth.getInstance()
+        firestore= FirebaseFirestore.getInstance()
+
 
         binding.signupbtn.setOnClickListener {
             val email = binding.useremail.text.toString()
@@ -48,6 +52,12 @@ class SignupActivity : AppCompatActivity() {
                 if (pass.equals(confirmPass)) {
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener{
                         if(it.isSuccessful) {
+                            var useraccount = UserAccount()
+                            useraccount.userId = email
+                            useraccount.userName = username
+                            useraccount.userPassword = pass
+                            firestore?.collection("User Account")?.document(email)?.set(useraccount)
+                            Toast.makeText(this,"save user account information",Toast.LENGTH_SHORT).show()
                             val nextScreen = Intent(this, SuccessfulsignupActivity::class.java)
                             startActivity(nextScreen)
                         }
