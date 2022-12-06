@@ -16,6 +16,7 @@ import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.ss.usermodel.Sheet
 import org.apache.poi.ss.usermodel.Workbook
+
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -166,8 +167,8 @@ class FinancialMypageActivity : AppCompatActivity() {
 
     private fun saveExcel() {
         val workbook: Workbook = HSSFWorkbook()
-        val sheet: Sheet = workbook.createSheet() // 새로운 시트 생성
-        var row: Row? = sheet.createRow(0) // 새로운 행 생성
+        val sheet: Sheet = workbook.createSheet("Sheet1") // 새로운 시트 생성
+        var row: Row = sheet.createRow(0) // 새로운 행 생성
         var cell: Cell
 
         // 1번 셀 생성과 입력
