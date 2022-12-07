@@ -30,14 +30,26 @@ class FinancialMypageActivity : AppCompatActivity() {
     var myItems = mutableListOf<Items>()
     var myAdapter = MynumbersAdapter(myItems)
     var btnYearMonthPicker: Button? = null
+    var yr = ""
+    var month = ""
+    var userYearMonth = ""
+    var yearmonth = ""
 
-    var d =
-        OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-            Log.d(
-                "test",
-                "year = $year, month = $monthOfYear, day = $dayOfMonth"
-            )
-        }
+
+//    var d =
+//        OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+//            Log.d(
+//                "test",
+//                "year = $year, month = $monthOfYear, day = $dayOfMonth"
+//            )
+//            yr = "$year"
+//            if ("$monthOfYear".length == 1){
+//                month = "0$monthOfYear"
+//            }else{
+//                month = "$monthOfYear"
+//            }
+//            yearmonth = "${yr}${month}"
+//        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,17 +61,6 @@ class FinancialMypageActivity : AppCompatActivity() {
         mEdtDate = binding.editTextDate
         mEdtName = binding.editTextProduct
         mEdtPrice = binding.editTextTextPrice
-
-        // month, year select
-
-        btnYearMonthPicker = binding.btnYearMonthPicker
-
-        btnYearMonthPicker!!.setOnClickListener {
-            val pd = MyYearMonthPickerDialog()
-            pd.setListener(d)
-            pd.show(supportFragmentManager, "YearMonthPickerTest")
-        }
-
 
 
 
@@ -75,9 +76,18 @@ class FinancialMypageActivity : AppCompatActivity() {
         val editor: SharedPreferences.Editor = sharedPref.edit()
         var userId =  sharedPref.getString("userid", "")
 
+        // Calendar month, year select
+        btnYearMonthPicker = binding.btnYearMonthPicker
+
+
+
+
         // Initiate previous records and display the list of them with recycler view
-        val stored = db.mynumbersDAO().findId(userId!!) // Get previous records from database
-        for(i in stored){
+
+        var dblist = db.mynumbersDAO().findId(userId!!) // Get previous records from database
+
+        val stored = dblist
+          for(i in stored){
             myItems.add(i) // add records to myNumbers
         }
         position = myItems.size
@@ -88,6 +98,10 @@ class FinancialMypageActivity : AppCompatActivity() {
 
 
 
+
+
+
+// when user types receipt information
         val receive_intent = intent
 
         val temp = receive_intent.getStringExtra("key01").toString()
@@ -95,7 +109,9 @@ class FinancialMypageActivity : AppCompatActivity() {
         val temp3 = receive_intent.getStringExtra("key03").toString()
         Log.d("test","temp: ${temp}, temp2: ${temp2}, temp3: ${temp3}")
         if (temp != "" && temp2 != "" && temp3 != ""){
-            val item = Items(position,userId!!, temp, temp2, temp3)
+            // make useryearmonth to match with the year, month that user selected
+            userYearMonth = temp.substring(0 until 6)
+            val item = Items(position,userId!!,userYearMonth, temp, temp2, temp3)
             myItems.add(item) // add intended data class with 6 unique random number to the list
             db.mynumbersDAO().insertNumbers(item) // insert it to the database
             val pos = binding.itemList.adapter?.itemCount?.minus(1) // get last position
@@ -119,16 +135,51 @@ class FinancialMypageActivity : AppCompatActivity() {
 
         }
 
-//        binding.rowTextResult.setText(temp)
-//        binding.rowTextResult2.setText(temp2)
-//        binding.rowTextResult3.setText(temp3)
+        btnYearMonthPicker!!.setOnClickListener {
+            val pd = MyYearMonthPickerDialog()
+
+            pd.setListener(OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                Log.d(
+                    "test",
+                    "year = $year, month = $monthOfYear, day = $dayOfMonth"
+                )
+                yr = "$year"
+                if ("$monthOfYear".length == 1){
+                    month = "0$monthOfYear"
+                }else{
+                    month = "$monthOfYear"
+                }
+                yearmonth = "${yr}${month}"
+                binding.yearMonth.text = "${yr}/${month}"
+                Log.d("test","yearmonth: ${yearmonth}")
+                dblist = db.mynumbersDAO().findIdDate(userId!!, yearmonth) // Get previous records from database
+
+                myItems.clear()
+
+                val stored2 = dblist
+                for(i in stored2){
+                    myItems.add(i) // add records to myNumbers
+                }
+                position = myItems.size
+                binding.itemList.adapter?.notifyDataSetChanged() // NOTIFY recycler view that the list size and items are changed
+
+            })
+
+            pd.show(supportFragmentManager, "YearMonthPickerTest")
+
+
+        }
+
 
         // when 'generate' button is clicked
         binding.generate?.setOnClickListener {
             var date = mEdtDate!!.getText().toString()
             var name = mEdtName!!.getText().toString()
             var price = mEdtPrice!!.getText().toString()
-            val item = Items(position, userId!!,date, name, price)
+
+            // make useryearmonth to match with the year, month that user selected
+            userYearMonth = date.substring(0 until 6)
+            val item = Items(position, userId!!,userYearMonth,date, name, price)
             myItems.add(item) // add createdNumber data class with 6 unique random number to the list
             db.mynumbersDAO().insertNumbers(item) // insert it to the database
             val pos = binding.itemList.adapter?.itemCount?.minus(1) // get last position

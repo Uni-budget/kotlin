@@ -22,6 +22,7 @@ class MyYearMonthPickerDialog : DialogFragment() {
 
     var btnConfirm: Button? = null
     var btnCancel: Button? = null
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(activity)
         val inflater: LayoutInflater = requireActivity().getLayoutInflater()
@@ -30,6 +31,7 @@ class MyYearMonthPickerDialog : DialogFragment() {
         btnCancel = dialog.findViewById(R.id.btn_cancel)
         val monthPicker = dialog.findViewById(R.id.picker_month) as NumberPicker
         val yearPicker = dialog.findViewById(R.id.picker_year) as NumberPicker
+
         btnCancel!!.setOnClickListener {
             this@MyYearMonthPickerDialog.getDialog()!!.cancel()
             }

@@ -16,6 +16,9 @@ interface MyitemsDAO {
     @Query("SELECT * FROM items WHERE items.user_id == :userId")
     fun findId(userId: String): List<Items>
 
+    @Query("SELECT * FROM items WHERE items.user_id == :userId and items.year_month == :yearMonth")
+    fun findIdDate(userId: String, yearMonth:String): List<Items>
+
     @Query("DELETE FROM items WHERE items.user_id == :userId")
     fun deleteIdNumbers(userId: String)// delete all records
 
