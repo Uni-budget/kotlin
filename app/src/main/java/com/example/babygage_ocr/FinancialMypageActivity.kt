@@ -1,9 +1,11 @@
 package com.example.babygage_ocr
 
+import android.app.DatePickerDialog.OnDateSetListener
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +18,6 @@ import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.ss.usermodel.Sheet
 import org.apache.poi.ss.usermodel.Workbook
-
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -28,7 +29,15 @@ class FinancialMypageActivity : AppCompatActivity() {
     var mEdtPrice: EditText? = null
     var myItems = mutableListOf<Items>()
     var myAdapter = MynumbersAdapter(myItems)
+    var btnYearMonthPicker: Button? = null
 
+    var d =
+        OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            Log.d(
+                "test",
+                "year = $year, month = $monthOfYear, day = $dayOfMonth"
+            )
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +49,19 @@ class FinancialMypageActivity : AppCompatActivity() {
         mEdtDate = binding.editTextDate
         mEdtName = binding.editTextProduct
         mEdtPrice = binding.editTextTextPrice
+
+        // month, year select
+
+        btnYearMonthPicker = binding.btnYearMonthPicker
+
+        btnYearMonthPicker!!.setOnClickListener {
+            val pd = MyYearMonthPickerDialog()
+            pd.setListener(d)
+            pd.show(supportFragmentManager, "YearMonthPickerTest")
+        }
+
+
+
 
         var position = 0
         var db: MyitemsDB
@@ -72,7 +94,7 @@ class FinancialMypageActivity : AppCompatActivity() {
         val temp2 = receive_intent.getStringExtra("key02").toString()
         val temp3 = receive_intent.getStringExtra("key03").toString()
         Log.d("test","temp: ${temp}, temp2: ${temp2}, temp3: ${temp3}")
-        if (temp != "" || temp2 != "" || temp3 != ""){
+        if (temp != "" && temp2 != "" && temp3 != ""){
             val item = Items(position,userId!!, temp, temp2, temp3)
             myItems.add(item) // add intended data class with 6 unique random number to the list
             db.mynumbersDAO().insertNumbers(item) // insert it to the database

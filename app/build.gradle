@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.babygage_ocr"
-        minSdk 26
+        minSdk 28
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -92,4 +92,5 @@ dependencies {
     implementation "commons-logging:commons-logging:1.1.2"
 
     implementation 'com.amazonaws:aws-android-sdk-sns:2.6.23'
+
 }
