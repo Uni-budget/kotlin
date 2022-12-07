@@ -43,6 +43,7 @@ class TestActivity : AppCompatActivity() {
     var price: String =""
     var imageView: ImageView? = null
     var intendImagePath : String = ""
+    var cameraPath : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,22 +84,28 @@ class TestActivity : AppCompatActivity() {
             if (intendImagePath.length > 0) { // if there exists image path
                 nextScreen!!.putExtra("path", intendImagePath)
             }
-
             startActivity(nextScreen)
         }
+
+
+
+
         binding.camera.setOnClickListener{
             val nextScreen = Intent(this, CameraActivity::class.java)
             startActivity(nextScreen)
         }
 
         // glide camera image
-        val cameraPath = intent.getStringExtra("camerapath")
+        cameraPath = intent.getStringExtra("camerapath").toString()
         Glide.with(this).load(cameraPath)
             .skipMemoryCache(true)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .fallback(R.drawable.logo)
+            .error(R.drawable.logo)
+            .placeholder(R.drawable.logo)
             .into(imageView!!)
         Log.d("test","image view loaded")
+        intendImagePath = cameraPath
 
 
     }
