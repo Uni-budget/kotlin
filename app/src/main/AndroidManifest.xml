@@ -19,6 +19,8 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-feature android:name="android.hardware.camera.any" /><!-- camerax -->
 
+
+
     <application
 
         android:allowBackup="false"
@@ -97,9 +99,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".ReceiptocrActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ImportimageActivity"
             android:exported="false"

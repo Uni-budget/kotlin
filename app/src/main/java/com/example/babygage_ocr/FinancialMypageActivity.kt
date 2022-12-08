@@ -1,26 +1,40 @@
 package com.example.babygage_ocr
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog.OnDateSetListener
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
+import android.os.ParcelFileDescriptor
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.babygage_ocr.databinding.ActivityFinancialMypageBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.apache.poi.hssf.usermodel.HSSFCell
+import org.apache.poi.hssf.usermodel.HSSFRow
+import org.apache.poi.hssf.usermodel.HSSFSheet
 import org.apache.poi.hssf.usermodel.HSSFWorkbook
 import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.ss.usermodel.Sheet
 import org.apache.poi.ss.usermodel.Workbook
 import java.io.File
+import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class FinancialMypageActivity : AppCompatActivity() {
@@ -221,7 +235,9 @@ class FinancialMypageActivity : AppCompatActivity() {
 
         }
         binding.excelbtn.setOnClickListener{
-            saveExcel()
+//            saveExcel()
+            exportExcelData()
+
         }
 
         binding.barchart.setOnClickListener {
@@ -238,11 +254,63 @@ class FinancialMypageActivity : AppCompatActivity() {
     }
 */
 
-    private fun saveExcel() {
-        val workbook: Workbook = HSSFWorkbook()
-        val sheet: Sheet = workbook.createSheet("Sheet1") // 새로운 시트 생성
+    @SuppressLint("SimpleDateFormat")
+    fun exportExcelData() {
+        val now = System.currentTimeMillis()
+        val date = Date(now)
+        val sdfNow = SimpleDateFormat("yyyyMMddHHmmss")
+        val formatDate = sdfNow.format(date)
+
+        saf("FinancialAudit_${formatDate}.xls")
+    }
+
+    private fun saf(fileName: String?) {
+        try {
+            /**
+             * SAF 파일 편집
+             */
+            val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "*/*"
+                putExtra(Intent.EXTRA_TITLE, fileName)
+                putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+            }
+            startActivityForResult.launch(intent)
+
+        } catch (e: java.lang.Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    private var startActivityForResult = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result: ActivityResult ->
+        if (result.resultCode == RESULT_OK) {
+            val uri = result.data?.data
+            if (uri != null) {
+                exportExcel(uri)
+            }
+        }
+    }
+
+
+    //Export
+    private var pfd: ParcelFileDescriptor? = null
+    private var fileOutputStream: FileOutputStream? = null
+
+    private fun exportExcel(uri: Uri) = CoroutineScope(Dispatchers.IO).launch {
+
+
+        val wb: Workbook = HSSFWorkbook()
+        val sheet: Sheet = wb.createSheet()
+
+        val now = System.currentTimeMillis()
+        val formatDate = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date(now))
+
+
         var row: Row = sheet.createRow(0) // 새로운 행 생성
         var cell: Cell
+        Log.d("test", "Inside saveExcel()")
 
         // 1번 셀 생성과 입력
         cell = row!!.createCell(0)
@@ -255,26 +323,109 @@ class FinancialMypageActivity : AppCompatActivity() {
         // 3번 셀에 값 생성과 입력
         cell = row!!.createCell(2)
         cell.setCellValue("Total Price")
+
         for (i in 0 until myItems.size) { // 데이터 엑셀에 입력
             row = sheet.createRow(i + 1)
             cell = row.createCell(0)
             cell.setCellValue(myItems.get(i).item_date)
+
             cell = row.createCell(1)
             cell.setCellValue(myItems.get(i).item_name)
+
             cell = row.createCell(2)
             cell.setCellValue(myItems.get(i).item_price)
         }
-        val excelFile = File(getExternalFilesDir(null), "user.xls")
+
+
+//        val dayRow: Row = sheet.createRow(0)
+//        dayRow.createCell(0).setCellValue(formatDate)
+
         try {
-            val os = FileOutputStream(excelFile)
-            workbook.write(os)
-        } catch (e: IOException) {
-            e.printStackTrace()
+            pfd = contentResolver.openFileDescriptor(uri, "w")
+            fileOutputStream = FileOutputStream(pfd!!.fileDescriptor)
+            wb.write(fileOutputStream)
+        } catch (e: Exception) {
+            // Util.showNotification("error: ${e.message}", "error")
+        } finally {
+            try {
+                wb.close()
+                fileOutputStream?.close()
+                pfd?.close()
+                //Util.showNotification("저장 되었습니다.", "success")
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+                //Util.showNotification("error: ${e.message}", "error")
+            }
+
         }
+
+
         Toast.makeText(
             applicationContext,
-            excelFile.getAbsolutePath() + "에 저장되었습니다",
+            "Excel file successfully saved!",
             Toast.LENGTH_SHORT
         ).show()
     }
-}
+
+
+
+
+
+
+
+
+
+        private fun saveExcel() {
+            val workbook = HSSFWorkbook()
+            val sheet: HSSFSheet = workbook.createSheet("Sheet1") // 새로운 시트 생성
+            var row: HSSFRow = sheet.createRow(0) // 새로운 행 생성
+            var cell: HSSFCell
+            Log.d("test", "Inside saveExcel()")
+
+            // 1번 셀 생성과 입력
+            cell = row!!.createCell(0)
+            cell.setCellValue("Date")
+
+            // 2번 셀에 값 생성과 입력
+            cell = row!!.createCell(1)
+            cell.setCellValue("Product name")
+
+            // 3번 셀에 값 생성과 입력
+            cell = row!!.createCell(2)
+            cell.setCellValue("Total Price")
+
+            for (i in 0 until myItems.size) { // 데이터 엑셀에 입력
+                row = sheet.createRow(i + 1)
+                cell = row.createCell(0)
+                cell.setCellValue(myItems.get(i).item_date)
+                cell = row.createCell(1)
+                cell.setCellValue(myItems.get(i).item_name)
+                cell = row.createCell(2)
+                cell.setCellValue(myItems.get(i).item_price)
+            }
+
+            // 일반 파일 폴더
+            // 일반 파일 폴더
+            val fileFileName = getFileStreamPath("Android")
+            val getFileName = fileFileName.path
+
+            val excelFile = File(getFileName, "user.xls")
+
+            try {
+                val os = FileOutputStream(excelFile)
+                workbook.write(os)
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: FileNotFoundException) {
+                e.printStackTrace()
+            }
+
+            Toast.makeText(
+                applicationContext,
+                excelFile.getAbsolutePath() + "에 저장되었습니다",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+ }
+
