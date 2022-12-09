@@ -56,6 +56,12 @@ class TestActivity : AppCompatActivity() {
         )
         var binding : ActivityTestBinding
         binding = ActivityTestBinding.inflate(layoutInflater)
+
+        // check it is from HouseholdmainFragment or FinancialmainFragment
+        val receive_intent = intent
+        val category = receive_intent.getStringExtra("category")
+
+
         val sharedPref = getSharedPreferences("uj",MODE_PRIVATE)
         var userId =  sharedPref.getString("userid", "")
         Log.d("test","shared preference test user id: ${userId}")
@@ -80,6 +86,7 @@ class TestActivity : AppCompatActivity() {
             nextScreen.putExtra("key01", temp)
             nextScreen.putExtra("key02", temp2)
             nextScreen.putExtra("key03", temp3)
+            nextScreen.putExtra("category",category)
 
             if (intendImagePath.length > 0) { // if there exists image path
                 nextScreen!!.putExtra("path", intendImagePath)

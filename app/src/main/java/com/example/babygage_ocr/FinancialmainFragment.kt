@@ -2,10 +2,10 @@ package com.example.babygage_ocr
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.babygage_ocr.databinding.FragmentFinancialmainBinding
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -64,6 +64,7 @@ class FinancialmainFragment : Fragment() {
         }
         binding.takePictureBtn.setOnClickListener (({
             val nextScreen = Intent(context, TestActivity::class.java)
+            nextScreen.putExtra("category", "financial")
             startActivity(nextScreen)
             activity?.finish()
         })

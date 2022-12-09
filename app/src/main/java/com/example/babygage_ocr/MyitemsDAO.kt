@@ -13,13 +13,15 @@ interface MyitemsDAO {
     @Query("DELETE FROM items")
     fun deleteAllNumbers()// delete all records
 
+    @Query("SELECT * FROM items WHERE items.user_id == :userId and items.category == :category")
+    fun findId(userId: String, category:String): List<Items>
     @Query("SELECT * FROM items WHERE items.user_id == :userId")
-    fun findId(userId: String): List<Items>
+    fun findIdOnly(userId: String): List<Items>
 
-    @Query("SELECT * FROM items WHERE items.user_id == :userId and items.year_month == :yearMonth")
-    fun findIdDate(userId: String, yearMonth:String): List<Items>
+    @Query("SELECT * FROM items WHERE items.user_id == :userId and items.year_month == :yearMonth and items.category == :category")
+    fun findIdDate(userId: String, yearMonth:String, category: String): List<Items>
 
-    @Query("DELETE FROM items WHERE items.user_id == :userId")
-    fun deleteIdNumbers(userId: String)// delete all records
+    @Query("DELETE FROM items WHERE items.user_id == :userId and items.category == :category")
+    fun deleteIdNumbers(userId: String, category:String)// delete all records
 
 }

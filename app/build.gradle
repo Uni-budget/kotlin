@@ -93,4 +93,8 @@ dependencies {
 
     implementation 'com.amazonaws:aws-android-sdk-sns:2.6.23'
 
+
+    // log
+    implementation 'log4j:log4j:1.2+'
+    implementation 'de.mindpipe.android:android-logging-log4j:1.0.3'
 }

@@ -55,319 +55,582 @@
     </androidx.appcompat.widget.Toolbar>
 
 
+<!--    <TextView-->
+<!--        android:id="@+id/financial_my"-->
+<!--        android:layout_width="177.5dp"-->
+<!--        android:layout_height="41.5dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginLeft="21.01dp"-->
+<!--        android:layout_marginTop="67dp"-->
+
+<!--        android:layout_marginEnd="0dp"-->
+<!--        android:layout_marginBottom="0dp"-->
+<!--        android:text="Household Ledger My Page"-->
+<!--        android:textColor="@color/babygage_color"-->
+<!--        android:textSize="14dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <View-->
+<!--        android:layout_width="180.03dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_below="@+id/financial_my"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginStart="23dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="-15dp"-->
+<!--        android:layout_marginEnd="227dp"-->
+<!--        android:background="@color/black"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/household_my2"-->
+<!--        android:layout_width="177.5dp"-->
+<!--        android:layout_height="41.5dp"-->
+
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+
+<!--        android:layout_marginTop="280dp"-->
+<!--        android:layout_marginStart="12.01dp"-->
+<!--        android:layout_marginEnd="9dp"-->
+<!--        android:layout_marginBottom="275dp"-->
+<!--        android:text="Household Ledger Table"-->
+<!--        android:textColor="@color/babygage_color"-->
+<!--        android:textSize="14dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:layout_below="@+id/household_my2"-->
+<!--        android:layout_marginTop="-290dp"-->
+<!--        android:layout_marginBottom="255dp">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_year_month_picker"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="36dp"-->
+<!--            android:layout_gravity="left"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:layout_marginBottom="-20dp"-->
+<!--            android:backgroundTint="@color/lightgrey"-->
+<!--            android:text="Year/Month"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textSize="10dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/yearMonth"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginBottom="3dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:hint="year/month"-->
+<!--            android:textSize="14dp" />-->
+<!--    </LinearLayout>-->
+
+
+<!--    <TableLayout-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="31dp"-->
+
+<!--        android:layout_below="@+id/lin"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginTop="74dp"-->
+<!--        android:layout_marginBottom="503dp"-->
+<!--        android:background="@android:color/white">-->
+<!--        &lt;!&ndash; Table Heading&ndash;&gt;-->
+<!--        <TableRow-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/_rectangle_59_color">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="4"-->
+<!--                android:gravity="center_horizontal"-->
+<!--                android:padding="10sp"-->
+<!--                android:text="Date"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="10sp">-->
+
+<!--            </TextView>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="4"-->
+<!--                android:gravity="center_horizontal"-->
+<!--                android:padding="10sp"-->
+<!--                android:text="Product Name"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="10sp">-->
+
+<!--            </TextView>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="4"-->
+<!--                android:gravity="center_horizontal"-->
+<!--                android:padding="10sp"-->
+<!--                android:text="Total Price"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="10sp">-->
+
+<!--            </TextView>-->
+
+
+<!--            &lt;!&ndash; Table Data&ndash;&gt;-->
+
+<!--        </TableRow>-->
+
+
+<!--    </TableLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lin"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="0dp"-->
+<!--        android:orientation="vertical"-->
+<!--        tools:layout_editor_absoluteX="1dp"-->
+<!--        tools:layout_editor_absoluteY="407dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginTop="120dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginRight="18dp"-->
+<!--                android:text="Date" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/editTextDate"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Enter the purchased date."-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:textSize="12dp" />-->
+<!--        </LinearLayout>-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:text="Name" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/editTextProduct"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Enter the Product name."-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:textSize="12dp" />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginRight="15dp"-->
+<!--                android:text="Price" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/editTextTextPrice"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Enter the price."-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:textSize="12dp" />-->
+<!--        </LinearLayout>-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="214dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_gravity="right"-->
+<!--            android:layout_marginEnd="1dp"-->
+<!--            android:layout_marginBottom="1dp"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/generate"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="generate"-->
+<!--                android:background="@drawable/edge2"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="10dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.317"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.956" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/delete"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:text="Delete"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="10dp"-->
+<!--                android:background="@drawable/edge2"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.716"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.95" />-->
+
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/itemList2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="300dp"-->
+
+<!--        android:layout_alignTop="@+id/household_my2"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginTop="89dp"-->
+<!--        android:layout_marginBottom="242dp"-->
+<!--        tools:listitem="@layout/recycler_financial_list_view" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/barchart"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginBottom="151dp"-->
+<!--        android:background="@drawable/_rectangle_59_shape"-->
+<!--        android:text="Go to Chart Dashboard !"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textStyle="bold"-->
+<!--        app:backgroundTint="@color/_rectangle_59_color" />-->
+
+
     <TextView
-        android:id="@+id/financial_my"
+        android:id="@+id/household_my"
         android:layout_width="177.5dp"
+        android:layout_marginTop="60dp"
         android:layout_height="41.5dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="21.01dp"
-        android:layout_marginTop="67dp"
-
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:text="Household Ledger My Page"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="217dp"
+        android:text="Household Audit My Page"
         android:textColor="@color/babygage_color"
         android:textSize="14dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <View
-        android:layout_width="180.03dp"
-        android:layout_height="1dp"
-        android:layout_below="@+id/financial_my"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="-15dp"
-        android:layout_marginEnd="227dp"
-        android:background="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/financial_my2"
-        android:layout_width="177.5dp"
-        android:layout_height="41.5dp"
-        android:layout_below="@+id/lin"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="21.01dp"
-
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="6dp"
-        android:text="Household Ledger Table"
-        android:textColor="@color/babygage_color"
-        android:textSize="14dp"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="180.03dp"
-        android:layout_height="1dp"
-        android:layout_below="@+id/financial_my"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="198dp"
-        android:layout_marginEnd="236dp"
-        android:background="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TableLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:layout_below="@+id/view"
-
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="9dp"
-        android:layout_marginBottom="543dp"
-        android:background="@android:color/white">
-        <!-- Table Heading-->
-        <TableRow android:background="@color/_rectangle_59_color">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Date"
-                android:textColor="@color/black"
-                android:textSize="10sp">
-
-            </TextView>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Product Name"
-                android:textColor="@color/black"
-                android:textSize="10sp">
-
-            </TextView>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Total Price"
-                android:textColor="@color/black"
-                android:textSize="10sp">
-
-            </TextView>
-
-
-            <!-- Table Data-->
-
-        </TableRow>
-
-
-    </TableLayout>
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="400dp">
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/row_text_result"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text=""
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:id="@+id/row_text_result2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Age"
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:id="@+id/row_text_result3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1SurName"
-                android:textSize="12sp"></TextView>
-
-
-        </TableRow>
-    </TableLayout>
 
     <LinearLayout
-        android:id="@+id/lin"
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
+        android:layout_height="650dp"
+        android:layout_below="@+id/household_my"
+        android:layout_marginTop="0dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="407dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/lin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/parent"
+            android:layout_marginBottom="21dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="18dp"
+                    android:text="Date" />
+
+                <EditText
+                    android:id="@+id/editTextDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Enter the purchased date."
+                    android:inputType="textPersonName"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Name" />
+
+                <EditText
+                    android:id="@+id/editTextProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Enter the Product name."
+                    android:inputType="textPersonName"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+                    android:text="Price" />
+
+                <EditText
+                    android:id="@+id/editTextTextPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Enter the price."
+                    android:inputType="textPersonName"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="214dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/generate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/edge2"
+                    android:text="generate"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.317"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.956" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edge2"
+
+                    android:text="Delete"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.716"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.95" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/household_my2"
+            android:layout_width="177.5dp"
+            android:layout_height="30.5dp"
+            android:layout_below="@+id/lin"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:text="Household Audit Table"
+            android:textColor="@color/babygage_color"
+            android:textSize="14dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="120dp"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_year_month_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="-20dp"
+                android:backgroundTint="@color/lightgrey"
+                android:text="Year/Month"
+                android:textColor="#000000"
+                android:textSize="10dp" />
 
             <TextView
+                android:id="@+id/yearMonth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="18dp"
-                android:text="Date" />
-
-            <EditText
-                android:id="@+id/editTextDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter the purchased date."
-                android:inputType="textPersonName"
-                android:textSize="12dp" />
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:hint="year/month"
+                android:textSize="14dp" />
         </LinearLayout>
 
 
-        <LinearLayout
+        <TableLayout
+
+            android:id="@+id/tableLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="33dp"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="Name" />
+            android:layout_below="@+id/view"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white">
+            <!-- Table Heading-->
+            <TableRow android:background="@color/_rectangle_59_color">
 
-            <EditText
-                android:id="@+id/editTextProduct"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter the Product name."
-                android:inputType="textPersonName"
-                android:textSize="12dp" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:textSize="10sp">
 
-        <LinearLayout
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Product Name"
+                    android:textColor="@color/black"
+                    android:textSize="10sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Total Price"
+                    android:textColor="@color/black"
+                    android:textSize="10sp">
+
+                </TextView>
+
+
+                <!-- Table Data-->
+
+            </TableRow>
+
+
+        </TableLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemList2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="200dp"
+            android:layout_above="@+id/parent"
+            android:layout_below="@+id/parent"
+            tools:listitem="@layout/recycler_financial_list_view" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="15dp"
-                android:text="Price" />
-
-            <EditText
-                android:id="@+id/editTextTextPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter the price."
-                android:inputType="textPersonName"
-                android:textSize="12dp" />
-        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rectangle_60_shape"
+            android:text="Go to Chart Dashboard !"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
 
 
-        <LinearLayout
-            android:layout_width="214dp"
-            android:layout_height="40dp"
-            android:layout_gravity="right"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="1dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/generate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="generate"
-                android:background="@drawable/edge2"
-                android:textColor="@color/black"
-                android:textSize="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.317"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.956" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Delete"
-                android:textColor="@color/black"
-                android:textSize="10dp"
-                android:background="@drawable/edge2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.716"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.95" />
-
-        </LinearLayout>
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_below="@+id/view"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="0dp"
-        tools:listitem="@layout/recycler_financial_list_view" />
-
-    <Button
-        android:id="@+id/barchart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="151dp"
-        android:background="@drawable/_rectangle_59_shape"
-        android:text="Go to Chart Dashboard !"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:backgroundTint="@color/_rectangle_59_color" />
 
 
 </RelativeLayout>
