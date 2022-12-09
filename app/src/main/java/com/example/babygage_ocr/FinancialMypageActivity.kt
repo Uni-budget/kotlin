@@ -156,7 +156,7 @@ class FinancialMypageActivity : AppCompatActivity() {
                 "category" to "${category}"
             )
 
-            firestore.collection("${userId}").document("Financial_Receipts${receipt_position}")
+            firestore.collection("Financial_${userId}").document("Financial_Receipts${receipt_position}")
                 .set(fire_item)
                 .addOnSuccessListener { Log.d("test", "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.d("test", "Error writing document", e) }
@@ -225,7 +225,7 @@ class FinancialMypageActivity : AppCompatActivity() {
                 "category" to "${category}"
             )
 
-            firestore.collection("${userId}").document("Financial_Receipts${receipt_position}")
+            firestore.collection("Financial_${userId}").document("Financial_Receipts${receipt_position}")
                 .set(fire_item)
                 .addOnSuccessListener { Log.d("test", "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.d("test", "Error writing document", e) }
@@ -246,7 +246,7 @@ class FinancialMypageActivity : AppCompatActivity() {
                 if (pos != null) {
                     myItems.removeAt(pos) // delete at the last positions item in list
                     binding.itemList.adapter?.notifyItemRemoved(pos) // NOTIFY recycler view that item is removed in that position
-                    firestore.collection("${userId}")
+                    firestore.collection("Financial_${userId}")
                         .document("Financial_Receipts${pos}").delete();
                 }
             }

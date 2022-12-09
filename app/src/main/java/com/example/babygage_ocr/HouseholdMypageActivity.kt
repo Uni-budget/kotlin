@@ -73,7 +73,6 @@ class HouseholdMypageActivity : AppCompatActivity() {
             myItems.add(i) // add records to myNumbers
         }
 
-
         receipt_position = myItems.size
         binding.itemList2.adapter?.notifyDataSetChanged() // NOTIFY recycler view that the list size and items are changed
 
@@ -115,7 +114,7 @@ class HouseholdMypageActivity : AppCompatActivity() {
                 "category" to "${category}"
             )
 
-            firestore.collection("${userId}").document("Household_Receipts${receipt_position}")
+            firestore.collection("Household_${userId}").document("Household_Receipts${receipt_position}")
                 .set(fire_item)
                 .addOnSuccessListener { Log.d("test", "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.d("test", "Error writing document", e) }
@@ -184,7 +183,7 @@ class HouseholdMypageActivity : AppCompatActivity() {
                 "category" to "${category}"
             )
 
-            firestore.collection("${userId}").document("Household_Receipts${receipt_position}")
+            firestore.collection("Household_${userId}").document("Household_Receipts${receipt_position}")
                 .set(fire_item)
                 .addOnSuccessListener { Log.d("test", "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.d("test", "Error writing document", e) }
@@ -205,7 +204,7 @@ class HouseholdMypageActivity : AppCompatActivity() {
                 if (pos != null) {
                     myItems.removeAt(pos) // delete at the last positions item in list
                     binding.itemList2.adapter?.notifyItemRemoved(pos) // NOTIFY recycler view that item is removed in that position
-                    firestore.collection("${userId}")
+                    firestore.collection("Household_${userId}")
                         .document("Household_Receipts${pos}").delete();
                 }
             }
