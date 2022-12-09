@@ -47,7 +47,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
-    implementation files('libs/poi-5.2.3.jar')
+//    implementation files('libs/poi-5.2.3.jar')
+    implementation 'org.apache.poi:poi:5.2.3'
+
     implementation 'com.google.firebase:firebase-firestore-ktx:24.4.1'
     implementation 'androidx.camera:camera-lifecycle:1.1.0'
     implementation 'androidx.camera:camera-view:1.1.0'

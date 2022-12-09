@@ -21,18 +21,12 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.apache.poi.hssf.usermodel.HSSFCell
-import org.apache.poi.hssf.usermodel.HSSFRow
-import org.apache.poi.hssf.usermodel.HSSFSheet
 import org.apache.poi.hssf.usermodel.HSSFWorkbook
 import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.ss.usermodel.Sheet
 import org.apache.poi.ss.usermodel.Workbook
-import java.io.File
-import java.io.FileNotFoundException
 import java.io.FileOutputStream
-import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -296,12 +290,18 @@ class FinancialMypageActivity : AppCompatActivity() {
             /**
              * SAF 파일 편집
              */
+            Log.d("test","Inside the saf")
             val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
                 type = "*/*"
+                Log.d("test","settype")
                 putExtra(Intent.EXTRA_TITLE, fileName)
+                Log.d("test","extra_title")
+
                 putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+
             }
+            Log.d("test","startActivityFirResult")
             startActivityForResult.launch(intent)
 
         } catch (e: java.lang.Exception) {
@@ -314,9 +314,14 @@ class FinancialMypageActivity : AppCompatActivity() {
     ) { result: ActivityResult ->
         if (result.resultCode == RESULT_OK) {
             val uri = result.data?.data
+            Log.d("test","uri: ${uri}")
             if (uri != null) {
                 exportExcel(uri)
+            }else{
+                Log.d("test","uri is null!!")
             }
+        }else{
+            Log.d("test","resultcode is not ok")
         }
     }
 
@@ -325,19 +330,23 @@ class FinancialMypageActivity : AppCompatActivity() {
     private var pfd: ParcelFileDescriptor? = null
     private var fileOutputStream: FileOutputStream? = null
 
-    private fun exportExcel(uri: Uri) = CoroutineScope(Dispatchers.IO).launch {
+    private fun exportExcel(uri: Uri) = CoroutineScope(Dispatchers.Default).launch {
 
 
         val wb: Workbook = HSSFWorkbook()
+        Log.d("test","workbook!!")
         val sheet: Sheet = wb.createSheet()
-
+        Log.d("test","create sheet!!")
         val now = System.currentTimeMillis()
         val formatDate = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date(now))
 
 
         var row: Row = sheet.createRow(0) // 새로운 행 생성
+        Log.d("test", "CREATE ROW")
         var cell: Cell
-        Log.d("test", "Inside saveExcel()")
+        Log.d("test", "CREATE CELL")
+
+
 
         // 1번 셀 생성과 입력
         cell = row!!.createCell(0)
@@ -396,63 +405,5 @@ class FinancialMypageActivity : AppCompatActivity() {
     }
 
 
-
-
-
-
-
-
-
-        private fun saveExcel() {
-            val workbook = HSSFWorkbook()
-            val sheet: HSSFSheet = workbook.createSheet("Sheet1") // 새로운 시트 생성
-            var row: HSSFRow = sheet.createRow(0) // 새로운 행 생성
-            var cell: HSSFCell
-            Log.d("test", "Inside saveExcel()")
-
-            // 1번 셀 생성과 입력
-            cell = row!!.createCell(0)
-            cell.setCellValue("Date")
-
-            // 2번 셀에 값 생성과 입력
-            cell = row!!.createCell(1)
-            cell.setCellValue("Product name")
-
-            // 3번 셀에 값 생성과 입력
-            cell = row!!.createCell(2)
-            cell.setCellValue("Total Price")
-
-            for (i in 0 until myItems.size) { // 데이터 엑셀에 입력
-                row = sheet.createRow(i + 1)
-                cell = row.createCell(0)
-                cell.setCellValue(myItems.get(i).item_date)
-                cell = row.createCell(1)
-                cell.setCellValue(myItems.get(i).item_name)
-                cell = row.createCell(2)
-                cell.setCellValue(myItems.get(i).item_price)
-            }
-
-            // 일반 파일 폴더
-            // 일반 파일 폴더
-            val fileFileName = getFileStreamPath("Android")
-            val getFileName = fileFileName.path
-
-            val excelFile = File(getFileName, "user.xls")
-
-            try {
-                val os = FileOutputStream(excelFile)
-                workbook.write(os)
-            } catch (e: IOException) {
-                e.printStackTrace()
-            } catch (e: FileNotFoundException) {
-                e.printStackTrace()
-            }
-
-            Toast.makeText(
-                applicationContext,
-                excelFile.getAbsolutePath() + "에 저장되었습니다",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
  }
 
