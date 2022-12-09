@@ -37,7 +37,6 @@ class HouseholdChartActivity : AppCompatActivity() {
         var today = LocalDate.now()
         Log.d("ITM","today date : " + today.toString().substring(5,7))
 
-        var num = 30
         val entries = ArrayList<BarEntry>()
 
         var docsize = 0
@@ -45,6 +44,7 @@ class HouseholdChartActivity : AppCompatActivity() {
                 //${firebaseAuth.currentUser!!.email.toString()}
             .addOnSuccessListener { snap ->
                 Log.d("ITM","size of document : ${snap.size()}")
+                Log.d("ITM","snap : ${snap.metadata}")
                 docsize = snap.size()
                 for(i :Int in 0..docsize-1) {
 //                    Log.d("ITM", "in loop")
@@ -52,8 +52,8 @@ class HouseholdChartActivity : AppCompatActivity() {
                         .document("Household_Receipts${i}")
                     docRef.get()
                         .addOnSuccessListener { document ->
-//                            Log.d("ITM", "document data: ${document.data}")
-//                            Log.d("ITM","document month : ${document.data?.get("date").toString().substring(4, 6)}")
+                            Log.d("ITM", "document data: ${document.data}")
+                            Log.d("ITM","document month : ${document.data?.get("date").toString().substring(4, 6)}")
                             if (document.data?.get("date").toString().substring(4, 6) == today.toString().substring(5,7)) {
                                 //today.toString().substring(5,7)
 //                                Log.d("ITM","same month")
