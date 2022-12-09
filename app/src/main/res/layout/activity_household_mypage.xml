@@ -56,7 +56,7 @@
 
 
     <TextView
-        android:id="@+id/financial_my"
+        android:id="@+id/household_my"
         android:layout_width="177.5dp"
         android:layout_height="41.5dp"
         android:layout_alignParentStart="true"
@@ -78,7 +78,7 @@
     <View
         android:layout_width="180.03dp"
         android:layout_height="1dp"
-        android:layout_below="@+id/financial_my"
+        android:layout_below="@+id/household_my"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="23dp"
@@ -90,52 +90,73 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/financial_my2"
+        android:id="@+id/household_my2"
         android:layout_width="177.5dp"
         android:layout_height="41.5dp"
-        android:layout_below="@+id/lin"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="21.01dp"
 
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginStart="12.01dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="275dp"
         android:text="Household Ledger Table"
         android:textColor="@color/babygage_color"
         android:textSize="14dp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="180.03dp"
-        android:layout_height="1dp"
-        android:layout_below="@+id/financial_my"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="198dp"
-        android:layout_marginEnd="236dp"
-        android:background="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/household_my2"
+        android:layout_marginTop="-290dp"
+        android:layout_marginBottom="255dp">
+
+        <Button
+            android:id="@+id/btn_year_month_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="-20dp"
+            android:backgroundTint="@color/lightgrey"
+            android:text="Year/Month"
+            android:textColor="#000000"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/yearMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:hint="year/month"
+            android:textSize="14dp" />
+    </LinearLayout>
 
 
     <TableLayout
 
         android:layout_width="match_parent"
         android:layout_height="31dp"
-        android:layout_below="@+id/view"
 
+        android:layout_below="@+id/lin"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="9dp"
-        android:layout_marginBottom="543dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="503dp"
         android:background="@android:color/white">
         <!-- Table Heading-->
-        <TableRow android:background="@color/_rectangle_59_color">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/_rectangle_59_color">
 
             <TextView
                 android:layout_width="0dp"
@@ -179,49 +200,6 @@
         </TableRow>
 
 
-    </TableLayout>
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="400dp">
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/row_text_result"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text=""
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:id="@+id/row_text_result2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Age"
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:id="@+id/row_text_result3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1SurName"
-                android:textSize="12sp"></TextView>
-
-
-        </TableRow>
     </TableLayout>
 
     <LinearLayout
@@ -345,11 +323,14 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemList2"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_below="@+id/view"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="0dp"
+
+        android:layout_alignTop="@+id/household_my2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="89dp"
+        android:layout_marginBottom="242dp"
         tools:listitem="@layout/recycler_financial_list_view" />
 
     <Button

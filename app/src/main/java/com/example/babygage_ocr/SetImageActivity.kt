@@ -1,17 +1,12 @@
 package com.example.babygage_ocr
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.engine.GlideException
 import com.example.babygage_ocr.databinding.ActivitySetImageBinding
 
 
@@ -41,6 +36,7 @@ class SetImageActivity : AppCompatActivity() {
         val date = receive_intent.getStringExtra("key01")
         val name = receive_intent.getStringExtra("key02")
         val price = receive_intent.getStringExtra("key03")
+        val category = receive_intent.getStringExtra("category")
 
 //        textView.text = imagePath
         Log.d("test","set image view: ${imagePath}")
@@ -66,13 +62,24 @@ class SetImageActivity : AppCompatActivity() {
             val temp: String? = binding.dateTxt.text.toString()
             val temp2: String? = binding.productTxt.text.toString()
             val temp3: String? = binding.totalTxt.text.toString()
+            if (category == "financial"){
+                val nextScreen = Intent(this, FinancialMypageActivity::class.java)
+                nextScreen.putExtra("key01", temp)
+                nextScreen.putExtra("key02", temp2)
+                nextScreen.putExtra("key03", temp3)
+                nextScreen.putExtra("category", category)
+                startActivity(nextScreen)
 
-            val nextScreen = Intent(this, FinancialMypageActivity::class.java)
-            nextScreen.putExtra("key01", temp)
-            nextScreen.putExtra("key02", temp2)
-            nextScreen.putExtra("key03", temp3)
+            }else{
+                val nextScreen = Intent(this, HouseholdMypageActivity::class.java)
+                nextScreen.putExtra("key01", temp)
+                nextScreen.putExtra("key02", temp2)
+                nextScreen.putExtra("key03", temp3)
+                nextScreen.putExtra("category", category)
+                startActivity(nextScreen)
+            }
 
-            startActivity(nextScreen)
+
         }
 
     }

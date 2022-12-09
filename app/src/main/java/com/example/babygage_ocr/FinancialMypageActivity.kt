@@ -42,6 +42,7 @@ class FinancialMypageActivity : AppCompatActivity() {
     var mEdtName: EditText? = null
     var mEdtPrice: EditText? = null
     var myItems = mutableListOf<Items>()
+    var myItems2= mutableListOf<Items>()
     var myAdapter = MynumbersAdapter(myItems)
     var btnYearMonthPicker: Button? = null
     var yr = ""
@@ -75,10 +76,14 @@ class FinancialMypageActivity : AppCompatActivity() {
         mEdtDate = binding.editTextDate
         mEdtName = binding.editTextProduct
         mEdtPrice = binding.editTextTextPrice
+        val category = intent.getStringExtra("category").toString() // financial or household
+
+
 
 
 
         var position = 0
+        var receipt_position =0
         var db: MyitemsDB
         db = MyitemsDB.getInstance(this)
 
@@ -98,14 +103,24 @@ class FinancialMypageActivity : AppCompatActivity() {
 
         // Initiate previous records and display the list of them with recycler view
 
-        var dblist = db.mynumbersDAO().findId(userId!!) // Get previous records from database
+        var dblist = db.mynumbersDAO().findId(userId!!, category) // Get previous records from database
 
         val stored = dblist
           for(i in stored){
             myItems.add(i) // add records to myNumbers
         }
-        position = myItems.size
+
+
+        receipt_position = myItems.size
         binding.itemList.adapter?.notifyDataSetChanged() // NOTIFY recycler view that the list size and items are changed
+
+
+        var totalList = db.mynumbersDAO().getAll() // Get previous records from database
+        var stored2 = totalList
+         for(i in stored2){
+            myItems2.add(i) // add records to myNumbers
+        }
+        position = myItems2.size
 
         // initialize firebase
         val firestore = Firebase.firestore
@@ -115,17 +130,17 @@ class FinancialMypageActivity : AppCompatActivity() {
 
 
 
-// when user types receipt information
+        // when user types receipt information
         val receive_intent = intent
 
         val temp = receive_intent.getStringExtra("key01").toString()
         val temp2 = receive_intent.getStringExtra("key02").toString()
         val temp3 = receive_intent.getStringExtra("key03").toString()
-        Log.d("test","temp: ${temp}, temp2: ${temp2}, temp3: ${temp3}")
+        Log.d("test","temp: ${temp}, temp2: ${temp2}, temp3: ${temp3}, category: ${category}")
         if (temp != "" && temp2 != "" && temp3 != ""){
             // make useryearmonth to match with the year, month that user selected
             userYearMonth = temp.substring(0 until 6)
-            val item = Items(position,userId!!,userYearMonth, temp, temp2, temp3)
+            val item = Items(position,userId!!,category,userYearMonth, temp, temp2, temp3)
             myItems.add(item) // add intended data class with 6 unique random number to the list
             db.mynumbersDAO().insertNumbers(item) // insert it to the database
             val pos = binding.itemList.adapter?.itemCount?.minus(1) // get last position
@@ -137,15 +152,17 @@ class FinancialMypageActivity : AppCompatActivity() {
             val fire_item = hashMapOf(
                 "date" to "${temp}",
                 "name" to "${temp2}",
-                "price" to "${temp3}"
+                "price" to "${temp3}",
+                "category" to "${category}"
             )
 
-            firestore.collection("${userId}").document("Receipts${position}")
+            firestore.collection("${userId}").document("Financial_Receipts${receipt_position}")
                 .set(fire_item)
                 .addOnSuccessListener { Log.d("test", "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.d("test", "Error writing document", e) }
 
             position += 1
+            receipt_position += 1
 
         }
 
@@ -166,12 +183,12 @@ class FinancialMypageActivity : AppCompatActivity() {
                 yearmonth = "${yr}${month}"
                 binding.yearMonth.text = "${yr}/${month}"
                 Log.d("test","yearmonth: ${yearmonth}")
-                dblist = db.mynumbersDAO().findIdDate(userId!!, yearmonth) // Get previous records from database
+                dblist = db.mynumbersDAO().findIdDate(userId!!, yearmonth, category) // Get previous records from database
 
                 myItems.clear()
 
-                val stored2 = dblist
-                for(i in stored2){
+                val stored3 = dblist
+                for(i in stored3){
                     myItems.add(i) // add records to myNumbers
                 }
                 position = myItems.size
@@ -193,7 +210,7 @@ class FinancialMypageActivity : AppCompatActivity() {
 
             // make useryearmonth to match with the year, month that user selected
             userYearMonth = date.substring(0 until 6)
-            val item = Items(position, userId!!,userYearMonth,date, name, price)
+            val item = Items(position, userId!!,category,userYearMonth,date, name, price)
             myItems.add(item) // add createdNumber data class with 6 unique random number to the list
             db.mynumbersDAO().insertNumbers(item) // insert it to the database
             val pos = binding.itemList.adapter?.itemCount?.minus(1) // get last position
@@ -204,10 +221,11 @@ class FinancialMypageActivity : AppCompatActivity() {
             val fire_item = hashMapOf(
                 "date" to "${date}",
                 "name" to "${name}",
-                "price" to "${price}"
+                "price" to "${price}",
+                "category" to "${category}"
             )
 
-            firestore.collection("${userId}").document("Receipts${position}")
+            firestore.collection("${userId}").document("Financial_Receipts${receipt_position}")
                 .set(fire_item)
                 .addOnSuccessListener { Log.d("test", "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.d("test", "Error writing document", e) }
@@ -216,12 +234,13 @@ class FinancialMypageActivity : AppCompatActivity() {
             mEdtName!!.setText("");
             mEdtPrice!!.setText("");
             position += 1
+            receipt_position += 1
 
         }
 
 
         binding.delete?.setOnClickListener{
-            db.mynumbersDAO().deleteIdNumbers(userId)
+            db.mynumbersDAO().deleteIdNumbers(userId, category!!)
             while(binding.itemList.adapter?.itemCount!! > 0) { // repeat until all items in adapter are deleted
                 val pos = binding.itemList.adapter?.itemCount?.minus(1) // get last position
                 if (pos != null) {
@@ -231,7 +250,15 @@ class FinancialMypageActivity : AppCompatActivity() {
                         .document("Receipts${pos}").delete();
                 }
             }
-            position = 0
+
+            totalList = db.mynumbersDAO().getAll() // Get previous records from database
+            stored2 = totalList
+            for(i in stored2){
+                myItems2.add(i) // add records to myNumbers
+            }
+            position = myItems2.size
+            receipt_position = 0
+
 
         }
         binding.excelbtn.setOnClickListener{

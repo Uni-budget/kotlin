@@ -1,21 +1,16 @@
 package com.example.babygage_ocr
 
-import android.annotation.SuppressLint
-import android.content.Context.MODE_NO_LOCALIZED_COLLATORS
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.babygage_ocr.databinding.FragmentFinancialmainBinding
+import androidx.fragment.app.Fragment
 import com.example.babygage_ocr.databinding.FragmentHouseholdmainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import java.io.FileInputStream
-import java.io.FileOutputStream
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -199,6 +194,7 @@ class HouseholdmainFragment : Fragment() {
 
         binding.importReceipt.setOnClickListener (({
             val nextScreen = Intent(context, TestActivity::class.java)
+            nextScreen.putExtra("category", "household")
             startActivity(nextScreen)
             activity?.finish()
         })
