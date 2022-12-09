@@ -206,7 +206,7 @@ class HouseholdMypageActivity : AppCompatActivity() {
                     myItems.removeAt(pos) // delete at the last positions item in list
                     binding.itemList2.adapter?.notifyItemRemoved(pos) // NOTIFY recycler view that item is removed in that position
                     firestore.collection("${userId}")
-                        .document("Receipts${pos}").delete();
+                        .document("Household_Receipts${pos}").delete();
                 }
             }
 

@@ -247,7 +247,7 @@ class FinancialMypageActivity : AppCompatActivity() {
                     myItems.removeAt(pos) // delete at the last positions item in list
                     binding.itemList.adapter?.notifyItemRemoved(pos) // NOTIFY recycler view that item is removed in that position
                     firestore.collection("${userId}")
-                        .document("Receipts${pos}").delete();
+                        .document("Financial_Receipts${pos}").delete();
                 }
             }
 
