@@ -72,7 +72,7 @@ class TestActivity : AppCompatActivity() {
         binding.btnConfirm.setOnClickListener {
 
             // 데이터 첨부를하고 액티비티 실행
-            val temp: String =date
+            val temp: String = date
             val temp2: String = name
             val temp3: String = price
 

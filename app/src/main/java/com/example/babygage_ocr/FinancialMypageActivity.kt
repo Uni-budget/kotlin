@@ -124,6 +124,7 @@ class FinancialMypageActivity : AppCompatActivity() {
         Log.d("test","temp: ${temp}, temp2: ${temp2}, temp3: ${temp3}")
         if (temp != "" && temp2 != "" && temp3 != ""){
             // make useryearmonth to match with the year, month that user selected
+            Log.d("ITM","temp : $temp")
             userYearMonth = temp.substring(0 until 6)
             val item = Items(position,userId!!,userYearMonth, temp, temp2, temp3)
             myItems.add(item) // add intended data class with 6 unique random number to the list
