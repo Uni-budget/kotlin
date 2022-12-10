@@ -80,73 +80,77 @@ class MypageFragment : Fragment(){
                 binding.userEmail.text = "${document.data?.get("userId")}"
             }
 
+        binding.householdExpenditure.visibility = View.INVISIBLE
+        binding.householdTotal.visibility = View.INVISIBLE
+        binding.financialExpenditure.visibility = View.INVISIBLE
+        binding.financialTotal.visibility = View.INVISIBLE
+
         var sum_household = 0
         var sum_financial = 0
-        var docsize = 0
 
         var today = LocalDate.now()
         Log.d("ITM", "today : $today")
-        binding.householdExpenditure.text = "${sum_household}원"
-        binding.financialExpenditure.text = "${sum_financial}원"
-        firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}").get()
-            //${firebaseAuth.currentUser!!.email.toString()}
-            .addOnSuccessListener { snap ->
-                Log.d("ITM", "size of document : ${snap.size()}")
-                docsize = snap.size()
-                for (i: Int in 0..docsize - 1) {
-                    val receiptRef =
-                        firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}")
-                            .document("Household_Receipts${i}")
-                    receiptRef.get()
-                        .addOnSuccessListener { document ->
-                            Log.d("ITM", "document date = ${document.data?.get("date")}")
-                            if (document.data?.get("date").toString()
-                                    .substring(4, 6) == today.toString().substring(5, 7)
-                            ) {
-                                sum_household =
-                                    sum_household + document.data?.get("price").toString().toInt()
-                                Log.d("ITM", sum_household.toString())
-                                Log.d("ITM", binding.householdExpenditure.text.toString())
-                            } else {
-                                Log.d("ITM", "not on that date")
-                            }
-                            binding.householdExpenditure.text = "${sum_household}원"
-                        }
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d("ITM", "get failed with ", exception)
-            }
-
-        firestore.collection("Financial_${firebaseAuth.currentUser!!.email.toString()}").get()
-            //${firebaseAuth.currentUser!!.email.toString()}
-            .addOnSuccessListener { snap ->
-                Log.d("ITM", "size of document : ${snap.size()}")
-                docsize = snap.size()
-                for (i: Int in 0..docsize - 1) {
-                    val receiptRef =
-                        firestore.collection("Financial_${firebaseAuth.currentUser!!.email.toString()}")
-                            .document("Financial_Receipts${i}")
-                    receiptRef.get()
-                        .addOnSuccessListener { document ->
-                            Log.d("ITM", "document date = ${document.data?.get("date")}")
-                            Log.d("ITM", "substring month = ${document.data?.get("date").toString().substring(4, 6)}")
-                            Log.d("ITM", "today month = ${today.toString().substring(5, 7)}")
-
-                            if (document.data?.get("date").toString()
-                                    .substring(4, 6) == today.toString().substring(5, 7)) {
-                                sum_financial = sum_financial + document.data?.get("price").toString().toInt()
-                                Log.d("ITM", sum_financial.toString())
-                                Log.d("ITM", binding.financialExpenditure.text.toString())
-                            } else {
-                                Log.d("ITM", "not on that date")
-                            }
-                            binding.financialExpenditure.text = "${sum_financial}원"
-                        }
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d("ITM", "get failed with ", exception) }
+//        binding.householdExpenditure.text = "${sum_household}원"
+//        binding.financialExpenditure.text = "${sum_financial}원"
+//        firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}").get()
+//            //${firebaseAuth.currentUser!!.email.toString()}
+//            .addOnSuccessListener { snap ->
+//                Log.d("ITM", "size of document : ${snap.size()}")
+//                docsize = snap.size()
+//                for (i: Int in 0..docsize - 1) {
+//                    val receiptRef =
+//                        firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}")
+//                            .document("Household_Receipts${i}")
+//                    receiptRef.get()
+//                        .addOnSuccessListener { document ->
+//                            Log.d("ITM", "document date = ${document.data?.get("date")}")
+//                            if (document.data?.get("date").toString()
+//                                    .substring(4, 6) == today.toString().substring(5, 7)
+//                            ) {
+//                                sum_household =
+//                                    sum_household + document.data?.get("price").toString().toInt()
+//                                Log.d("ITM", sum_household.toString())
+//                                Log.d("ITM", binding.householdExpenditure.text.toString())
+//                            } else {
+//                                Log.d("ITM", "not on that date")
+//                            }
+//                            binding.householdExpenditure.text = "${sum_household}원"
+//                        }
+//                }
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.d("ITM", "get failed with ", exception)
+//            }
+//
+//        firestore.collection("Financial_${firebaseAuth.currentUser!!.email.toString()}").get()
+//            //${firebaseAuth.currentUser!!.email.toString()}
+//            .addOnSuccessListener { snap ->
+//                Log.d("ITM", "size of document : ${snap.size()}")
+//                docsize = snap.size()
+//                for (i: Int in 0..docsize - 1) {
+//                    val receiptRef =
+//                        firestore.collection("Financial_${firebaseAuth.currentUser!!.email.toString()}")
+//                            .document("Financial_Receipts${i}")
+//                    receiptRef.get()
+//                        .addOnSuccessListener { document ->
+//                            Log.d("ITM", "document date = ${document.data?.get("date")}")
+//                            Log.d("ITM", "substring month = ${document.data?.get("date").toString().substring(4, 6)}")
+//                            Log.d("ITM", "today month = ${today.toString().substring(5, 7)}")
+//
+//                            if (document.data?.get("date").toString()
+//                                    .substring(4, 6) == today.toString().substring(5, 7)) {
+//                                sum_financial = sum_financial + document.data?.get("price").toString().toInt()
+//                                Log.d("ITM", sum_financial.toString())
+//                                Log.d("ITM", binding.financialExpenditure.text.toString())
+//                            } else {
+//                                Log.d("ITM", "not on that date")
+//                            }
+//                            binding.financialExpenditure.text = "${sum_financial}원"
+//                        }
+//                }
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.d("ITM", "get failed with ", exception) }
 
 
 
@@ -164,19 +168,89 @@ class MypageFragment : Fragment(){
         })
         )
 
-        binding.toggleButton.addOnButtonCheckedListener{ toggleButton, checkedId, isChecked ->
-            if(isChecked) {
-                when (checkedId) {
-                    R.id.button1 -> {
-                        Toast.makeText(activity,"Household expenditure", Toast.LENGTH_SHORT).show()
-                        Log.d("ITM","Household expenditure")
-                        }
-                    R.id.button2 -> {
-                        Toast.makeText(activity,"Financial Audit expenditure", Toast.LENGTH_SHORT).show()
-                        Log.d("ITM","Financial Audit expenditure")
-                         }
+        binding.button1.setOnClickListener {
+            Toast.makeText(activity, "Household expenditure", Toast.LENGTH_SHORT).show()
+            Log.d("ITM", "Household expenditure")
+            sum_household = 0
+            var docsize = 0
+
+            var today = LocalDate.now()
+            Log.d("ITM", "today : $today")
+            binding.householdExpenditure.text = "${sum_household}원"
+            binding.financialExpenditure.text = "${sum_financial}원"
+            firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}").get()
+                //${firebaseAuth.currentUser!!.email.toString()}
+                .addOnSuccessListener { snap ->
+                    Log.d("ITM", "size of document : ${snap.size()}")
+                    docsize = snap.size()
+                    for (i: Int in 0..docsize - 1) {
+                        val receiptRef =
+                            firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}")
+                                .document("Household_Receipts${i}")
+                        receiptRef.get()
+                            .addOnSuccessListener { document ->
+                                Log.d("ITM", "document date = ${document.data?.get("date")}")
+                                if (document.data?.get("date").toString()
+                                        .substring(4, 6) == today.toString().substring(5, 7)
+                                ) {
+                                    sum_household =
+                                        sum_household + document.data?.get("price").toString().toInt()
+                                    Log.d("ITM", sum_household.toString())
+                                    Log.d("ITM", binding.householdExpenditure.text.toString())
+                                } else {
+                                    Log.d("ITM", "not on that date")
+                                }
+                                binding.householdExpenditure.text = "${sum_household}원"
+                                binding.householdExpenditure.visibility = View.VISIBLE
+                                binding.householdTotal.visibility = View.VISIBLE
+                                binding.financialExpenditure.visibility = View.INVISIBLE
+                                binding.financialTotal.visibility = View.INVISIBLE
+                            }
+                    }
                 }
-            }
+                .addOnFailureListener { exception ->
+                    Log.d("ITM", "get failed with ", exception)
+                }
+        }
+
+        binding.button2.setOnClickListener {
+            Toast.makeText(activity,"Financial Audit expenditure", Toast.LENGTH_SHORT).show()
+            Log.d("ITM","Financial Audit expenditure")
+            sum_financial = 0
+            var docsize = 0
+            firestore.collection("Financial_${firebaseAuth.currentUser!!.email.toString()}").get()
+                //${firebaseAuth.currentUser!!.email.toString()}
+                .addOnSuccessListener { snap ->
+                    Log.d("ITM", "size of document : ${snap.size()}")
+                    docsize = snap.size()
+                    for (i: Int in 0..docsize - 1) {
+                        val receiptRef =
+                            firestore.collection("Financial_${firebaseAuth.currentUser!!.email.toString()}")
+                                .document("Financial_Receipts${i}")
+                        receiptRef.get()
+                            .addOnSuccessListener { document ->
+                                Log.d("ITM", "document date = ${document.data?.get("date")}")
+                                Log.d("ITM", "substring month = ${document.data?.get("date").toString().substring(4, 6)}")
+                                Log.d("ITM", "today month = ${today.toString().substring(5, 7)}")
+
+                                if (document.data?.get("date").toString()
+                                        .substring(4, 6) == today.toString().substring(5, 7)) {
+                                    sum_financial = sum_financial + document.data?.get("price").toString().toInt()
+                                    Log.d("ITM", sum_financial.toString())
+                                    Log.d("ITM", binding.financialExpenditure.text.toString())
+                                } else {
+                                    Log.d("ITM", "not on that date")
+                                }
+                                binding.financialExpenditure.text = "${sum_financial}원"
+                                binding.householdExpenditure.visibility = View.INVISIBLE
+                                binding.householdTotal.visibility = View.INVISIBLE
+                                binding.financialExpenditure.visibility = View.VISIBLE
+                                binding.financialTotal.visibility = View.VISIBLE
+                            }
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d("ITM", "get failed with ", exception) }
         }
     }
 
