@@ -183,7 +183,7 @@
                     android:layout_width="189.5dp"
                     android:layout_height="40.5dp"
                     android:layout_marginStart="16dp"
-                    android:text="Today's expenditure and income"
+                    android:text="Today's expenditure"
                     android:textColor="@color/babygage_color"
                     android:textSize="13sp"
                     android:textStyle="bold"
@@ -259,6 +259,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/detailBox2"
                     app:layout_constraintVertical_bias="0.656" />
+
+                <TextView
+                    android:id="@+id/expenditure"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/detailBox"
+                    app:layout_constraintEnd_toEndOf="@+id/detailBox"
+                    app:layout_constraintStart_toStartOf="@+id/detailBox"
+                    app:layout_constraintTop_toTopOf="@+id/detailBox" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

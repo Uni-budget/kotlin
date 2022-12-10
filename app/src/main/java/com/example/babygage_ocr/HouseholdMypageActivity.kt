@@ -219,19 +219,6 @@ class HouseholdMypageActivity : AppCompatActivity() {
 
 
         }
-        
-        
-        
-        
-        
-        
-        
-
-
-
-
-      
-       
 
         binding.barchart.setOnClickListener{
             val nextScreen = Intent(this, HouseholdChartActivity::class.java)

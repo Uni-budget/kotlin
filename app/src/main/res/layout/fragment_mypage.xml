@@ -305,6 +305,7 @@
 
         <TextView
 
+            android:id="@+id/textView5"
             android:layout_width="75dp"
             android:layout_height="28dp"
             android:layout_marginLeft="159dp"
@@ -383,28 +384,24 @@
             android:layout_width="210dp"
             android:layout_height="1dp"
             android:layout_marginStart="64dp"
-            android:layout_marginTop="410dp"
+            android:layout_marginTop="428dp"
             android:background="@drawable/line_5_shape"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.39" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="130.5dp"
             android:layout_height="38.5dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="92dp"
             android:text="My Expenditure"
             android:textColor="@color/babygage_color"
             android:textSize="12dp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.242"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vector_ek29"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/vector_ek29" />
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/toggleButton"
@@ -424,9 +421,8 @@
                 android:id="@+id/button1"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="household"
-
                 android:textSize="10dp" />
 
             <Button
@@ -439,16 +435,45 @@
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView1"
-            android:layout_width="413dp"
-            android:layout_height="300dp"
-            android:layout_marginBottom="156dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <View
+            android:id="@+id/household_total"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rectangle_4_shape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/my_expenditure___household_ledger"
-            app:layout_constraintVertical_bias="0.152"
-            tools:listitem="@layout/recycler_list_view" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <View
+            android:id="@+id/financial_total"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rectangle_4_ek1_shape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/household_expenditure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/household_total"
+            app:layout_constraintEnd_toEndOf="@+id/household_total"
+            app:layout_constraintStart_toStartOf="@+id/household_total"
+            app:layout_constraintTop_toTopOf="@+id/household_total" />
+
+        <TextView
+            android:id="@+id/financial_expenditure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/financial_total"
+            app:layout_constraintEnd_toEndOf="@+id/financial_total"
+            app:layout_constraintStart_toStartOf="@+id/financial_total"
+            app:layout_constraintTop_toTopOf="@+id/financial_total" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
