@@ -183,7 +183,7 @@
                     android:layout_width="189.5dp"
                     android:layout_height="40.5dp"
                     android:layout_marginStart="16dp"
-                    android:text="Today's expenditure and income"
+                    android:text="Today's expenditure"
                     android:textColor="@color/babygage_color"
                     android:textSize="13sp"
                     android:textStyle="bold"

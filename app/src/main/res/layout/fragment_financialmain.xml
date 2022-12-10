@@ -93,13 +93,15 @@
 
                 <!-- this is upload button-->
 
+                <!-- this is fixed bottom bar -->
+
                 <TextView
                     android:id="@+id/moneyDetails"
                     android:layout_width="189.5dp"
                     android:layout_height="40.5dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Today's expenditure and income"
+                    android:layout_marginTop="40dp"
+                    android:text="Today's expenditure"
                     android:textColor="@color/babygage_color"
                     android:textSize="13sp"
                     android:textStyle="bold"
@@ -110,38 +112,36 @@
                     android:id="@+id/detailBox"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/rectangle_4_ek1_shape"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.494"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/moneyDetails" />
-
-                <!-- this is fixed bottom bar -->
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/takePictureBtn"
                     android:layout_width="374dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/edge"
                     android:text="Import receipt"
                     android:textColor="@drawable/textcolor"
                     android:textSize="13dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/detailBox"
+                    app:layout_constraintHorizontal_bias="0.486"
                     app:layout_constraintStart_toStartOf="@+id/detailBox"
-                    app:layout_constraintTop_toBottomOf="@+id/detailBox"
-                    app:layout_constraintVertical_bias="0.747" />
+                    app:layout_constraintTop_toBottomOf="@+id/detailBox" />
 
                 <TextView
                     android:id="@+id/expenditure"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
                     app:layout_constraintBottom_toBottomOf="@+id/detailBox"
                     app:layout_constraintEnd_toEndOf="@+id/detailBox"
-                    app:layout_constraintStart_toStartOf="@+id/detailBox"
-                    app:layout_constraintTop_toTopOf="@+id/detailBox" />
+                    app:layout_constraintStart_toStartOf="@+id/detailBox" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
