@@ -51,7 +51,7 @@ class MypageFragment : Fragment(){
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentMypageBinding.inflate(inflater, container, false)
-       setUpView()
+        setUpView()
 
         // Inflate the layout for this fragment
         return binding.root
