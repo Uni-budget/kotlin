@@ -37,6 +37,7 @@ class SetImageActivity : AppCompatActivity() {
         val name = receive_intent.getStringExtra("key02")
         val price = receive_intent.getStringExtra("key03")
         val category = receive_intent.getStringExtra("category")
+        Log.d("ITM", category.toString())
 
 //        textView.text = imagePath
         Log.d("test","set image view: ${imagePath}")
