@@ -38,14 +38,14 @@ class FinancialChartActivity : AppCompatActivity() {
         val entries = ArrayList<BarEntry>()
 
         var docsize = 0
-        firestore.collection("${firebaseAuth.currentUser!!.email.toString()}").get()
+        firestore.collection("Financial_${firebaseAuth.currentUser!!.email.toString()}").get()
             //${firebaseAuth.currentUser!!.email.toString()}
             .addOnSuccessListener { snap ->
                 Log.d("ITM","size of document : ${snap.size()}")
                 docsize = snap.size()
                 for(i :Int in 0..docsize-1) {
 //                    Log.d("ITM", "in loop")
-                    val docRef = firestore.collection("${firebaseAuth.currentUser!!.email.toString()}")
+                    val docRef = firestore.collection("Financial_${firebaseAuth.currentUser!!.email.toString()}")
                         .document("Financial_Receipts${i}")
                     docRef.get()
                         .addOnSuccessListener { document ->
