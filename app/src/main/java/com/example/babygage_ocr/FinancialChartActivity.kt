@@ -78,9 +78,9 @@ class FinancialChartActivity : AppCompatActivity() {
                                 entries.sortBy { it.x }
                                 Log.d("ITM","entries sortBy x : ${entries}")
                                 Log.d("ITM","size : ${entries.size}")
-                                if(entries.size>2) {
+                                if(entries.size>=2) {
                                     for (i:Int in 0..entries.size-1) {
-                                        if(entries.size>=i+1) {
+                                        if(entries.size-1>=i+1) {
                                             if ((entries[i].x) == (entries[i + 1].x)) {
                                                 var y_sum = entries[i].y + entries[i + 1].y
                                                 var x = entries[i].x
