@@ -37,56 +37,23 @@ class HouseholdChartActivity : AppCompatActivity() {
         var today = LocalDate.now()
         Log.d("ITM","today date : " + today.toString().substring(5,7))
 
-        var num = 30
         val entries = ArrayList<BarEntry>()
 
-//
-//        entries.add(BarEntry(1.2f, 20.0f))
-//        entries.add(BarEntry(2.2f, 70.0f))
-//        entries.add(BarEntry(3.2f, 30.0f))
-//        entries.add(BarEntry(4.2f, 90.0f))
-//        entries.add(BarEntry(5.2f, 70.0f))
-//        entries.add(BarEntry(6.2f, 30.0f))
-//        entries.add(BarEntry(7.2f, 90.0f))
-//        entries.add(BarEntry(8.2f, 90.0f))
-//        entries.add(BarEntry(9.2f, 90.0f))
-//        entries.add(BarEntry(10.2f, 90.0f))
-//        entries.add(BarEntry(11.2f, 90.0f))
-//        entries.add(BarEntry(12.2f, 90.0f))
-//        entries.add(BarEntry(13.2f, 90.0f))
-//        entries.add(BarEntry(14.2f, 90.0f))
-//        entries.add(BarEntry(15.2f, 90.0f))
-//        entries.add(BarEntry(16.2f, 90.0f))
-//        entries.add(BarEntry(17.2f, 90.0f))
-//        entries.add(BarEntry(18.2f, 90.0f))
-//        entries.add(BarEntry(19.2f, 90.0f))
-//        entries.add(BarEntry(20.2f, 90.0f))
-//        entries.add(BarEntry(21.2f, 90.0f))
-//        entries.add(BarEntry(22.2f, 90.0f))
-//        entries.add(BarEntry(23.2f, 90.0f))
-//        entries.add(BarEntry(24.2f, 90.0f))
-//        entries.add(BarEntry(25.2f, 90.0f))
-//        entries.add(BarEntry(26.2f, 90.0f))
-//        entries.add(BarEntry(27.2f, 90.0f))
-//        entries.add(BarEntry(28.2f, 90.0f))
-//        entries.add(BarEntry(29.2f, 90.0f))
-//        entries.add(BarEntry(30.2f, 10.0f))
-//        entries.add(BarEntry(31.2f, 90.0f))
-
         var docsize = 0
-        firestore.collection("huj0808@naver.com").get()
+        firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}").get()
                 //${firebaseAuth.currentUser!!.email.toString()}
             .addOnSuccessListener { snap ->
                 Log.d("ITM","size of document : ${snap.size()}")
+                Log.d("ITM","snap : ${snap.metadata}")
                 docsize = snap.size()
                 for(i :Int in 0..docsize-1) {
 //                    Log.d("ITM", "in loop")
-                    val docRef = firestore.collection("huj0808@naver.com")
-                        .document("Receipts${i}")
+                    val docRef = firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}")
+                        .document("Household_Receipts${i}")
                     docRef.get()
                         .addOnSuccessListener { document ->
-//                            Log.d("ITM", "document data: ${document.data}")
-//                            Log.d("ITM","document month : ${document.data?.get("date").toString().substring(4, 6)}")
+                            Log.d("ITM", "document data: ${document.data}")
+                            Log.d("ITM","document month : ${document.data?.get("date").toString().substring(4, 6)}")
                             if (document.data?.get("date").toString().substring(4, 6) == today.toString().substring(5,7)) {
                                 //today.toString().substring(5,7)
 //                                Log.d("ITM","same month")
@@ -99,30 +66,66 @@ class HouseholdChartActivity : AppCompatActivity() {
 //                                Log.d("ITM",
 //                                    document.data?.get("price").toString().toFloat().toString() )
 
-                                entries.add(BarEntry(("${document.data?.get("date").toString().substring(6, 8)}").toFloat(), "${document.data?.get("price")}".toString().toFloat()))
-                                Log.d("ITM", entries.toString())
-                                var set = BarDataSet(entries,"DataSet") // 데이터셋 초기화
-                                Log.d("ITM", set.toString())
-//        set.color = ContextCompat.getColor(applicationContext!!,R.color.design_default_color_primary_dark) // 바 그래프 색 설정
+//
+                                entries.add(
+                                    BarEntry(
+                                        ("${
+                                            document.data?.get("date").toString()
+                                                .substring(6, 8)
+                                        }").toFloat(),
+                                        "${document.data?.get("price")}".toString()
+                                            .toFloat()
+                                    )
+                                )
+                                Log.d("ITM","entries : ${entries[0].x}")
 
-                                val dataSet :ArrayList<IBarDataSet> = ArrayList()
-                                dataSet.add(set)
-                                val data = BarData(dataSet)
-                                data.barWidth = 0.5f //막대 너비 설정
-                                binding.barchart.run {
-                                    this.data = data //차트의 데이터를 data로 설정해줌.
-                                    setFitBars(true)
-                                    invalidate()
+                                entries.sortBy { it.x }
+                                Log.d("ITM","entries sortBy x : ${entries}")
+                                Log.d("ITM","size : ${entries.size}")
+                                if(entries.size>2) {
+                                    for (i:Int in 0..entries.size-1) {
+                                        if(entries.size>=i+1) {
+                                            if ((entries[i].x) == (entries[i + 1].x)) {
+                                                var y_sum = entries[i].y + entries[i + 1].y
+                                                var x = entries[i].x
+                                                Log.d("ITM", "y_sum : $y_sum")
+                                                entries.removeAt(i)
+                                                entries.removeAt((i))
+                                                Log.d("ITM","remove entries : $entries")
+                                                entries.add(BarEntry(x, y_sum))
+                                                Log.d("ITM","add entries : $entries")
+                                            }
+                                            else {
+                                                continue
+                                            }
+                                        }
+                                        else {
+                                            break
+                                        }
+                                    }
+    //                                Log.d("ITM", entries.toString())
+                                    var set = BarDataSet(entries,"DataSet") // 데이터셋 초기화
+                                    Log.d("ITM", set.toString())
+    //        set.color = ContextCompat.getColor(applicationContext!!,R.color.design_default_color_primary_dark) // 바 그래프 색 설정
+
+                                    val dataSet :ArrayList<IBarDataSet> = ArrayList()
+                                    dataSet.add(set)
+                                    val data = BarData(dataSet)
+                                    data.barWidth = 0.5f //막대 너비 설정
+                                    binding.barchart.run {
+                                        this.data = data //차트의 데이터를 data로 설정해줌.
+                                        setFitBars(true)
+                                        invalidate()
+                                    }
                                 }
                             }
                             else {
                                 Log.d("ITM", "not in this month : ${document.data}")
-//                                entries.add(BarEntry(("${document.data?.get("date").toString().substring(6, 8)}"+".2").toFloat(),0.0f))
 //                                Log.d("ITM", entries.toString())
                             }
                         }
                 }
-                Log.d("ITM","out loop")
+//                Log.d("ITM","out loop")
             }
             .addOnFailureListener { exception ->
                 Log.d("ITM", "get failed with ", exception) }

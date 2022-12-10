@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.DateFormat
 import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -67,17 +68,18 @@ class HouseholdmainFragment : Fragment() {
         firestore= FirebaseFirestore.getInstance()
 
         //handle layout of date text
-        binding.date.bringToFront()
+//        binding.date.bringToFront()
 
         //날짜 형태
         val dateform: DateFormat = SimpleDateFormat("yyyy년 MM월 dd일")
         //date type (오늘 날짜)
         val date: Date = Date(binding.calendarView.date)
+        var today = LocalDate.now()
 
         binding.date.text = dateform.format(date)
 
         Log.d("ITM",binding.date.text.toString())
-        val docRef = firestore.collection("${firebaseAuth.currentUser!!.uid.toString()} diary").document(binding.date.text.toString())
+        val docRef = firestore.collection("${firebaseAuth.currentUser!!.email.toString()} diary").document(binding.date.text.toString())
         docRef.get()
             .addOnSuccessListener { document ->
                 Log.d("ITM", document.data.toString())
@@ -104,11 +106,76 @@ class HouseholdmainFragment : Fragment() {
                 }
             }
 
+
+        // total expenditure
+        var docsize = 0
+        var sum = 0
+        binding.expenditure.bringToFront()
+        firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}").get()
+            //${firebaseAuth.currentUser!!.email.toString()}
+            .addOnSuccessListener { snap ->
+                Log.d("ITM", "size of document : ${snap.size()}")
+                docsize = snap.size()
+                for (i: Int in 0..docsize-1) {
+                    val receiptRef =
+                        firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}")
+                            .document("Household_Receipts${i}")
+                    receiptRef.get()
+                        .addOnSuccessListener { document ->
+//                            Log.d("ITM","document date = ${document.data?.get("date")}")
+//                            Log.d("ITM","date text = ${day_reciept}")
+                            if (document.data?.get("date") == today) {
+                                sum = sum + document.data?.get("price").toString().toInt()
+                                Log.d("ITM", sum.toString())
+                            } else {
+                                Log.d("ITM", "not on that date")
+                            }
+                        }
+                }
+                binding.expenditure.text = "${sum}원"
+            }
+
+
         binding.calendarView.setOnDateChangeListener { calendarView, year : Int, month : Int, dayOfMonth : Int ->
             var day: String = "${year}년 ${month + 1}월 ${dayOfMonth}일"
+            var day_reciept = ""
+            if(dayOfMonth.toString().length<2) {
+                day_reciept = "${year}${month + 1}0${dayOfMonth}"
+                Log.d("ITM", "day_receipt : $day_reciept")
+            }
+            else {
+                day_reciept = "${year}${month + 1}${dayOfMonth}"
+                Log.d("ITM", "day_receipt : $day_reciept")
+            }
 
             binding.date.text = day
-            val docRef = firestore.collection("${firebaseAuth.currentUser!!.uid.toString()} diary").document(binding.date.text.toString())
+            sum = 0
+            binding.expenditure.text = "${sum}원"
+            firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}").get()
+                //${firebaseAuth.currentUser!!.email.toString()}
+                .addOnSuccessListener { snap ->
+                    Log.d("ITM", "size of document : ${snap.size()}")
+                    docsize = snap.size()
+                    for (i: Int in 0..docsize-1) {
+                        val receiptRef =
+                            firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}")
+                                .document("Household_Receipts${i}")
+                        receiptRef.get()
+                            .addOnSuccessListener { document ->
+                                Log.d("ITM","document date = ${document.data?.get("date")}")
+                                Log.d("ITM","date text = ${day_reciept}")
+                                if (document.data?.get("date") == day_reciept) {
+                                    sum = sum + document.data?.get("price").toString().toInt()
+                                    Log.d("ITM", sum.toString())
+                                    binding.expenditure.text = "${sum}원"
+                                    Log.d("ITM",binding.expenditure.text.toString())
+                                } else {
+                                    Log.d("ITM", "not on that date")
+                                }
+                            }
+                    }
+                }
+            val docRef = firestore.collection("${firebaseAuth.currentUser!!.email.toString()} diary").document(binding.date.text.toString())
             docRef.get()
                 .addOnSuccessListener { document ->
                     if(document.data?.get("date")==binding.date.text.toString()) {
@@ -136,7 +203,7 @@ class HouseholdmainFragment : Fragment() {
         }
 
         binding.savebtn.setOnClickListener { // save Button 클릭
-            val docRef = firestore.collection("${firebaseAuth.currentUser!!.uid.toString()} diary").document(binding.date.text.toString())
+            val docRef = firestore.collection("${firebaseAuth.currentUser!!.email.toString()} diary").document(binding.date.text.toString())
             docRef.get()
                 .addOnSuccessListener { document ->
                     if(document.data?.get("date")==binding.date.text.toString()) {
@@ -148,7 +215,7 @@ class HouseholdmainFragment : Fragment() {
                         userDiary.useId = firebaseAuth.currentUser!!.email
                         userDiary.diary = binding.diary.text.toString()
                         userDiary.date = binding.date.text.toString()
-                        firestore?.collection("${firebaseAuth.currentUser!!.uid.toString()} diary")?.document(binding.date.text.toString())?.set(userDiary)
+                        firestore?.collection("${firebaseAuth.currentUser!!.email.toString()} diary")?.document(binding.date.text.toString())?.set(userDiary)
                         Toast.makeText(getActivity(),"save diary",Toast.LENGTH_SHORT).show()
                     }
                     else {
@@ -159,7 +226,7 @@ class HouseholdmainFragment : Fragment() {
                         userDiary.useId = firebaseAuth.currentUser!!.email
                         userDiary.diary = binding.diary.text.toString()
                         userDiary.date = binding.date.text.toString()
-                        firestore?.collection("${firebaseAuth.currentUser!!.uid.toString()} diary")?.document(binding.date.text.toString())?.set(userDiary)
+                        firestore?.collection("${firebaseAuth.currentUser!!.email.toString()} diary")?.document(binding.date.text.toString())?.set(userDiary)
                         Toast.makeText(getActivity(),"save diary",Toast.LENGTH_SHORT).show()
                     }
                     binding.savebtn.visibility = View.INVISIBLE
@@ -188,7 +255,7 @@ class HouseholdmainFragment : Fragment() {
             binding.savebtn.visibility = View.VISIBLE
             binding.editbtn.visibility = View.INVISIBLE
             binding.deletebtn.visibility = View.INVISIBLE
-            firestore.collection("${firebaseAuth.currentUser!!.uid.toString()} diary")?.document(binding.date.text.toString())?.delete()
+            firestore.collection("${firebaseAuth.currentUser!!.email.toString()} diary")?.document(binding.date.text.toString())?.delete()
             Toast.makeText(getActivity(), "delete diary", Toast.LENGTH_SHORT).show()
         }
 
@@ -196,9 +263,7 @@ class HouseholdmainFragment : Fragment() {
             val nextScreen = Intent(context, TestActivity::class.java)
             nextScreen.putExtra("category", "household")
             startActivity(nextScreen)
-            activity?.finish()
-        })
-        )
+            activity?.finish() }))
     }
 
 
