@@ -1,7 +1,5 @@
 package com.example.babygage_ocr
 
-import android.R
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,14 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import com.example.babygage_ocr.databinding.FragmentMypageBinding
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.time.LocalDate
-import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -56,7 +51,7 @@ class MypageFragment : Fragment(){
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentMypageBinding.inflate(inflater, container, false)
-       setUpView()
+        setUpView()
 
         // Inflate the layout for this fragment
         return binding.root
@@ -156,6 +151,13 @@ class MypageFragment : Fragment(){
 
         binding.btnMyFinancial?.setOnClickListener (({
             val nextScreen = Intent(context, FinancialMypageActivity::class.java)
+
+            nextScreen.putExtra("key01", "")
+            nextScreen.putExtra("key02", "")
+            nextScreen.putExtra("key03", "")
+            nextScreen.putExtra("category", "financial")
+
+
             startActivity(nextScreen)
             activity?.finish()
         })
@@ -163,6 +165,14 @@ class MypageFragment : Fragment(){
 
         binding.btnMyHouse?.setOnClickListener (({
             val nextScreen = Intent(context, HouseholdMypageActivity::class.java)
+
+            nextScreen.putExtra("key01", "")
+            nextScreen.putExtra("key02", "")
+            nextScreen.putExtra("key03", "")
+            nextScreen.putExtra("category", "household")
+
+
+
             startActivity(nextScreen)
             activity?.finish()
         })

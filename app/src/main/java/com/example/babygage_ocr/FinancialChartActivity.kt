@@ -3,8 +3,8 @@ package com.example.babygage_ocr
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.ContextCompat
 import com.example.babygage_ocr.databinding.ActivityFinancialChartBinding
-import com.example.babygage_ocr.databinding.ActivityHouseholdChartBinding
 import com.github.mikephil.charting.components.AxisBase
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
@@ -15,14 +15,17 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.time.LocalDate
+import java.util.*
+import kotlin.collections.ArrayList
 
 class FinancialChartActivity : AppCompatActivity() {
+
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        lateinit var firebaseAuth: FirebaseAuth
-        lateinit var firestore: FirebaseFirestore
-
         super.onCreate(savedInstanceState)
+
         var binding : ActivityFinancialChartBinding
         binding = ActivityFinancialChartBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -34,7 +37,6 @@ class FinancialChartActivity : AppCompatActivity() {
         var today = LocalDate.now()
         Log.d("ITM","today date : " + today.toString().substring(5,7))
 
-        var num = 30
         val entries = ArrayList<BarEntry>()
 
         var docsize = 0
@@ -42,6 +44,7 @@ class FinancialChartActivity : AppCompatActivity() {
             //${firebaseAuth.currentUser!!.email.toString()}
             .addOnSuccessListener { snap ->
                 Log.d("ITM","size of document : ${snap.size()}")
+                Log.d("ITM","snap : ${snap.metadata}")
                 docsize = snap.size()
                 for(i :Int in 0..docsize-1) {
 //                    Log.d("ITM", "in loop")
@@ -49,8 +52,8 @@ class FinancialChartActivity : AppCompatActivity() {
                         .document("Financial_Receipts${i}")
                     docRef.get()
                         .addOnSuccessListener { document ->
-//                            Log.d("ITM", "document data: ${document.data}")
-//                            Log.d("ITM","document month : ${document.data?.get("date").toString().substring(4, 6)}")
+                            Log.d("ITM", "document data: ${document.data}")
+                            Log.d("ITM","document month : ${document.data?.get("date").toString().substring(4, 6)}")
                             if (document.data?.get("date").toString().substring(4, 6) == today.toString().substring(5,7)) {
                                 //today.toString().substring(5,7)
 //                                Log.d("ITM","same month")
@@ -79,15 +82,15 @@ class FinancialChartActivity : AppCompatActivity() {
                                 entries.sortBy { it.x }
                                 Log.d("ITM","entries sortBy x : ${entries}")
                                 Log.d("ITM","size : ${entries.size}")
-                                if(entries.size>2) {
+                                if(entries.size>=2) {
                                     for (i:Int in 0..entries.size-1) {
-                                        if(entries.size>=i+1) {
+                                        if(entries.size-1>=i+1) {
                                             if ((entries[i].x) == (entries[i + 1].x)) {
                                                 var y_sum = entries[i].y + entries[i + 1].y
                                                 var x = entries[i].x
                                                 Log.d("ITM", "y_sum : $y_sum")
                                                 entries.removeAt(i)
-                                                entries.removeAt((i))
+                                                entries.removeAt(i)
                                                 Log.d("ITM","remove entries : $entries")
                                                 entries.add(BarEntry(x, y_sum))
                                                 Log.d("ITM","add entries : $entries")
