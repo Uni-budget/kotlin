@@ -134,7 +134,7 @@ class FinancialMypageActivity : AppCompatActivity() {
         if (temp != "" && temp2 != "" && temp3 != ""){
             // make useryearmonth to match with the year, month that user selected
             userYearMonth = temp.substring(0 until 6)
-            val item = Items(position,userId!!,category,userYearMonth, temp, temp2, temp3)
+            val item = Items(position+1,userId!!,category,userYearMonth, temp, temp2, temp3)
             myItems.add(item) // add intended data class with 6 unique random number to the list
             db.mynumbersDAO().insertNumbers(item) // insert it to the database
             val pos = binding.itemList.adapter?.itemCount?.minus(1) // get last position
@@ -204,7 +204,7 @@ class FinancialMypageActivity : AppCompatActivity() {
 
             // make useryearmonth to match with the year, month that user selected
             userYearMonth = date.substring(0 until 6)
-            val item = Items(position, userId!!,category,userYearMonth,date, name, price)
+            val item = Items(position+1, userId!!,category,userYearMonth,date, name, price)
             myItems.add(item) // add createdNumber data class with 6 unique random number to the list
             db.mynumbersDAO().insertNumbers(item) // insert it to the database
             val pos = binding.itemList.adapter?.itemCount?.minus(1) // get last position

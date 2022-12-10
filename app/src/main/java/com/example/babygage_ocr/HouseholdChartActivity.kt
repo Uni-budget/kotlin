@@ -1,9 +1,8 @@
 package com.example.babygage_ocr
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.example.babygage_ocr.databinding.ActivityHouseholdChartBinding
 import com.github.mikephil.charting.components.AxisBase
 import com.github.mikephil.charting.components.XAxis
@@ -15,8 +14,6 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.time.LocalDate
-import java.util.*
-import kotlin.collections.ArrayList
 
 class HouseholdChartActivity : AppCompatActivity() {
 
@@ -41,7 +38,7 @@ class HouseholdChartActivity : AppCompatActivity() {
 
         var docsize = 0
         firestore.collection("Household_${firebaseAuth.currentUser!!.email.toString()}").get()
-                //${firebaseAuth.currentUser!!.email.toString()}
+            //${firebaseAuth.currentUser!!.email.toString()}
             .addOnSuccessListener { snap ->
                 Log.d("ITM","size of document : ${snap.size()}")
                 Log.d("ITM","snap : ${snap.metadata}")
@@ -82,9 +79,9 @@ class HouseholdChartActivity : AppCompatActivity() {
                                 entries.sortBy { it.x }
                                 Log.d("ITM","entries sortBy x : ${entries}")
                                 Log.d("ITM","size : ${entries.size}")
-                                if(entries.size>2) {
+                                if(entries.size>=2) {
                                     for (i:Int in 0..entries.size-1) {
-                                        if(entries.size>=i+1) {
+                                        if(i+1<=entries.size-1) {
                                             if ((entries[i].x) == (entries[i + 1].x)) {
                                                 var y_sum = entries[i].y + entries[i + 1].y
                                                 var x = entries[i].x
@@ -103,10 +100,10 @@ class HouseholdChartActivity : AppCompatActivity() {
                                             break
                                         }
                                     }
-    //                                Log.d("ITM", entries.toString())
+                                    //                                Log.d("ITM", entries.toString())
                                     var set = BarDataSet(entries,"DataSet") // 데이터셋 초기화
                                     Log.d("ITM", set.toString())
-    //        set.color = ContextCompat.getColor(applicationContext!!,R.color.design_default_color_primary_dark) // 바 그래프 색 설정
+                                    //        set.color = ContextCompat.getColor(applicationContext!!,R.color.design_default_color_primary_dark) // 바 그래프 색 설정
 
                                     val dataSet :ArrayList<IBarDataSet> = ArrayList()
                                     dataSet.add(set)

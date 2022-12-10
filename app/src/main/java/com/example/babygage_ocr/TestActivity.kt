@@ -156,7 +156,7 @@ class TestActivity : AppCompatActivity() {
         responseText.text = "Sending the Files. Please Wait ..."
 
 //        val postUrl = "http://$ipv4Address:$portNumber/getpost"
-        val postUrl =  "https://b026-203-246-85-178.jp.ngrok.io/getpost"
+        val postUrl =  "https://8083-203-246-85-188.jp.ngrok.io/getpost"
         Log.d("test","Post url: ${postUrl}")
         val multipartBodyBuilder = MultipartBody.Builder().setType(MultipartBody.FORM)
         for (i in selectedImagesPaths!!.indices) {
@@ -211,7 +211,7 @@ class TestActivity : AppCompatActivity() {
                     val responseText = findViewById<TextView>(R.id.responseText)
                     try {
 
-                        //=============== get date, name, price information =================
+                        // =============== get date, name, price information =================
                         val jsonObject = JSONObject(response.body().string())
                         date = jsonObject.getString("date")
                         name = jsonObject.getString("name")
@@ -255,6 +255,7 @@ class TestActivity : AppCompatActivity() {
                     //SHOW IMAGE
 
                     if (currentImagePath!!.length > 0) {
+                        intendImagePath = currentImagePath
                         intendImagePath = currentImagePath
                         imageView?.let {
                             Glide.with(this)

@@ -47,7 +47,7 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:backgroundTint="@color/rectangle_49_ek4_color"
-            android:text="cancle"
+            android:text="cancel"
             android:textAllCaps="false"
             android:textColor="#000000" />
 
