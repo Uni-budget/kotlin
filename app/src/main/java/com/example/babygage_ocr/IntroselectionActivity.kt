@@ -28,7 +28,7 @@ class IntroselectionActivity : AppCompatActivity() {
             .addOnSuccessListener { document ->
                 Log.d("ITM", "DocumentSnapshot data: ${document.data}")
                 binding.hiOooWelcomeToEasygage.text =
-                    "Hi! ${document.data?.get("userName")}. Welcome to BABYGAGE"
+                    "Hi! ${document.data?.get("userName")}. Welcome to Unibudget"
             }
 
         binding.householdbtn.setOnClickListener{
