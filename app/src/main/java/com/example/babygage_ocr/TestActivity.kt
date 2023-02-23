@@ -107,9 +107,9 @@ class TestActivity : AppCompatActivity() {
         Glide.with(this).load(cameraPath)
             .skipMemoryCache(true)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
-            .fallback(R.drawable.logo)
-            .error(R.drawable.logo)
-            .placeholder(R.drawable.logo)
+            .fallback(R.drawable.unibudget)
+            .error(R.drawable.unibudget)
+            .placeholder(R.drawable.unibudget)
             .into(imageView!!)
         Log.d("test","image view loaded")
         intendImagePath = cameraPath
